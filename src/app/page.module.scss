@@ -9,13 +9,7 @@ $clinical-white: #F9FBFD;
 $text-dark: #333333;
 $text-light: rgba(0, 59, 70, 0.7);
 
-// Container
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  width: 100%;
-}
+// Container - Bootstrap handles this, but we override for hero section
 
 // Landing Page
 .landingPage {
@@ -23,88 +17,7 @@ $text-light: rgba(0, 59, 70, 0.7);
   background: $clinical-white;
 }
 
-// Navigation
-.navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: transparent;
-  padding: 24px 0;
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logoContainer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .logoIcon {
-    width: 24px;
-    height: 24px;
-    color: $vitality-green;
-  }
-
-  .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: white;
-    letter-spacing: -0.5px;
-  }
-
-  .navLinks {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-
-    a {
-      color: white;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      font-size: 15px;
-
-      &:hover {
-        color: rgba(255, 255, 255, 0.8);
-      }
-    }
-
-    .navCTA {
-      background: $vitality-green;
-      color: white;
-      border: none;
-      padding: 10px 24px;
-      border-radius: 24px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 15px;
-
-      &:hover {
-        background: color.adjust($vitality-green, $lightness: -5%);
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(141, 198, 63, 0.3);
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding: 16px 0;
-
-    .navLinks {
-      gap: 16px;
-
-      a {
-        display: none;
-      }
-    }
-  }
-}
+// Navigation styles removed - now handled by Header component
 
 // Hero Section
 .hero {
@@ -113,7 +26,7 @@ $text-light: rgba(0, 59, 70, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 0 80px;
+  padding: 200px 0 80px;
   overflow: hidden;
 
   .heroBackground {
@@ -132,7 +45,7 @@ $text-light: rgba(0, 59, 70, 0.7);
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url('/images/hero-2.jpeg');
+      background-image: url('/images/hero-5.jpg');
       background-size: cover;
       background-position: center bottom;
       background-repeat: no-repeat;
@@ -150,7 +63,7 @@ $text-light: rgba(0, 59, 70, 0.7);
       bottom: 0;
       background: 
         linear-gradient(to top, rgba(0, 59, 70, 0.3) 0%, transparent 50%),
-        linear-gradient(135deg, rgba(46, 181, 172, 0.85) 0%, rgba(30, 90, 168, 0.9) 100%);
+        linear-gradient(135deg, rgba(46, 181, 172, 0.85) 0%, rgba(30, 90, 168, 0.8) 100%);
       z-index: 2;
     }
   }
@@ -169,18 +82,18 @@ $text-light: rgba(0, 59, 70, 0.7);
   }
 
   .heroTag {
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1) !important;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     padding: 8px 16px;
     border-radius: 24px;
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 32px;
-    color: white;
+    color: white !important;
 
     .tagIcon {
       width: 18px;
@@ -214,7 +127,7 @@ $text-light: rgba(0, 59, 70, 0.7);
     line-height: 1.7;
     margin-bottom: 48px;
     color: rgba(255, 255, 255, 0.95);
-    max-width: 700px;
+    max-width: 725px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -244,29 +157,21 @@ $text-light: rgba(0, 59, 70, 0.7);
     }
   }
 
-  // Hero Feature Cards
+  // Hero Feature Cards - Bootstrap Row/Col handles grid
   .heroFeatures {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 80px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 24px;
+    margin-top: 40px;
   }
 
   .heroFeatureCard {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1) !important;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 16px;
-    padding: 24px;
     text-align: center;
     transition: all 0.3s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.15) !important;
       transform: translateY(-4px);
     }
   }
@@ -321,16 +226,9 @@ $text-light: rgba(0, 59, 70, 0.7);
     }
   }
 
-  // Hero Statistics Bar
+  // Hero Statistics Bar - Bootstrap Row/Col handles grid
   .heroStats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
     margin-top: 24px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 24px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -406,15 +304,7 @@ $text-light: rgba(0, 59, 70, 0.7);
       }
     }
 
-    .heroFeatures {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 60px;
-    }
-
     .heroStats {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
       padding: 24px;
     }
   }
@@ -426,12 +316,6 @@ $text-light: rgba(0, 59, 70, 0.7);
 
     .heroSubtitle {
       font-size: 16px;
-    }
-
-    .heroFeatures {
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 40px;
     }
 
     .heroFeatureCard {
@@ -449,8 +333,6 @@ $text-light: rgba(0, 59, 70, 0.7);
     }
 
     .heroStats {
-      grid-template-columns: 1fr;
-      gap: 16px;
       padding: 20px;
     }
 
@@ -460,17 +342,15 @@ $text-light: rgba(0, 59, 70, 0.7);
   }
 }
 
-// Buttons
+// Buttons - Custom brand styling for Bootstrap buttons
 .primaryCTA {
-  background: $vitality-green;
-  color: white;
-  border: none;
+  background: $vitality-green !important;
+  color: white !important;
+  border: none !important;
   padding: 16px 32px;
   border-radius: 28px;
   font-weight: 600;
   font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 14px rgba(141, 198, 63, 0.3);
   display: inline-flex;
   align-items: center;
@@ -482,22 +362,20 @@ $text-light: rgba(0, 59, 70, 0.7);
   }
 
   &:hover {
-    background: color.adjust($vitality-green, $lightness: -5%);
+    background: color.adjust($vitality-green, $lightness: -5%) !important;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(141, 198, 63, 0.4);
   }
 }
 
 .secondaryCTA {
-  background: white;
-  color: $trust-blue;
-  border: none;
+  background: white !important;
+  color: $trust-blue !important;
+  border: none !important;
   padding: 16px 32px;
   border-radius: 28px;
   font-weight: 600;
   font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -509,7 +387,7 @@ $text-light: rgba(0, 59, 70, 0.7);
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95) !important;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
   }
@@ -550,41 +428,112 @@ $text-light: rgba(0, 59, 70, 0.7);
   }
 }
 
+// Product Overview Section
+.productOverviewTitle {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  color: $wellness-teal;
+  letter-spacing: -0.5px;
+}
+
+.segmentedLine {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  gap: 0;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .lineSegmentGreen {
+    height: 4px;
+    width: 30%;
+    background: $vitality-green;
+    border-radius: 2px 0 0 2px;
+  }
+
+  .lineSegmentBlue {
+    height: 4px;
+    width: 70%;
+    background: $trust-blue;
+    border-radius: 0 2px 2px 0;
+  }
+}
+
+.productOverviewText {
+  font-size: 18px;
+  line-height: 1.7;
+  color: $text-dark;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+
+  .highlightedText {
+    color: $wellness-teal;
+    font-weight: 500;
+  }
+}
+
+.productBadges {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+
+  .productBadge {
+    background: rgba(141, 198, 63, 0.15);
+    color: $wellness-teal;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(46, 181, 172, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .productOverviewTitle {
+    font-size: 32px;
+  }
+
+  .productOverviewText {
+    font-size: 16px;
+    padding: 0 16px;
+  }
+
+  .productBadges {
+    padding: 0 16px;
+    gap: 8px;
+
+    .productBadge {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+  }
+}
+
 // Features Section
 .featuresSection {
   background: white;
 }
 
 .featuresGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
   margin-top: 40px;
 
   .featureCard {
-    background: $clinical-white;
-    padding: 32px;
+    background: $clinical-white !important;
     border-radius: 20px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 59, 70, 0.08);
+    border: 1px solid rgba(0, 59, 70, 0.08) !important;
 
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(0, 59, 70, 0.1);
-      border-color: rgba(46, 181, 172, 0.2);
-    }
-
-    h3 {
-      font-size: 20px;
-      margin: 20px 0 12px;
-      color: $deep-petrol;
-    }
-
-    p {
-      font-size: 15px;
-      line-height: 1.6;
-      color: $text-light;
+      border-color: rgba(46, 181, 172, 0.2) !important;
     }
   }
 
@@ -619,14 +568,6 @@ $text-light: rgba(0, 59, 70, 0.7);
     }
   }
 
-  @media (max-width: 968px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 // AI Section
@@ -635,11 +576,8 @@ $text-light: rgba(0, 59, 70, 0.7);
 }
 
 .aiContent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
   margin-top: 40px;
+  align-items: center;
 }
 
 .aiText {
@@ -660,13 +598,12 @@ $text-light: rgba(0, 59, 70, 0.7);
 }
 
 .reportCard {
-  background: white;
+  background: white !important;
   border-radius: 20px;
-  padding: 32px;
   box-shadow: 0 8px 32px rgba(0, 59, 70, 0.1);
   width: 100%;
   max-width: 400px;
-  border: 1px solid rgba(46, 181, 172, 0.2);
+  border: 1px solid rgba(46, 181, 172, 0.2) !important;
 }
 
 .reportHeader {
@@ -723,11 +660,6 @@ $text-light: rgba(0, 59, 70, 0.7);
 }
 
 @media (max-width: 968px) {
-  .aiContent {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
   .aiText {
     .sectionTitle,
     .sectionText {
@@ -742,34 +674,18 @@ $text-light: rgba(0, 59, 70, 0.7);
 }
 
 .gamificationGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
   margin-top: 40px;
 
   .gamificationCard {
-    background: $clinical-white;
-    padding: 32px 24px;
+    background: $clinical-white !important;
     border-radius: 20px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 59, 70, 0.08);
+    border: 1px solid rgba(0, 59, 70, 0.08) !important;
 
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(0, 59, 70, 0.1);
-    }
-
-    h3 {
-      font-size: 18px;
-      margin: 16px 0 8px;
-      color: $deep-petrol;
-    }
-
-    p {
-      font-size: 14px;
-      color: $text-light;
-      line-height: 1.5;
     }
   }
 
@@ -804,13 +720,6 @@ $text-light: rgba(0, 59, 70, 0.7);
     }
   }
 
-  @media (max-width: 968px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 // Pricing Section
@@ -819,20 +728,16 @@ $text-light: rgba(0, 59, 70, 0.7);
 }
 
 .pricingGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
   margin-top: 40px;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 
   .pricingCard {
-    background: white;
+    background: white !important;
     border-radius: 24px;
-    padding: 40px 32px;
     text-align: center;
-    border: 2px solid rgba(0, 59, 70, 0.1);
+    border: 2px solid rgba(0, 59, 70, 0.1) !important;
     transition: all 0.3s ease;
     position: relative;
 
@@ -842,7 +747,7 @@ $text-light: rgba(0, 59, 70, 0.7);
     }
 
     &.pricingCardFeatured {
-      border-color: $vitality-green;
+      border-color: $vitality-green !important;
       box-shadow: 0 8px 32px rgba(141, 198, 63, 0.2);
       transform: scale(1.05);
 
@@ -855,19 +760,13 @@ $text-light: rgba(0, 59, 70, 0.7);
         top: -12px;
         left: 50%;
         transform: translateX(-50%);
-        background: $vitality-green;
-        color: white;
+        background: $vitality-green !important;
+        color: white !important;
         padding: 6px 20px;
         border-radius: 20px;
         font-size: 12px;
         font-weight: 600;
       }
-    }
-
-    h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: $deep-petrol;
     }
 
     .price {
@@ -911,38 +810,27 @@ $text-light: rgba(0, 59, 70, 0.7);
 
     .pricingCTA {
       width: 100%;
-      padding: 14px 24px;
       border-radius: 24px;
       font-weight: 600;
       font-size: 16px;
-      cursor: pointer;
       transition: all 0.3s ease;
-      border: 2px solid $trust-blue;
-      background: transparent;
-      color: $trust-blue;
+      border: 2px solid $trust-blue !important;
 
       &:hover {
-        background: $trust-blue;
-        color: white;
         transform: translateY(-2px);
       }
 
       &.pricingCTAPrimary {
-        background: $vitality-green;
-        color: white;
-        border-color: $vitality-green;
+        background: $vitality-green !important;
+        color: white !important;
+        border-color: $vitality-green !important;
 
         &:hover {
-          background: color.adjust($vitality-green, $lightness: -5%);
+          background: color.adjust($vitality-green, $lightness: -5%) !important;
           box-shadow: 0 6px 20px rgba(141, 198, 63, 0.3);
         }
       }
     }
-  }
-
-  @media (max-width: 968px) {
-    grid-template-columns: 1fr;
-    max-width: 500px;
   }
 }
 
@@ -962,17 +850,13 @@ $text-light: rgba(0, 59, 70, 0.7);
 }
 
 .testimonialsGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
   margin-top: 40px;
   margin-bottom: 60px;
 
   .testimonialCard {
-    background: white;
-    padding: 32px 24px;
+    background: white !important;
     border-radius: 16px;
-    border: 1px solid rgba(141, 198, 63, 0.3);
+    border: 1px solid rgba(141, 198, 63, 0.3) !important;
     box-shadow: 0 4px 16px rgba(0, 59, 70, 0.08);
     transition: all 0.3s ease;
     position: relative;
@@ -982,7 +866,7 @@ $text-light: rgba(0, 59, 70, 0.7);
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 59, 70, 0.12);
-      border-color: rgba(141, 198, 63, 0.5);
+      border-color: rgba(141, 198, 63, 0.5) !important;
     }
 
     .quoteIcon {
@@ -1073,14 +957,6 @@ $text-light: rgba(0, 59, 70, 0.7);
     }
   }
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .testimonialsCTA {
@@ -1095,19 +971,20 @@ $text-light: rgba(0, 59, 70, 0.7);
 
   .testimonialsCTAButton {
     padding: 16px 40px;
-    border: none;
+    border: none !important;
     border-radius: 28px;
-    background: linear-gradient(135deg, $vitality-green, $wellness-teal);
-    color: white;
+    background: linear-gradient(135deg, $vitality-green, $wellness-teal) !important;
+    color: white !important;
     font-weight: 600;
     font-size: 16px;
-    cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 14px rgba(141, 198, 63, 0.3);
 
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(141, 198, 63, 0.4);
+      background: linear-gradient(135deg, $vitality-green, $wellness-teal) !important;
+      color: white !important;
     }
   }
 }
@@ -1118,12 +995,13 @@ $text-light: rgba(0, 59, 70, 0.7);
   background: $clinical-white;
 
   .newsletterCard {
-    background: linear-gradient(135deg, rgba(30, 90, 168, 0.9), rgba(46, 181, 172, 0.9));
+    background: linear-gradient(135deg, rgba(30, 90, 168, 0.9), rgba(46, 181, 172, 0.9)) !important;
     border-radius: 24px;
     padding: 60px 48px;
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
+    border: none !important;
 
     .newsletterTitle {
       font-size: 36px;
@@ -1146,14 +1024,11 @@ $text-light: rgba(0, 59, 70, 0.7);
       margin: 0 auto;
 
       .newsletterInput {
-        flex: 1;
-        padding: 16px 24px;
-        border: none;
+        border: none !important;
         border-radius: 12px;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.95) !important;
         font-size: 16px;
         color: $text-dark;
-        outline: none;
         transition: all 0.3s ease;
 
         &::placeholder {
@@ -1161,26 +1036,27 @@ $text-light: rgba(0, 59, 70, 0.7);
         }
 
         &:focus {
-          background: white;
+          background: white !important;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border: none !important;
         }
       }
 
       .newsletterButton {
-        padding: 16px 32px;
-        border: none;
+        border: none !important;
         border-radius: 12px;
-        background: linear-gradient(135deg, $vitality-green, $wellness-teal);
-        color: white;
+        background: linear-gradient(135deg, $vitality-green, $wellness-teal) !important;
+        color: white !important;
         font-weight: 600;
         font-size: 16px;
-        cursor: pointer;
         transition: all 0.3s ease;
         white-space: nowrap;
 
         &:hover {
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(141, 198, 63, 0.4);
+          background: linear-gradient(135deg, $vitality-green, $wellness-teal) !important;
+          color: white !important;
         }
       }
     }
@@ -1202,10 +1078,6 @@ $text-light: rgba(0, 59, 70, 0.7);
 
       .newsletterForm {
         flex-direction: column;
-
-        .newsletterButton {
-          width: 100%;
-        }
       }
     }
   }
@@ -1217,9 +1089,6 @@ $text-light: rgba(0, 59, 70, 0.7);
   padding: 60px 0 0;
 
   .footerContent {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 48px;
     margin-bottom: 40px;
     padding-bottom: 40px;
 
@@ -1398,11 +1267,6 @@ $text-light: rgba(0, 59, 70, 0.7);
   }
 
   @media (max-width: 968px) {
-    .footerContent {
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
     .footerBottom {
       flex-direction: column;
       gap: 16px;
@@ -1418,10 +1282,5 @@ $text-light: rgba(0, 59, 70, 0.7);
 
   @media (max-width: 640px) {
     padding: 40px 0 0;
-
-    .footerContent {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
   }
 }

@@ -1,0 +1,116 @@
+@use "sass:color";
+
+// Brand Colors
+$vitality-green: #8DC63F;
+$wellness-teal: #2EB5AC;
+$trust-blue: #1E5AA8;
+$deep-petrol: #003B46;
+
+// Container - override Bootstrap container
+.container {
+  max-width: 1200px;
+}
+
+// Navigation Bar with Glassmorphism
+.navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  z-index: 1000;
+  background: rgba(0, 59, 70, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 16px 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #8DC63F 0%, #B8E986 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+      width: 22px;
+      height: 22px;
+      color: white;
+    }
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+
+  .navLink {
+    color: white !important;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+  }
+
+  .navCTA {
+    background: linear-gradient(135deg, #8DC63F 0%, #B8E986 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(141, 198, 63, 0.4);
+      background: linear-gradient(135deg, #8DC63F 0%, #B8E986 100%);
+      color: white;
+    }
+  }
+
+  @media (max-width: 768px) {
+    top: 16px;
+    width: calc(100% - 32px);
+    padding: 12px 20px;
+
+    .logoIcon {
+      width: 36px;
+      height: 36px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+
+    .navCTA {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+}
+
