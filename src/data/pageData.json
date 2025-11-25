@@ -102,146 +102,32 @@
   },
   "features": [
     {
-      "iconClass": "iconGreen",
-      "icon": {
-        "viewBox": "0 0 24 24",
-        "paths": [
-          "M3 8 18 4 1",
-          "M4 12 16 4 1",
-          "M5 16 14 4 1"
-        ],
-        "elements": [
-          {
-            "type": "rect",
-            "x": "3",
-            "y": "8",
-            "width": "18",
-            "height": "4",
-            "rx": "1"
-          },
-          {
-            "type": "rect",
-            "x": "4",
-            "y": "12",
-            "width": "16",
-            "height": "4",
-            "rx": "1"
-          },
-          {
-            "type": "rect",
-            "x": "5",
-            "y": "16",
-            "width": "14",
-            "height": "4",
-            "rx": "1"
-          }
-        ]
-      },
+      "image": "/images/hero-1.jpg",
       "title": "Personalized Diet Plans",
-      "description": "Custom meal plans tailored to your goals, preferences, and dietary needs."
+      "description": "Custom meal plans tailored to your goals, preferences, and dietary restrictions."
     },
     {
-      "iconClass": "iconTeal",
-      "icon": {
-        "viewBox": "0 0 24 24",
-        "elements": [
-          {
-            "type": "rect",
-            "x": "3",
-            "y": "3",
-            "width": "18",
-            "height": "18",
-            "rx": "2"
-          },
-          {
-            "type": "path",
-            "d": "M9 12l2 2 4-4",
-            "strokeLinecap": "round",
-            "strokeLinejoin": "round"
-          }
-        ]
-      },
+      "image": "/images/hero-2.jpeg",
       "title": "Workout Library & Guided Exercises",
       "description": "Access hundreds of workouts with step-by-step video guidance and form tips."
     },
     {
-      "iconClass": "iconBlue",
-      "icon": {
-        "viewBox": "0 0 24 24",
-        "elements": [
-          {
-            "type": "rect",
-            "x": "3",
-            "y": "3",
-            "width": "18",
-            "height": "18",
-            "rx": "2"
-          },
-          {
-            "type": "path",
-            "d": "M9 12l2 2 4-4",
-            "strokeLinecap": "round",
-            "strokeLinejoin": "round"
-          }
-        ]
-      },
+      "image": "/images/hero-3.jpg",
       "title": "Habit & Water Intake Tracking",
       "description": "Build healthy habits with daily tracking and reminders for water intake."
     },
     {
-      "iconClass": "iconGreen",
-      "icon": {
-        "viewBox": "0 0 24 24",
-        "path": "M2 12h2l2-4 2 8 2-4 2 4 2-8 2 4h2",
-        "strokeLinecap": "round",
-        "strokeLinejoin": "round"
-      },
+      "image": "/images/hero-4.jpg",
       "title": "BP / Sugar / BMI / Heart Rate Monitoring",
       "description": "Track vital signs and health metrics with easy-to-use monitoring tools."
     },
     {
-      "iconClass": "iconTeal",
-      "icon": {
-        "viewBox": "0 0 24 24",
-        "elements": [
-          {
-            "type": "path",
-            "d": "M9 21h6M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-          },
-          {
-            "type": "circle",
-            "cx": "12",
-            "cy": "9",
-            "r": "2",
-            "fill": "currentColor"
-          }
-        ]
-      },
+      "image": "/images/hero-5.jpg",
       "title": "AI Medical Report Analyzer",
       "description": "Get instant insights from your medical reports with AI-powered analysis."
     },
     {
-      "iconClass": "iconBlue",
-      "icon": {
-        "viewBox": "0 0 24 24",
-        "elements": [
-          {
-            "type": "circle",
-            "cx": "12",
-            "cy": "12",
-            "r": "10"
-          },
-          {
-            "type": "polyline",
-            "points": "12 6 12 12 16 14"
-          },
-          {
-            "type": "path",
-            "d": "M12 2v4M12 18v4M2 12h4M18 12h4",
-            "strokeLinecap": "round"
-          }
-        ]
-      },
+      "image": "/images/hero-1.jpg",
       "title": "Reminders & Daily Health Tasks",
       "description": "Never miss a medication, workout, or health check with smart reminders."
     }

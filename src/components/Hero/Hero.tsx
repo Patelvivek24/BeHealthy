@@ -3,9 +3,22 @@
 import { Container, Badge, Row, Col, Card } from 'react-bootstrap';
 import Button from '@/components/Button';
 import { useState, useEffect, useRef } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon, loadIcon } from '@iconify/react';
 import styles from './Hero.module.scss';
 import pageData from '@/data/pageData.json';
+
+// Preload icons immediately when module loads (before component renders)
+// This ensures icons start loading as soon as the module is imported
+const iconNames = pageData.heroFeatures.map(feature => feature.icon);
+// Start preloading icons - don't await, let them load in background
+Promise.all(
+  iconNames.map(iconName => 
+    loadIcon(iconName).catch(err => {
+      console.warn(`Failed to preload icon ${iconName}:`, err);
+      return null;
+    })
+  )
+);
 
 // Custom hook for counting animation
 function useCountAnimation(end: number, duration: number = 2000, format: 'number' | 'k' | 'm' | 'decimal' = 'number', decimals: number = 0, startAnimation: boolean = false) {
@@ -61,6 +74,9 @@ function useCountAnimation(end: number, duration: number = 2000, format: 'number
 export default function Hero() {
   const statsRef = useRef<HTMLDivElement>(null);
   const [startAnimation, setStartAnimation] = useState(false);
+
+  // Icons are preloaded at module level when this file is imported
+  // This ensures they start loading as early as possible
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -181,7 +197,17 @@ export default function Hero() {
               <Card className={styles.heroFeatureCard}>
                 <Card.Body className="text-center">
                   <div className={`${styles.heroFeatureIcon} ${styles[feature.iconClass]}`}>
-                    <Icon icon={feature.icon} />
+                    <Icon 
+                      icon={feature.icon} 
+                      width={30} 
+                      height={30}
+                      inline={true}
+                      style={{ 
+                        minWidth: '30px', 
+                        minHeight: '30px',
+                        display: 'inline-block'
+                      }}
+                    />
                   </div>
                   <div className={styles.heroFeatureText}>
                     <strong>{feature.title}</strong>
