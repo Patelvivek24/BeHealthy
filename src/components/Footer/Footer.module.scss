@@ -1,8 +1,5 @@
+@use '../../app/variables' as *;
 @use "sass:color";
-
-// Brand Colors
-$vitality-green: #8DC63F;
-$trust-blue: #1E5AA8;
 
 .footer {
   background: white;
@@ -15,7 +12,7 @@ $trust-blue: #1E5AA8;
     .footerSection {
       h4 {
         font-size: 18px;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
         margin-bottom: 24px;
         background: linear-gradient(135deg, $vitality-green, $trust-blue);
         -webkit-background-clip: text;
@@ -58,7 +55,7 @@ $trust-blue: #1E5AA8;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-size: 15px;
-            transition: all 0.3s ease;
+            transition: $transition-base;
             line-height: 1.5;
 
             &:hover {
@@ -99,7 +96,7 @@ $trust-blue: #1E5AA8;
     }
 
     .footerLogoPlaceholder {
-      border-radius: 12px;
+      border-radius: $border-radius-sm;
       margin-bottom: 20px;
     }
 

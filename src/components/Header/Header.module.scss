@@ -1,10 +1,4 @@
-@use "sass:color";
-
-// Brand Colors
-$vitality-green: #8DC63F;
-$wellness-teal: #2EB5AC;
-$trust-blue: #1E5AA8;
-$deep-petrol: #003B46;
+@use '../../app/variables' as *;
 
 // Container - override Bootstrap container
 .container {
@@ -19,12 +13,12 @@ $deep-petrol: #003B46;
   transform: translateX(-50%);
   width: calc(100% - 48px);
   max-width: 1200px;
-  z-index: 1000;
+  z-index: $z-index-fixed;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
+  border-radius: $border-radius-xl;
   padding: 12px 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 
@@ -37,7 +31,7 @@ $deep-petrol: #003B46;
   .logoIcon {
     width: 40px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: $border-radius-sm;
     background: linear-gradient(135deg, #8DC63F 0%, #B8E986 100%);
     display: flex;
     align-items: center;
@@ -53,16 +47,16 @@ $deep-petrol: #003B46;
 
   .logo {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     color: white;
     letter-spacing: -0.5px;
   }
 
   .navLink {
-    color: #8DC63F !important;
-    font-weight: 500;
+    color: $vitality-green !important;
+    font-weight: $font-weight-medium;
     font-size: 15px;
-    transition: color 0.3s ease;
+    transition: $transition-base;
 
     &:hover {
       color: #588b0f !important;
@@ -70,20 +64,20 @@ $deep-petrol: #003B46;
   }
 
   .navCTA {
-    background: #8DC63F;
+    background: $vitality-green;
     color: white;
     border: none;
     padding: 12px 24px;
-    border-radius: 20px;
-    font-weight: 600;
+    border-radius: $border-radius-lg;
+    font-weight: $font-weight-semibold;
     font-size: 15px;
-    transition: all 0.3s ease;
+    transition: $transition-base;
     white-space: nowrap;
 
     &:hover {
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(141, 198, 63, 0.4);
-      background: linear-gradient(135deg, #8DC63F 0%, #B8E986 100%);
+      box-shadow: $shadow-button-hover;
+      background: linear-gradient(135deg, $vitality-green 0%, #B8E986 100%);
       color: white;
     }
   }

@@ -1,0 +1,123 @@
+@use '../../app/variables' as *;
+
+.aiSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(46, 181, 172, 0.05), rgba(30, 90, 168, 0.05));
+}
+
+.aiContent {
+  margin-top: 40px;
+  align-items: center;
+}
+
+.aiText {
+  .sectionTitle {
+    font-size: 42px;
+    font-weight: $font-weight-bold;
+    text-align: left;
+    margin-bottom: 20px;
+    color: $deep-petrol;
+    letter-spacing: -0.5px;
+  }
+
+  .sectionText {
+    font-size: 18px;
+    line-height: 1.7;
+    color: $text-light;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+.aiVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.reportCard {
+  background: white !important;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid rgba(46, 181, 172, 0.2) !important;
+}
+
+.reportHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid $clinical-white;
+
+  .reportTitle {
+    font-size: 18px;
+    font-weight: $font-weight-semibold;
+    color: $deep-petrol;
+  }
+
+  .reportScore {
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    color: $vitality-green;
+  }
+}
+
+.reportChart {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  height: 120px;
+  margin-bottom: 24px;
+
+  .chartBar {
+    flex: 1;
+    background: linear-gradient(180deg, $wellness-teal, $trust-blue);
+    border-radius: 8px 8px 0 0;
+    min-height: 20px;
+  }
+}
+
+.reportInsights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .insight {
+    font-size: 14px;
+    color: $text-dark;
+    padding: 8px 0;
+    border-bottom: 1px solid $clinical-white;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .aiSection {
+    padding: 60px 0;
+  }
+
+  .aiText {
+    .sectionTitle,
+    .sectionText {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .aiText {
+    .sectionTitle {
+      font-size: 32px;
+    }
+
+    .sectionText {
+      font-size: 16px;
+    }
+  }
+}
+

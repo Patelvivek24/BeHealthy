@@ -1,0 +1,95 @@
+@use '../../app/variables' as *;
+
+.featuresSection {
+  background: white;
+  padding: 100px 0 80px 0;
+
+  .sectionTitle {
+    font-size: 46px;
+    font-weight: $font-weight-semibold;
+    text-align: center;
+    margin-bottom: 40px;
+    color: $deep-petrol;
+    letter-spacing: 0px;
+  }
+}
+
+.featuresGrid {
+  margin-top: 40px;
+
+  .featureCard {
+    background: #F8F9FA !important;
+    border-radius: $border-radius-md;
+    text-align: center;
+    transition: $transition-base;
+    border: none !important;
+    box-shadow: $shadow-sm;
+    padding: 24px;
+    height: 100%;
+
+    :global(.card-body) {
+      padding: 0;
+    }
+
+    :global(.card-title) {
+      font-size: 18px;
+      font-weight: $font-weight-semibold;
+      color: $deep-petrol;
+      margin-top: 16px;
+      margin-bottom: 12px;
+    }
+
+    :global(.card-text) {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  .featureIcon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    border-radius: $border-radius-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    &.iconGreen {
+      background: rgba(141, 198, 63, 0.15);
+      color: $vitality-green;
+    }
+
+    &.iconTeal {
+      background: rgba(168, 230, 207, 0.3);
+      color: $wellness-teal;
+    }
+
+    &.iconBlue {
+      background: rgba(74, 144, 226, 0.15);
+      color: #4A90E2;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 60px 0;
+
+    .sectionTitle {
+      font-size: 32px;
+    }
+  }
+}
+
