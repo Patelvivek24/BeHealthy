@@ -1,6 +1,7 @@
 'use client';
 
-import { Container, Card, Button, Form } from 'react-bootstrap';
+import { Container, Card, Form } from 'react-bootstrap';
+import Button from '@/components/Button';
 import styles from './Newsletter.module.scss';
 import pageData from '@/data/pageData.json';
 
@@ -20,7 +21,7 @@ export default function Newsletter() {
                 placeholder={pageData.newsletter.placeholder}
                 className={styles.newsletterInput}
               />
-              <Button type="submit" className={styles.newsletterButton}>
+              <Button type="submit" variant="primary" className={styles.newsletterButton}>
                 {pageData.newsletter.buttonText}
               </Button>
             </Form>

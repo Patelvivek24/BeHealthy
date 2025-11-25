@@ -1,6 +1,7 @@
 'use client';
 
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import Button from '@/components/Button';
 import styles from './Testimonials.module.scss';
 import pageData from '@/data/pageData.json';
 
@@ -42,7 +43,7 @@ export default function Testimonials() {
         </Row>
         <div className={styles.testimonialsCTA}>
           <p className={styles.testimonialsCTAText}>{pageData.testimonials.cta.text}</p>
-          <Button className={styles.testimonialsCTAButton}>{pageData.testimonials.cta.buttonText}</Button>
+          <Button variant="primary" className={styles.testimonialsCTAButton}>{pageData.testimonials.cta.buttonText}</Button>
         </div>
       </Container>
     </section>

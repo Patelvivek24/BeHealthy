@@ -64,22 +64,7 @@
   }
 
   .navCTA {
-    background: $vitality-green;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: $border-radius-lg;
-    font-weight: $font-weight-semibold;
-    font-size: 15px;
-    transition: $transition-base;
     white-space: nowrap;
-
-    &:hover {
-      transform: translateY(-1px);
-      box-shadow: $shadow-button-hover;
-      background: linear-gradient(135deg, $vitality-green 0%, #B8E986 100%);
-      color: white;
-    }
   }
 
   @media (max-width: 768px) {

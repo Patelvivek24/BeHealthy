@@ -1,6 +1,7 @@
 'use client';
 
-import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
+import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
+import Button from '@/components/Button';
 import styles from './Pricing.module.scss';
 import pageData from '@/data/pageData.json';
 
@@ -26,8 +27,8 @@ export default function Pricing() {
                     ))}
                   </ul>
                   <Button 
-                    className={`${styles.pricingCTA} ${plan.buttonVariant === 'primary' ? styles.pricingCTAPrimary : ''}`}
-                    variant={plan.buttonVariant === 'primary' ? 'primary' : 'outline-primary'}
+                    variant={plan.buttonVariant === 'primary' ? 'primary' : 'outline'}
+                    className={styles.pricingCTA}
                   >
                     {plan.buttonText}
                   </Button>

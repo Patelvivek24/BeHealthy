@@ -165,8 +165,8 @@
   }
 
   .heroFeatureIcon {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     margin: 0 auto 16px;
     border-radius: $border-radius-sm;
     display: flex;
@@ -175,8 +175,8 @@
     color: white;
 
     svg {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
     }
 
     &.heroIconGreen {
@@ -196,27 +196,26 @@
   }
 
   .heroFeatureText {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
     color: white;
 
     strong {
       font-size: 18px;
       font-weight: $font-weight-medium;
       display: block;
+      line-height: 1.2;
     }
 
     span {
       font-size: 14px;
       font-weight: $font-weight-normal;
       opacity: 0.8;
+      line-height: 1.2;
     }
   }
 
   // Hero Statistics Bar
   .heroStats {
-    margin-top: 24px;
+    margin: 24px 0px 0px 0px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -248,58 +247,6 @@
     opacity: 0.8;
   }
 
-  // Buttons
-  .primaryCTA {
-    background: $vitality-green !important;
-    color: white !important;
-    border: none !important;
-    padding: 16px 32px;
-    border-radius: 28px;
-    font-weight: $font-weight-semibold;
-    font-size: 16px;
-    box-shadow: $shadow-button;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: $transition-base;
-
-    .arrowIcon {
-      width: 20px;
-      height: 20px;
-    }
-
-    &:hover {
-      background: color.adjust($vitality-green, $lightness: -5%) !important;
-      transform: translateY(-2px);
-      box-shadow: $shadow-button-hover;
-    }
-  }
-
-  .secondaryCTA {
-    background: #ffffff52 !important;
-    color: $trust-blue !important;
-    border: 2px solid #ffffff52 !important;
-    padding: 16px 32px;
-    border-radius: 28px;
-    font-weight: $font-weight-semibold;
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
-    transition: $transition-base;
-
-    .playIcon {
-      width: 20px;
-      height: 20px;
-    }
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.95) !important;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-    }
-  }
 
   @keyframes bounce {
     0%,

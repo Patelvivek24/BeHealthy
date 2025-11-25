@@ -13,7 +13,7 @@ export default function Features() {
           {pageData.features.map((feature, idx) => (
             <Col key={idx} md={6} lg={4} className="mb-4">
               <Card className={styles.featureCard}>
-                <Card.Body className="text-center">
+                <Card.Body className={`text-center ${styles.cardBody}`}>
                   <div className={`${styles.featureIcon} ${styles[feature.iconClass]}`}>
                     <svg viewBox={feature.icon.viewBox} fill="none" stroke="currentColor" strokeWidth="2">
                       {feature.icon.path && (
@@ -44,8 +44,8 @@ export default function Features() {
                       })}
                     </svg>
                   </div>
-                  <Card.Title>{feature.title}</Card.Title>
-                  <Card.Text>{feature.description}</Card.Text>
+                  <Card.Title className={styles.cardTitle}>{feature.title}</Card.Title>
+                  <Card.Text className={styles.cardText}>{feature.description}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>

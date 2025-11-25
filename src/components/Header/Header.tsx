@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import Button from '@/components/Button';
 import styles from './Header.module.scss';
 
 export default function Header() {
@@ -26,7 +27,7 @@ export default function Header() {
             <Nav.Link href="#features" className={styles.navLink}>Features</Nav.Link>
             <Nav.Link href="#pricing" className={styles.navLink}>Pricing</Nav.Link>
             <Nav.Link href="#testimonials" className={styles.navLink}>Testimonials</Nav.Link>
-            <Button className={styles.navCTA}>Get Started Free</Button>
+            <Button variant="primary" className={styles.navCTA}>Get Started Free</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

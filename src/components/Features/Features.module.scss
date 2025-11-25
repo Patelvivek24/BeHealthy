@@ -27,28 +27,28 @@
     padding: 24px;
     height: 100%;
 
-    :global(.card-body) {
-      padding: 0;
-    }
-
-    :global(.card-title) {
-      font-size: 18px;
-      font-weight: $font-weight-semibold;
-      color: $deep-petrol;
-      margin-top: 16px;
-      margin-bottom: 12px;
-    }
-
-    :global(.card-text) {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.6;
-    }
-
     &:hover {
       transform: translateY(-4px);
       box-shadow: $shadow-md;
     }
+  }
+
+  .cardBody {
+    padding: 0;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+    font-weight: $font-weight-semibold;
+    color: $deep-petrol;
+    margin-top: 16px;
+    margin-bottom: 12px;
+  }
+
+  .cardText {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
   }
 
   .featureIcon {

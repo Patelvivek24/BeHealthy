@@ -1,7 +1,9 @@
 'use client';
 
-import { Container, Button, Badge, Row, Col, Card } from 'react-bootstrap';
+import { Container, Badge, Row, Col, Card } from 'react-bootstrap';
+import Button from '@/components/Button';
 import { useState, useEffect, useRef } from 'react';
+import { Icon } from '@iconify/react';
 import styles from './Hero.module.scss';
 import pageData from '@/data/pageData.json';
 
@@ -135,14 +137,14 @@ export default function Hero() {
             {pageData.hero.subtitle}
           </p>
           <div className={styles.heroButtons}>
-            <Button className={styles.primaryCTA}>
+            <Button variant="primary">
               {pageData.hero.buttons.primary.text}
-              <svg className={styles.arrowIcon} viewBox={pageData.hero.buttons.primary.icon.viewBox} fill="none" stroke="currentColor" strokeWidth="2">
+              <svg style={{ width: '20px', height: '20px' }} viewBox={pageData.hero.buttons.primary.icon.viewBox} fill="none" stroke="currentColor" strokeWidth="2">
                 <path d={pageData.hero.buttons.primary.icon.path}/>
               </svg>
             </Button>
-            <Button variant="light" className={styles.secondaryCTA}>
-              <svg className={styles.playIcon} viewBox={pageData.hero.buttons.secondary.icon.viewBox} fill="currentColor">
+            <Button variant="outline">
+              <svg style={{ width: '20px', height: '20px' }} viewBox={pageData.hero.buttons.secondary.icon.viewBox} fill="currentColor">
                 <path d={pageData.hero.buttons.secondary.icon.path}/>
               </svg>
               {pageData.hero.buttons.secondary.text}
@@ -179,15 +181,7 @@ export default function Hero() {
               <Card className={styles.heroFeatureCard}>
                 <Card.Body className="text-center">
                   <div className={`${styles.heroFeatureIcon} ${styles[feature.iconClass]}`}>
-                    <svg viewBox={feature.icon.viewBox} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      {feature.icon.path ? (
-                        <path d={feature.icon.path}/>
-                      ) : feature.icon.paths ? (
-                        feature.icon.paths.map((path, pIdx) => (
-                          <path key={pIdx} d={path}/>
-                        ))
-                      ) : null}
-                    </svg>
+                    <Icon icon={feature.icon} />
                   </div>
                   <div className={styles.heroFeatureText}>
                     <strong>{feature.title}</strong>
