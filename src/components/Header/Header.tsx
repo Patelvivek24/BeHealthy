@@ -16,8 +16,8 @@ export default function Header() {
           <Image 
             src="/images/logo.png" 
             alt="BeHealthy Logo" 
-            width={60} 
-            height={60}
+            width={50} 
+            height={50}
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

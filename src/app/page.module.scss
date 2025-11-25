@@ -61,7 +61,7 @@ $text-light: rgba(0, 59, 70, 0.7);
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
+      background:
         linear-gradient(to top, rgba(0, 59, 70, 0.3) 0%, transparent 50%),
         linear-gradient(135deg, rgba(46, 181, 172, 0.85) 0%, rgba(30, 90, 168, 0.8) 100%);
       z-index: 2;
@@ -104,11 +104,11 @@ $text-light: rgba(0, 59, 70, 0.7);
   }
 
   .heroTitle {
-    font-size: 64px;
-    font-weight: 800;
+    font-size: 76px;
+    font-weight: 600;
     line-height: 1.1;
     margin-bottom: 24px;
-    letter-spacing: -2px;
+    letter-spacing: 0px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -149,6 +149,13 @@ $text-light: rgba(0, 59, 70, 0.7);
     font-size: 14px;
     font-weight: 500;
     margin-top: 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      transform: translateY(4px);
+    }
 
     .scrollArrow {
       width: 20px;
@@ -214,15 +221,15 @@ $text-light: rgba(0, 59, 70, 0.7);
     color: white;
 
     strong {
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 500;
       display: block;
     }
 
     span {
       font-size: 14px;
       font-weight: 400;
-      opacity: 0.9;
+      opacity: 0.8;
     }
   }
 
@@ -242,8 +249,8 @@ $text-light: rgba(0, 59, 70, 0.7);
   }
 
   .heroStatNumber {
-    font-size: 32px;
-    font-weight: 800;
+    font-size: 36px;
+    font-weight: 500;
     margin-bottom: 8px;
     line-height: 1;
 
@@ -256,15 +263,18 @@ $text-light: rgba(0, 59, 70, 0.7);
 
   .heroStatLabel {
     font-size: 14px;
-    font-weight: 500;
-    opacity: 0.9;
+    font-weight: 400;
+    opacity: 0.8;
   }
 
   @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: scale(1);
       opacity: 0.5;
     }
+
     50% {
       transform: scale(1.1);
       opacity: 0.3;
@@ -272,9 +282,12 @@ $text-light: rgba(0, 59, 70, 0.7);
   }
 
   @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(8px);
     }
@@ -369,9 +382,9 @@ $text-light: rgba(0, 59, 70, 0.7);
 }
 
 .secondaryCTA {
-  background: white !important;
+  background: #ffffff52 !important;
   color: $trust-blue !important;
-  border: none !important;
+  border: 2px solid #ffffff52 !important;
   padding: 16px 32px;
   border-radius: 28px;
   font-weight: 600;
@@ -430,12 +443,12 @@ $text-light: rgba(0, 59, 70, 0.7);
 
 // Product Overview Section
 .productOverviewTitle {
-  font-size: 42px;
-  font-weight: 700;
+  font-size: 46px;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 24px;
-  color: $wellness-teal;
-  letter-spacing: -0.5px;
+  color: #003B46;
+  letter-spacing: 0px;
 }
 
 .segmentedLine {
@@ -447,24 +460,18 @@ $text-light: rgba(0, 59, 70, 0.7);
   margin-left: auto;
   margin-right: auto;
 
-  .lineSegmentGreen {
+  .linegradientSegment {
     height: 4px;
-    width: 30%;
-    background: $vitality-green;
-    border-radius: 2px 0 0 2px;
-  }
-
-  .lineSegmentBlue {
-    height: 4px;
-    width: 70%;
-    background: $trust-blue;
-    border-radius: 0 2px 2px 0;
+    width: 100%;
+    background: linear-gradient(to top, rgb(55 211 93 / 80%) 0%, transparent 50%), linear-gradient(135deg, rgba(46, 181, 172, 0.85) 0%, rgb(40 106 191 / 90%) 100%);
+    border-radius: 24px;
   }
 }
 
 .productOverviewText {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.4;
+  font-weight: 400;
   color: $text-dark;
   text-align: center;
   max-width: 800px;
@@ -491,6 +498,17 @@ $text-light: rgba(0, 59, 70, 0.7);
     font-size: 14px;
     font-weight: 600;
     border: 1px solid rgba(46, 181, 172, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+      background: rgba(141, 198, 63, 0.25);
+      border-color: rgba(46, 181, 172, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(46, 181, 172, 0.2);
+      color: color.adjust($wellness-teal, $lightness: -5%);
+    }
   }
 }
 
@@ -518,22 +536,52 @@ $text-light: rgba(0, 59, 70, 0.7);
 // Features Section
 .featuresSection {
   background: white;
+  padding: 100px 0 80px 0;
+
+  .sectionTitle {
+    font-size: 46px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #003B46;
+    letter-spacing: 0px;
+  }
 }
 
 .featuresGrid {
   margin-top: 40px;
 
   .featureCard {
-    background: $clinical-white !important;
-    border-radius: 20px;
+    background: #F8F9FA !important;
+    border-radius: 16px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 59, 70, 0.08) !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+    height: 100%;
+
+    :global(.card-body) {
+      padding: 0;
+    }
+
+    :global(.card-title) {
+      font-size: 18px;
+      font-weight: 600;
+      color: #003B46;
+      margin-top: 16px;
+      margin-bottom: 12px;
+    }
+
+    :global(.card-text) {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 59, 70, 0.1);
-      border-color: rgba(46, 181, 172, 0.2) !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
   }
 
@@ -541,30 +589,30 @@ $text-light: rgba(0, 59, 70, 0.7);
     width: 64px;
     height: 64px;
     margin: 0 auto;
-    border-radius: 16px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px;
 
     svg {
-      width: 100%;
-      height: 100%;
+      width: 32px;
+      height: 32px;
     }
 
     &.iconGreen {
       background: rgba(141, 198, 63, 0.15);
-      color: $vitality-green;
+      color: #8DC63F;
     }
 
     &.iconTeal {
-      background: rgba(46, 181, 172, 0.15);
-      color: $wellness-teal;
+      background: rgba(168, 230, 207, 0.3);
+      color: #2EB5AC;
     }
 
     &.iconBlue {
-      background: rgba(30, 90, 168, 0.15);
-      color: $trust-blue;
+      background: rgba(74, 144, 226, 0.15);
+      color: #4A90E2;
     }
   }
 
@@ -661,6 +709,7 @@ $text-light: rgba(0, 59, 70, 0.7);
 
 @media (max-width: 968px) {
   .aiText {
+
     .sectionTitle,
     .sectionText {
       text-align: center;
@@ -1082,7 +1131,6 @@ $text-light: rgba(0, 59, 70, 0.7);
     }
   }
 }
-
 // Footer
 .footer {
   background: white;

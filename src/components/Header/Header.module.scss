@@ -20,12 +20,12 @@ $deep-petrol: #003B46;
   width: calc(100% - 48px);
   max-width: 1200px;
   z-index: 1000;
-  background: rgba(0, 59, 70, 0.4);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px;
-  padding: 16px 32px;
+  padding: 12px 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 
   .logoContainer {
@@ -59,18 +59,18 @@ $deep-petrol: #003B46;
   }
 
   .navLink {
-    color: white !important;
+    color: #8DC63F !important;
     font-weight: 500;
     font-size: 15px;
     transition: color 0.3s ease;
 
     &:hover {
-      color: rgba(255, 255, 255, 0.8) !important;
+      color: #588b0f !important;
     }
   }
 
   .navCTA {
-    background: linear-gradient(135deg, #8DC63F 0%, #B8E986 100%);
+    background: #8DC63F;
     color: white;
     border: none;
     padding: 12px 24px;
