@@ -133,21 +133,47 @@
     }
   ],
   "medicalAI": {
+    "badge": {
+      "text": "AI-Powered Analysis",
+      "icon": "mdi:leaf"
+    },
     "title": "Understand Your Health Reports Instantly",
-    "description": "AI analyzes blood tests, sugar, thyroid, lipid profile, and more — giving users easy insights, scoring, and personalized recommendations. No more confusion about complex medical terminology.",
-    "reportCard": {
-      "title": "Health Score",
-      "score": "87/100",
-      "chartBars": [
-        { "height": "70%" },
-        { "height": "85%" },
-        { "height": "60%" },
-        { "height": "90%" }
-      ],
-      "insights": [
-        { "type": "success", "text": "Blood Sugar: Normal" },
-        { "type": "success", "text": "Cholesterol: Good" },
-        { "type": "warning", "text": "Thyroid: Monitor" }
+    "description": "AI analyzes blood tests, sugar, thyroid, lipid profile, and more giving users easy insights, scoring, and personalized recommendations.",
+    "features": [
+      {
+        "icon": "icon-park-outline:upload-logs",
+        "title": "Upload Any Medical Report",
+        "description": "Support for PDFs, images, and scanned documents"
+      },
+      {
+        "icon": "lineicons:trend-up-1",
+        "title": "Get Health Score & Trends",
+        "description": "Visual insights into your health metrics over time"
+      },
+      {
+        "icon": "hugeicons:task-done-01",
+        "title": "Personalized Recommendations",
+        "description": "AI-generated action plans based on your results"
+      }
+    ],
+    "visualSection": {
+      "image": "/images/hero-5.jpg",
+      "scores": [
+        {
+          "value": "85",
+          "label": "Overall Score",
+          "color": "green"
+        },
+        {
+          "value": "92",
+          "label": "Cholesterol",
+          "color": "blue"
+        },
+        {
+          "value": "78",
+          "label": "Blood Sugar",
+          "color": "blue"
+        }
       ]
     }
   },
