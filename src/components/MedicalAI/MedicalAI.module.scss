@@ -1,0 +1,289 @@
+@use '../../app/variables' as *;
+
+.aiSection {
+  padding: 80px 0;
+  background: white;
+}
+
+.aiContent {
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.aiText {
+  padding: 0 15px;
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(141, 198, 63, 0.1);
+    border: 1px solid rgba(141, 198, 63, 0.2);
+    padding: 8px 16px;
+    border-radius: $border-radius-md;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    margin-bottom: 24px;
+    color: $vitality-green;
+
+    .badgeIcon {
+      width: 18px;
+      height: 18px;
+      color: $vitality-green;
+      flex-shrink: 0;
+      
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+    font-weight: $font-weight-bold;
+    text-align: left;
+    margin-bottom: 20px;
+    color: $text-dark;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .sectionText {
+    font-size: 18px;
+    line-height: 1.7;
+    color: $text-light;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .feature {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+
+    &:nth-child(1) .featureIcon {
+      background: rgba(141, 198, 63, 0.15);
+      color: $vitality-green;
+    }
+
+    &:nth-child(2) .featureIcon,
+    &:nth-child(3) .featureIcon {
+      background: rgba(30, 90, 168, 0.15);
+      color: $trust-blue;
+    }
+  }
+
+  .featureIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .featureContent {
+    flex: 1;
+  }
+
+  .featureTitle {
+    font-size: 18px;
+    font-weight: $font-weight-semibold;
+    color: $text-dark;
+    margin-bottom: 8px;
+  }
+
+  .featureDescription {
+    font-size: 15px;
+    line-height: 1.6;
+    color: $text-light;
+    margin: 0;
+  }
+}
+
+.aiVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  margin-top: 40px;
+
+  @media (min-width: 992px) {
+    margin-top: 0;
+  }
+}
+
+.visualContainer {
+  width: 100%;
+  background: white;
+  border-radius: $border-radius-xl;
+  box-shadow: 
+    0 0 40px rgba(141, 198, 63, 0.2),
+    0 0 80px rgba(141, 198, 63, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(141, 198, 63, 0.15);
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.medicalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scoreCards {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  background: white;
+}
+
+.scoreCard {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  border-radius: $border-radius-md;
+  background: $clinical-white;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  &.green {
+    .scoreValue {
+      color: $vitality-green;
+    }
+  }
+
+  &.blue {
+    .scoreValue {
+      color: $trust-blue;
+    }
+  }
+}
+
+.scoreValue {
+  font-size: 36px;
+  font-weight: $font-weight-bold;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.scoreLabel {
+  font-size: 14px;
+  color: $text-light;
+  font-weight: $font-weight-medium;
+}
+
+@media (max-width: 991.98px) {
+  .aiText {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .sectionTitle,
+    .sectionText {
+      text-align: center;
+    }
+
+    .badge {
+      margin: 0 auto 24px;
+      display: flex;
+    }
+
+    .features {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .aiVisual {
+    margin-top: 0;
+  }
+
+  .visualContainer {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .aiSection {
+    padding: 60px 0;
+  }
+
+  .aiText {
+    .sectionTitle {
+      font-size: 32px;
+    }
+
+    .sectionText {
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    .feature {
+      gap: 12px;
+    }
+
+    .featureIcon {
+      width: 40px;
+      height: 40px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .featureTitle {
+      font-size: 16px;
+    }
+
+    .featureDescription {
+      font-size: 14px;
+    }
+  }
+
+  .imageWrapper {
+    height: 300px;
+  }
+
+  .scoreCards {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .scoreCard {
+    padding: 16px;
+  }
+
+  .scoreValue {
+    font-size: 32px;
+  }
+}
+
+

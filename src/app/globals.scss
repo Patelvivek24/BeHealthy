@@ -1,26 +1,50 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand Colors */
+  --vitality-green: #8DC63F;
+  --wellness-teal: #2EB5AC;
+  --trust-blue: #1E5AA8;
+  --deep-petrol: #003B46;
+  --clinical-white: #F9FBFD;
+  --text-dark: #333333;
+  --text-light: rgba(0, 59, 70, 0.7);
+  
+  --background: var(--clinical-white);
+  --foreground: var(--deep-petrol);
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   margin: 0;
   padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--deep-petrol);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 

@@ -1,0 +1,325 @@
+{
+  "hero": {
+    "badge": {
+      "text": "AI-Powered Complete Health Platform",
+      "icon": {
+        "viewBox": "0 0 24 24",
+        "paths": [
+          "M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z",
+          "M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"
+        ]
+      }
+    },
+    "title": {
+      "part1": "Your Complete Health",
+      "part2": "Journey Starts Here"
+    },
+    "subtitle": "Transform your wellness with personalized diet plans, guided workouts, AI medical report analysis, and smart habit tracking all unified in one beautiful platform.",
+    "buttons": {
+      "primary": {
+        "text": "Start Your Free Journey",
+        "icon": {
+          "viewBox": "0 0 24 24",
+          "path": "M5 12h14M12 5l7 7-7 7"
+        }
+      },
+      "secondary": {
+        "text": "Watch Demo",
+        "icon": {
+          "viewBox": "0 0 24 24",
+          "path": "M8 5v14l11-7z"
+        }
+      }
+    }
+  },
+  "heroFeatures": [
+    {
+      "iconClass": "heroIconGreen",
+      "icon": "fluent-mdl2:health",
+      "title": "AI-Powered",
+      "subtitle": "Personalized Plans"
+    },
+    {
+      "iconClass": "heroIconTeal",
+      "icon": "ri:health-book-line",
+      "title": "Real-time",
+      "subtitle": "Health Tracking"
+    },
+    {
+      "iconClass": "heroIconBlue",
+      "icon": "mdi:chart-timeline-variant",
+      "title": "Advanced",
+      "subtitle": "Progress Analytics"
+    },
+    {
+      "iconClass": "heroIconGreen",
+      "icon": "oui:app-reporting",
+      "title": "AI Reports",
+      "subtitle": "Medical Analysis"
+    }
+  ],
+  "statistics": [
+    {
+      "value": 50000,
+      "format": "k",
+      "label": "Active Users"
+    },
+    {
+      "value": 1000000,
+      "format": "m",
+      "label": "Workouts Completed"
+    },
+    {
+      "value": 100000,
+      "format": "k",
+      "label": "Reports Analyzed"
+    },
+    {
+      "value": 4.8,
+      "format": "decimal",
+      "decimals": 1,
+      "label": "App Rating",
+      "showStar": true
+    }
+  ],
+  "productOverview": {
+    "title": "Your Complete Health Companion",
+    "text": "BeHealthy is an all-in-one platform that helps users build and maintain a healthier lifestyle through {personalized diet plans}, {guided workouts}, {habit tracking}, {medical reminders}, {vital monitoring}, and {smart medical report analysis} all in one app.",
+    "highlights": [
+      "personalized diet plans",
+      "guided workouts",
+      "habit tracking",
+      "medical reminders",
+      "vital monitoring",
+      "smart medical report analysis"
+    ],
+    "badges": [
+      "AI-Powered",
+      "Personalized",
+      "All-in-One",
+      "Evidence-Based"
+    ]
+  },
+  "features": [
+    {
+      "image": "/images/hero-1.jpg",
+      "title": "Personalized Diet Plans",
+      "description": "Custom meal plans tailored to your goals, preferences, and dietary restrictions."
+    },
+    {
+      "image": "/images/hero-2.jpeg",
+      "title": "Workout Library & Guided Exercises",
+      "description": "Access hundreds of workouts with step-by-step video guidance and form tips."
+    },
+    {
+      "image": "/images/hero-3.jpg",
+      "title": "Habit & Water Intake Tracking",
+      "description": "Build healthy habits with daily tracking and reminders for water intake."
+    },
+    {
+      "image": "/images/hero-4.jpg",
+      "title": "BP / Sugar / BMI / Heart Rate Monitoring",
+      "description": "Track vital signs and health metrics with easy-to-use monitoring tools."
+    },
+    {
+      "image": "/images/hero-5.jpg",
+      "title": "AI Medical Report Analyzer",
+      "description": "Get instant insights from your medical reports with AI-powered analysis."
+    },
+    {
+      "image": "/images/hero-1.jpg",
+      "title": "Reminders & Daily Health Tasks",
+      "description": "Never miss a medication, workout, or health check with smart reminders."
+    }
+  ],
+  "medicalAI": {
+    "badge": {
+      "text": "AI-Powered Analysis",
+      "icon": "mdi:leaf"
+    },
+    "title": "Understand Your Health Reports Instantly",
+    "description": "AI analyzes blood tests, sugar, thyroid, lipid profile, and more giving users easy insights, scoring, and personalized recommendations.",
+    "features": [
+      {
+        "icon": "icon-park-outline:upload-logs",
+        "title": "Upload Any Medical Report",
+        "description": "Support for PDFs, images, and scanned documents"
+      },
+      {
+        "icon": "lineicons:trend-up-1",
+        "title": "Get Health Score & Trends",
+        "description": "Visual insights into your health metrics over time"
+      },
+      {
+        "icon": "hugeicons:task-done-01",
+        "title": "Personalized Recommendations",
+        "description": "AI-generated action plans based on your results"
+      }
+    ],
+    "visualSection": {
+      "image": "/images/hero-5.jpg",
+      "scores": [
+        {
+          "value": "85",
+          "label": "Overall Score",
+          "color": "green"
+        },
+        {
+          "value": "92",
+          "label": "Cholesterol",
+          "color": "blue"
+        },
+        {
+          "value": "78",
+          "label": "Blood Sugar",
+          "color": "blue"
+        }
+      ]
+    }
+  },
+  "gamification": {
+    "title": "Stay Motivated with Levels, Badges & Streaks",
+    "description": "Earn rewards, maintain streaks, and compete on leaderboards. Turn your health journey into an engaging experience that keeps you coming back every day.",
+    "cards": [
+      {
+        "iconClass": "iconGreen",
+        "icon": {
+          "viewBox": "0 0 24 24",
+          "path": "M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+        },
+        "title": "Earn Badges",
+        "description": "Unlock achievements as you reach milestones"
+      },
+      {
+        "iconClass": "iconTeal",
+        "icon": {
+          "viewBox": "0 0 24 24",
+          "path": "M13 3C9.23 3 6.19 5.95 6 9.66L4 15L5.5 16.5L7 15L8.34 14.66C8.55 17.3 10.76 19.45 13.5 19.89V22H15.5V19.89C18.24 19.45 20.45 17.3 20.66 14.66L22 15L23.5 16.5L25 15L23 9.66C22.81 5.95 19.77 3 16 3H13M13 5H16C18.21 5 20 6.79 20 9C20 11.21 18.21 13 16 13H13C10.79 13 9 11.21 9 9C9 6.79 10.79 5 13 5Z"
+        },
+        "title": "Maintain Streaks",
+        "description": "Build consistency with daily activity tracking"
+      },
+      {
+        "iconClass": "iconBlue",
+        "icon": {
+          "viewBox": "0 0 24 24",
+          "path": "M7.5 21H2V9H7.5V21ZM14.25 21H9V3H14.25V21ZM21 21H15.5V13.5H21V21Z"
+        },
+        "title": "Leaderboards",
+        "description": "Compete with friends and the community"
+      },
+      {
+        "iconClass": "iconGreen",
+        "icon": {
+          "viewBox": "0 0 24 24",
+          "path": "M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+        },
+        "title": "Level Up",
+        "description": "Progress through levels as you improve"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "plans": [
+      {
+        "name": "Free Plan",
+        "price": 0,
+        "period": "/month",
+        "features": [
+          "Basic health tracking",
+          "Limited workout library",
+          "Water intake tracking",
+          "Basic reminders"
+        ],
+        "buttonText": "Get Started",
+        "buttonVariant": "outline-primary",
+        "featured": false
+      },
+      {
+        "name": "Premium Analytics",
+        "price": 9.99,
+        "period": "/month",
+        "features": [
+          "Everything in Free",
+          "AI Medical Report Analysis",
+          "Advanced health insights",
+          "Unlimited workouts",
+          "Priority support"
+        ],
+        "buttonText": "Start Free Trial",
+        "buttonVariant": "primary",
+        "featured": true,
+        "badge": "Popular"
+      },
+      {
+        "name": "Personal Coaching",
+        "price": 29.99,
+        "period": "/month",
+        "features": [
+          "Everything in Premium",
+          "1-on-1 personal coach",
+          "Custom meal plans",
+          "Weekly check-ins",
+          "24/7 support"
+        ],
+        "buttonText": "Start Free Trial",
+        "buttonVariant": "outline-primary",
+        "featured": false
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Loved by Thousands",
+    "subtitle": "Join our community of health-conscious individuals achieving their wellness goals",
+    "items": [
+      {
+        "rating": 5,
+        "text": "BeHealthy has completely transformed how I approach wellness. The AI report analysis helped me understand my health metrics better than my doctor's explanations!",
+        "author": {
+          "name": "Sarah Mitchell",
+          "role": "Marketing Manager",
+          "initials": "SM"
+        }
+      },
+      {
+        "rating": 5,
+        "text": "The gamification features keep me motivated! I've maintained a 45-day streak and lost 15 pounds. Best health investment I've made.",
+        "author": {
+          "name": "James Rodriguez",
+          "role": "Software Engineer",
+          "initials": "JR"
+        }
+      },
+      {
+        "rating": 5,
+        "text": "I love how everything is in one place - diet, exercise, meditation, and health tracking. The personalized recommendations are spot-on!",
+        "author": {
+          "name": "Emily Chen",
+          "role": "Yoga Instructor",
+          "initials": "EC"
+        }
+      },
+      {
+        "rating": 5,
+        "text": "As someone with diabetes, the vital monitoring and medication reminders are lifesavers. BeHealthy keeps me accountable every single day.",
+        "author": {
+          "name": "Michael Park",
+          "role": "Business Owner",
+          "initials": "MP"
+        }
+      }
+    ],
+    "cta": {
+      "text": "Join 100,000+ satisfied users transforming their health",
+      "buttonText": "Start Your Journey Today"
+    }
+  },
+  "newsletter": {
+    "title": "Stay Updated with BeHealthy",
+    "subtitle": "Get health tips, feature updates, and exclusive offers delivered to your inbox",
+    "placeholder": "Enter your email",
+    "buttonText": "Subscribe"
+  }
+}
+

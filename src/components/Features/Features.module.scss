@@ -1,0 +1,195 @@
+@use '../../app/variables' as *;
+
+.featuresSection {
+  background: white;
+  padding: 100px 0 80px 0;
+
+  .sectionHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .sectionTag {
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, rgba(141, 198, 63, 0.15) 0%, rgba(141, 198, 63, 0.1) 100%);
+    border: 1px solid rgba(141, 198, 63, 0.3);
+    border-radius: $border-radius-xl;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    color: $deep-petrol;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .sectionTitle {
+    font-size: 46px;
+    font-weight: $font-weight-semibold;
+    text-align: center;
+    margin-bottom: 0;
+    color: $deep-petrol;
+    letter-spacing: 0px;
+  }
+}
+
+.featuresGrid {
+  margin-top: 40px;
+
+  .featureCard {
+    background: white !important;
+    border-radius: $border-radius-md;
+    text-align: left;
+    transition: $transition-base;
+    border: 1px solid #e0f2fe !important;
+    box-shadow: $shadow-sm;
+    padding: 32px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-md;
+
+      .cardOverlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .cardBody {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    z-index: 1;
+  }
+
+  .cardContent {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .featureImageWrapper {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+  }
+
+  .featureImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f0f0f0;
+  }
+
+  .cardTextContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+    font-weight: $font-weight-semibold;
+    color: $deep-petrol;
+    margin-top: 0;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .cardText {
+    font-size: 15px;
+    color: $text-light;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .cardOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-md;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+  }
+
+  .learnMoreLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: $vitality-green;
+    font-size: 15px;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    transition: $transition-base;
+    padding: 12px 24px;
+    background: white;
+    border-radius: $border-radius-sm;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      color: darken($vitality-green, 10%);
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .arrowIcon {
+      width: 16px;
+      height: 16px;
+      transition: $transition-base;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 60px 0;
+
+    .sectionTag {
+      font-size: 13px;
+      padding: 6px 16px;
+      margin-bottom: 12px;
+    }
+
+    .sectionTitle {
+      font-size: 32px;
+    }
+  }
+
+  .featuresGrid {
+    .featureCard {
+      padding: 24px;
+    }
+
+    .cardTitle {
+      font-size: 18px;
+    }
+
+    .cardText {
+      font-size: 14px;
+    }
+  }
+}
+

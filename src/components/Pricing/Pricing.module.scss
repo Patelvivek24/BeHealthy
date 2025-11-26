@@ -1,0 +1,114 @@
+@use '../../app/variables' as *;
+@use "sass:color";
+
+.pricingSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(30, 90, 168, 0.03), rgba(46, 181, 172, 0.03));
+
+  .sectionTitle {
+    font-size: 42px;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    margin-bottom: 24px;
+    color: $deep-petrol;
+    letter-spacing: -0.5px;
+  }
+}
+
+.pricingGrid {
+  margin-top: 40px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .pricingCard {
+    background: white !important;
+    border-radius: $border-radius-xl;
+    text-align: center;
+    border: 2px solid rgba(0, 59, 70, 0.1) !important;
+    transition: $transition-base;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-xl;
+    }
+
+    &.pricingCardFeatured {
+      border-color: $vitality-green !important;
+      box-shadow: 0 8px 32px rgba(141, 198, 63, 0.2);
+      transform: scale(1.05);
+
+      @media (max-width: 968px) {
+        transform: scale(1);
+      }
+
+      .badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $vitality-green !important;
+        color: white !important;
+        padding: 6px 20px;
+        border-radius: $border-radius-lg;
+        font-size: 12px;
+        font-weight: $font-weight-semibold;
+      }
+    }
+
+    .price {
+      margin-bottom: 32px;
+
+      .priceAmount {
+        font-size: 48px;
+        font-weight: $font-weight-bold;
+        color: $deep-petrol;
+      }
+
+      .pricePeriod {
+        font-size: 16px;
+        color: $text-light;
+        margin-left: 4px;
+      }
+    }
+
+    .pricingFeatures {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 32px;
+      min-height: 200px;
+
+      li {
+        padding: 12px 0;
+        color: $text-dark;
+        font-size: 15px;
+        position: relative;
+        padding-left: 24px;
+
+        &::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: $vitality-green;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+
+    .pricingCTA {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pricingSection {
+    padding: 60px 0;
+
+    .sectionTitle {
+      font-size: 32px;
+    }
+  }
+}
+

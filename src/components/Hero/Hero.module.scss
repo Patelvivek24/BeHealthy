@@ -1,0 +1,329 @@
+@use '../../app/variables' as *;
+@use "sass:color";
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 200px 0 80px;
+  overflow: hidden;
+
+  .heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-index-base;
+
+    // Blurred background image layer
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('/images/hero-5.jpg');
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      filter: blur(2px);
+      z-index: $z-index-base;
+    }
+
+    // Gradient overlays (crisp, not blurred)
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        linear-gradient(to top, rgba(0, 59, 70, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(46, 181, 172, 0.85) 0%, rgba(30, 90, 168, 0.8) 100%);
+      z-index: 2;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .heroContent {
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .heroTag {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 8px 16px;
+    border-radius: $border-radius-xl;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    margin-bottom: 32px;
+    color: white !important;
+
+    .tagIcon {
+      width: 18px;
+      height: 18px;
+      color: $vitality-green;
+      flex-shrink: 0;
+    }
+  }
+
+  .heroTitle {
+    font-size: 76px;
+    font-weight: $font-weight-semibold;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .titlePart1 {
+      color: white;
+    }
+
+    .titlePart2 {
+      color: $vitality-green;
+    }
+  }
+
+  .heroSubtitle {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 725px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroButtons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+  }
+
+  .scrollPrompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    margin-top: 32px;
+    cursor: pointer;
+    transition: $transition-base;
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      transform: translateY(4px);
+    }
+
+    .scrollArrow {
+      width: 20px;
+      height: 20px;
+      animation: bounce 2s infinite;
+    }
+  }
+
+  // Hero Feature Cards
+  .heroFeatures {
+    margin-top: 40px;
+  }
+
+  .heroFeatureCard {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: $border-radius-md;
+    text-align: center;
+    transition: $transition-base;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15) !important;
+      transform: translateY(-4px);
+    }
+  }
+
+  .heroFeatureIcon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 0 auto 16px;
+    border-radius: $border-radius-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      min-height: 30px;
+      flex-shrink: 0;
+    }
+
+    &.heroIconGreen {
+      background: rgba(141, 198, 63, 0.3);
+      border: 1px solid rgba(141, 198, 63, 0.5);
+    }
+
+    &.heroIconTeal {
+      background: rgba(46, 181, 172, 0.3);
+      border: 1px solid rgba(46, 181, 172, 0.5);
+    }
+
+    &.heroIconBlue {
+      background: rgba(30, 90, 168, 0.3);
+      border: 1px solid rgba(30, 90, 168, 0.5);
+    }
+  }
+
+  .heroFeatureText {
+    color: white;
+
+    strong {
+      font-size: 18px;
+      font-weight: $font-weight-medium;
+      display: block;
+      line-height: 1.2;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: $font-weight-normal;
+      opacity: 0.8;
+      line-height: 1.2;
+    }
+  }
+
+  // Hero Statistics Bar
+  .heroStats {
+    margin: 24px 0px 0px 0px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: $border-radius-md;
+    padding: 32px 24px;
+  }
+
+  .heroStat {
+    text-align: center;
+    color: white;
+  }
+
+  .heroStatNumber {
+    font-size: 36px;
+    font-weight: $font-weight-medium;
+    margin-bottom: 8px;
+    line-height: 1;
+
+    .starIcon {
+      font-size: 24px;
+      vertical-align: middle;
+      margin-left: 2px;
+    }
+  }
+
+  .heroStatLabel {
+    font-size: 14px;
+    font-weight: $font-weight-normal;
+    opacity: 0.8;
+  }
+
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(8px);
+    }
+  }
+
+  @media (max-width: 968px) {
+    padding: 150px 0 60px;
+    min-height: 90vh;
+
+    .heroTitle {
+      font-size: 48px;
+    }
+
+    .heroSubtitle {
+      font-size: 18px;
+      padding: 0 24px;
+    }
+
+    .heroButtons {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 24px;
+
+      button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    .heroStats {
+      padding: 24px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .heroTitle {
+      font-size: 36px;
+    }
+
+    .heroSubtitle {
+      font-size: 16px;
+    }
+
+    .heroFeatureCard {
+      padding: 20px;
+    }
+
+    .heroFeatureIcon {
+      width: 48px;
+      height: 48px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .heroStats {
+      padding: 20px;
+    }
+
+    .heroStatNumber {
+      font-size: 28px;
+    }
+  }
+}
+

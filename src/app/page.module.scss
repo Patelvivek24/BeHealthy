@@ -1,0 +1,6 @@
+@use "./variables" as *;
+
+.landingPage {
+  min-height: 100vh;
+  background: $clinical-white;
+}
