@@ -1,102 +1,115 @@
 @use '../../app/variables' as *;
-@use "sass:color";
-
 .section {
-  padding: 80px 0;
+  padding: 120px 0;
+  background: linear-gradient(to bottom, #F9FBFD, #ffffff);
+  position: relative;
+  overflow: hidden;
 }
 
-.productOverviewTitle {
-  font-size: 46px;
-  font-weight: $font-weight-semibold;
+.innerContainer {
+  position: relative;
+  z-index: 10;
+}
+
+.contentCenter {
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
+}
+
+/* Background decorative circles */
+.circleGreen {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  width: 280px;
+  height: 280px;
+  background: rgba(#8DC63F, 0.05);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.circleBlue {
+  position: absolute;
+  bottom: 80px;
+  left: 40px;
+  width: 280px;
+  height: 280px;
+  background: rgba(#2EB5AC, 0.05);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 40px;
+  background: linear-gradient(to right, rgba(#8DC63F, 0.1), rgba(#2EB5AC, 0.1));
+  border: 1px solid rgba(#8DC63F, 0.2);
   margin-bottom: 24px;
-  color: $deep-petrol;
-  letter-spacing: 0px;
 }
 
-.segmentedLine {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 32px;
-  gap: 0;
-  max-width: 200px;
-  margin-left: auto;
-  margin-right: auto;
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  background: #8DC63F;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
 
-  .linegradientSegment {
-    height: 4px;
-    width: 100%;
-    background: linear-gradient(to top, rgb(55 211 93 / 80%) 0%, transparent 50%), linear-gradient(135deg, rgba(46, 181, 172, 0.85) 0%, rgb(40 106 191 / 90%) 100%);
-    border-radius: $border-radius-xl;
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Title */
+.title {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #003B46, #1E5AA8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (min-width: 768px) {
+    font-size: 56px;
   }
 }
 
-.productOverviewText {
+/* Description */
+.description {
   font-size: 18px;
-  line-height: 1.4;
-  font-weight: $font-weight-normal;
-  color: $text-dark;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px;
-
-  .highlightedText {
-    color: $wellness-teal;
-    font-weight: $font-weight-medium;
-  }
+  font-weight: 400;
+  color: rgba(51, 51, 51, 0.8);
+  line-height: 1.8;
+  margin-bottom: 40px;
 }
 
-.productBadges {
+/* Tags */
+.tags {
   display: flex;
-  justify-content: center;
-  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 40px;
-
-  .productBadge {
-    background: rgba(141, 198, 63, 0.15);
-    color: $wellness-teal;
-    padding: 10px 20px;
-    border-radius: $border-radius-xl;
-    font-size: 14px;
-    font-weight: $font-weight-semibold;
-    border: 1px solid rgba(46, 181, 172, 0.2);
-    transition: $transition-base;
-    cursor: pointer;
-    display: inline-block;
-
-    &:hover {
-      background: rgba(141, 198, 63, 0.25);
-      border-color: rgba(46, 181, 172, 0.4);
-      transform: translateY(-2px);
-      box-shadow: $shadow-sm;
-      color: color.adjust($wellness-teal, $lightness: -5%);
-    }
-  }
+  gap: 16px;
+  justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 60px 0;
-  }
+.tagButton {
+  padding: 12px 24px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
 
-  .productOverviewTitle {
-    font-size: 32px;
-  }
-
-  .productOverviewText {
-    font-size: 16px;
-    padding: 0 16px;
-  }
-
-  .productBadges {
-    padding: 0 16px;
-    gap: 8px;
-
-    .productBadge {
-      font-size: 12px;
-      padding: 8px 16px;
-    }
+  &:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
   }
 }
-
