@@ -1,4 +1,5 @@
 @use '../../app/variables' as *;
+@use 'sass:color';
 
 .featuresSection {
   background: white;
@@ -149,7 +150,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
     &:hover {
-      color: darken($vitality-green, 10%);
+      color: color.adjust($vitality-green, $lightness: -10%);
       gap: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
