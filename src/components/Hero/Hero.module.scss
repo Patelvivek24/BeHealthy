@@ -26,7 +26,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url('/images/hero-5.jpg');
+      background-image: url('/images/hero-21.jpg');
       background-size: cover;
       background-position: center bottom;
       background-repeat: no-repeat;
@@ -121,30 +121,6 @@
     margin-bottom: 64px;
   }
 
-  .scrollPrompt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    font-weight: $font-weight-medium;
-    margin-top: 32px;
-    cursor: pointer;
-    transition: $transition-base;
-
-    &:hover {
-      color: rgba(255, 255, 255, 1);
-      transform: translateY(4px);
-    }
-
-    .scrollArrow {
-      width: 20px;
-      height: 20px;
-      animation: bounce 2s infinite;
-    }
-  }
-
   // Hero Feature Cards
   .heroFeatures {
     margin-top: 40px;
@@ -219,51 +195,6 @@
     }
   }
 
-  // Hero Statistics Bar
-  .heroStats {
-    margin: 24px 0px 0px 0px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: $border-radius-md;
-    padding: 32px 24px;
-  }
-
-  .heroStat {
-    text-align: center;
-    color: white;
-  }
-
-  .heroStatNumber {
-    font-size: 36px;
-    font-weight: $font-weight-medium;
-    margin-bottom: 8px;
-    line-height: 1;
-
-    .starIcon {
-      font-size: 24px;
-      vertical-align: middle;
-      margin-left: 2px;
-    }
-  }
-
-  .heroStatLabel {
-    font-size: 14px;
-    font-weight: $font-weight-normal;
-    opacity: 0.8;
-  }
-
-
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(8px);
-    }
-  }
 
   @media (max-width: 968px) {
     padding: 150px 0 60px;
@@ -288,10 +219,6 @@
         max-width: 300px;
       }
     }
-
-    .heroStats {
-      padding: 24px;
-    }
   }
 
   @media (max-width: 640px) {
@@ -315,14 +242,6 @@
         width: 24px;
         height: 24px;
       }
-    }
-
-    .heroStats {
-      padding: 20px;
-    }
-
-    .heroStatNumber {
-      font-size: 28px;
     }
   }
 }

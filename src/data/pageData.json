@@ -58,30 +58,6 @@
       "subtitle": "Medical Analysis"
     }
   ],
-  "statistics": [
-    {
-      "value": 50000,
-      "format": "k",
-      "label": "Active Users"
-    },
-    {
-      "value": 1000000,
-      "format": "m",
-      "label": "Workouts Completed"
-    },
-    {
-      "value": 100000,
-      "format": "k",
-      "label": "Reports Analyzed"
-    },
-    {
-      "value": 4.8,
-      "format": "decimal",
-      "decimals": 1,
-      "label": "App Rating",
-      "showStar": true
-    }
-  ],
   "productOverview": {
     "title": "Your Complete Health Companion",
     "text": "BeHealthy is an all-in-one platform that helps users build and maintain a healthier lifestyle through {personalized diet plans}, {guided workouts}, {habit tracking}, {medical reminders}, {vital monitoring}, and {smart medical report analysis} all in one app.",
@@ -102,7 +78,7 @@
   },
   "features": [
     {
-      "image": "/images/hero-1.jpg",
+      "image": "/images/hero-2.jpeg",
       "title": "Personalized Diet Plans",
       "description": "Custom meal plans tailored to your goals, preferences, and dietary restrictions."
     },
@@ -112,22 +88,22 @@
       "description": "Access hundreds of workouts with step-by-step video guidance and form tips."
     },
     {
-      "image": "/images/hero-3.jpg",
+      "image": "/images/hero-2.jpeg",
       "title": "Habit & Water Intake Tracking",
       "description": "Build healthy habits with daily tracking and reminders for water intake."
     },
     {
-      "image": "/images/hero-4.jpg",
+      "image": "/images/hero-2.jpeg",
       "title": "BP / Sugar / BMI / Heart Rate Monitoring",
       "description": "Track vital signs and health metrics with easy-to-use monitoring tools."
     },
     {
-      "image": "/images/hero-5.jpg",
+      "image": "/images/hero-2.jpeg",
       "title": "AI Medical Report Analyzer",
       "description": "Get instant insights from your medical reports with AI-powered analysis."
     },
     {
-      "image": "/images/hero-1.jpg",
+      "image": "/images/hero-2.jpeg",
       "title": "Reminders & Daily Health Tasks",
       "description": "Never miss a medication, workout, or health check with smart reminders."
     }
