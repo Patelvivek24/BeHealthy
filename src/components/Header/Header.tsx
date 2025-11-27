@@ -1,9 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Icon } from '@iconify/react';
 import Button from '@/components/Button';
 import styles from './Header.module.scss';
+import Image from 'next/image';
 
 export default function Header() {
   return (
@@ -12,14 +13,13 @@ export default function Header() {
       expand="lg" 
       className={styles.navbar}
     >
-      <Container className={styles.container}>
+      <Container>
         <Navbar.Brand className={styles.logoContainer}>
-          <Image 
-            src="/images/logo.png" 
-            alt="BeHealthy Logo" 
-            width={50} 
-            height={50}
-          />
+          {/* <div className={styles.logoIcon}>
+            <Icon icon="lucide:heart" />
+          </div>
+          <span className={styles.logo}>BeHealthy</span> */}
+          <Image src="/images/logo.png" className={styles.logoImage} alt="BeHealthy" width={100} height={100} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

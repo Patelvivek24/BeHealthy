@@ -1,10 +1,5 @@
 @use '../../app/variables' as *;
 
-// Container - override Bootstrap container
-.container {
-  max-width: 1200px;
-}
-
 // Navigation Bar with Glassmorphism
 .navbar {
   position: fixed;
@@ -14,11 +9,11 @@
   width: calc(100% - 48px);
   max-width: 1200px;
   z-index: $z-index-fixed;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: $border-radius-xl;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
   padding: 12px 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 
@@ -28,11 +23,16 @@
     gap: 12px;
   }
 
+  .logoImage {
+    width: 42px;
+    height: 42px;
+  }
+
   .logoIcon {
     width: 40px;
     height: 40px;
     border-radius: $border-radius-sm;
-    background: linear-gradient(135deg, #8DC63F 0%, #B8E986 100%);
+    background: linear-gradient(135deg, #8DC63F 0%, #7AB82E 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,7 +48,7 @@
   .logo {
     font-size: 24px;
     font-weight: $font-weight-bold;
-    color: white;
+    color: $vitality-green;
     letter-spacing: -0.5px;
   }
 

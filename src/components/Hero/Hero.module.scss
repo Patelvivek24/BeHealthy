@@ -1,248 +1,307 @@
-@use '../../app/variables' as *;
-@use "sass:color";
+// Variables
+$white: #ffffff;
+$bg-gradient-start: #003B46;
+$bg-gradient-mid: #1E5AA8;
+$bg-gradient-end: #2EB5AC;
+$green-500: #8DC63F;
+$teal-500: #2EB5AC;
+$blue-700: #1E5AA8;
+$glass-border: rgba(255, 255, 255, 0.2);
+$shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.45);
 
-.hero {
+// Breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+.heroSection {
   position: relative;
   min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 200px 0 80px;
-  overflow: hidden;
+  color: $white;
+  padding-top: 100px;
+}
 
-  .heroBackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: $z-index-base;
+/* Background wrapper */
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transform-origin: center;
+}
 
-    // Blurred background image layer
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('/images/hero-21.jpg');
-      background-size: cover;
-      background-position: center bottom;
-      background-repeat: no-repeat;
-      filter: blur(2px);
-      z-index: $z-index-base;
-    }
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 59, 70, 0.85) 0%, rgba(33, 98, 184, 0.9) 65%, rgba(46, 181, 172, 0.9) 100%);
+  z-index: 2;
+}
 
-    // Gradient overlays (crisp, not blurred)
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background:
-        linear-gradient(to top, rgba(0, 59, 70, 0.3) 0%, transparent 50%),
-        linear-gradient(135deg, rgba(46, 181, 172, 0.85) 0%, rgba(30, 90, 168, 0.8) 100%);
-      z-index: 2;
-    }
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // filter: blur(8px);
+  transform: scale(1);
+  z-index: 0;
+}
+
+/* Orbs */
+.orbGreen,
+.orbTeal {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.orbGreen {
+  top: 8%;
+  left: 4%;
+  width: 400px;
+  height: 400px;
+  background: $green-500;
+  opacity: 0.2;
+}
+
+.orbTeal {
+  right: 10%;
+  bottom: 10%;
+  width: 500px;
+  height: 500px;
+  background: $teal-500;
+  opacity: 0.25;
+}
+
+/* Hero Content */
+.heroContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+  padding: 60px 20px;
+}
+
+.centerBox {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $white;
+  margin-bottom: 8px;
+}
+
+.badgeIcon {
+  width: 16px;
+  height: 16px;
+  color: $green-500;
+}
+
+/* Heading */
+.mainHeading {
+  font-size: 84px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: $white;
+  margin: 0;
+  letter-spacing: 1px;
+
+  @media (max-width: $md) {
+    font-size: 42px;
   }
 
-  .container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-  }
-
-  .heroContent {
-    text-align: center;
-    color: white;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .heroTag {
-    display: inline-flex !important;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    padding: 8px 16px;
-    border-radius: $border-radius-xl;
-    font-size: 14px;
-    font-weight: $font-weight-medium;
-    margin-bottom: 32px;
-    color: white !important;
-
-    .tagIcon {
-      width: 18px;
-      height: 18px;
-      color: $vitality-green;
-      flex-shrink: 0;
-    }
-  }
-
-  .heroTitle {
-    font-size: 76px;
-    font-weight: $font-weight-semibold;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    letter-spacing: 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    .titlePart1 {
-      color: white;
-    }
-
-    .titlePart2 {
-      color: $vitality-green;
-    }
-  }
-
-  .heroSubtitle {
-    font-size: 20px;
-    line-height: 1.7;
-    margin-bottom: 48px;
-    color: rgba(255, 255, 255, 0.95);
-    max-width: 725px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .heroButtons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 64px;
-  }
-
-  // Hero Feature Cards
-  .heroFeatures {
-    margin-top: 40px;
-  }
-
-  .heroFeatureCard {
-    background: rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: $border-radius-md;
-    text-align: center;
-    transition: $transition-base;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.15) !important;
-      transform: translateY(-4px);
-    }
-  }
-
-  .heroFeatureIcon {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-    min-height: 50px;
-    margin: 0 auto 16px;
-    border-radius: $border-radius-sm;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    flex-shrink: 0;
-
-    svg {
-      width: 30px;
-      height: 30px;
-      min-width: 30px;
-      min-height: 30px;
-      flex-shrink: 0;
-    }
-
-    &.heroIconGreen {
-      background: rgba(141, 198, 63, 0.3);
-      border: 1px solid rgba(141, 198, 63, 0.5);
-    }
-
-    &.heroIconTeal {
-      background: rgba(46, 181, 172, 0.3);
-      border: 1px solid rgba(46, 181, 172, 0.5);
-    }
-
-    &.heroIconBlue {
-      background: rgba(30, 90, 168, 0.3);
-      border: 1px solid rgba(30, 90, 168, 0.5);
-    }
-  }
-
-  .heroFeatureText {
-    color: white;
-
-    strong {
-      font-size: 18px;
-      font-weight: $font-weight-medium;
-      display: block;
-      line-height: 1.2;
-    }
-
-    span {
-      font-size: 14px;
-      font-weight: $font-weight-normal;
-      opacity: 0.8;
-      line-height: 1.2;
-    }
-  }
-
-
-  @media (max-width: 968px) {
-    padding: 150px 0 60px;
-    min-height: 90vh;
-
-    .heroTitle {
-      font-size: 48px;
-    }
-
-    .heroSubtitle {
-      font-size: 18px;
-      padding: 0 24px;
-    }
-
-    .heroButtons {
-      flex-direction: column;
-      align-items: center;
-      padding: 0 24px;
-
-      button {
-        width: 100%;
-        max-width: 300px;
-      }
-    }
-  }
-
-  @media (max-width: 640px) {
-    .heroTitle {
-      font-size: 36px;
-    }
-
-    .heroSubtitle {
-      font-size: 16px;
-    }
-
-    .heroFeatureCard {
-      padding: 20px;
-    }
-
-    .heroFeatureIcon {
-      width: 48px;
-      height: 48px;
-
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
+  @media (max-width: $sm) {
+    font-size: 32px;
   }
 }
 
+.gradientText {
+  background: linear-gradient(135deg, $green-500 0%, $teal-500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Description */
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0;
+
+  @media (max-width: $md) {
+    font-size: 16px;
+  }
+}
+
+/* CTA Buttons */
+.ctaWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.primaryCTA {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, $green-500 0%, #7AB82E 100%);
+  border: none;
+  border-radius: 12px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(141, 198, 63, 0.4);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(141, 198, 63, 0.5);
+    background: linear-gradient(135deg, #7AB82E 0%, $green-500 100%);
+    color: $white;
+  }
+
+  @media (max-width: $sm) {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+}
+
+.secondaryCTA {
+  padding: 16px 32px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: $white;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: $sm) {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+}
+
+.arrowIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.playIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Feature Cards */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 48px;
+
+  @media (max-width: $md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: $sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featureCard {
+  background: rgba(173, 216, 230, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(173, 216, 230, 0.35);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-4px);
+  }
+}
+
+.featureIconWrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.featureIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.featureValue {
+  font-size: 18px;
+  font-weight: 600;
+  color: $white;
+  margin-top: 4px;
+}
+
+.featureLabel {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+}
