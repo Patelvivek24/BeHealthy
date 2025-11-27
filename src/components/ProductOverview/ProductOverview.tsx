@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Container from "react-bootstrap/Container";
 import styles from "./ProductOverview.module.scss";
 interface ProductOverviewProps {
-  onTagClick: (tag: string) => void;
+  onTagClick?: (tag: string) => void;
 }
 
 export default function ProductOverview({ onTagClick }: ProductOverviewProps) {
@@ -75,7 +75,7 @@ export default function ProductOverview({ onTagClick }: ProductOverviewProps) {
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                 whileHover={{ scale: 1.08, y: -4 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => onTagClick(tag.name)}
+                onClick={() => onTagClick?.(tag.name)}
                 className={styles.tagButton}
                 style={{
                   borderColor: `${tag.color}40`,
