@@ -1,163 +1,207 @@
 @use '../../app/variables' as *;
 
-.testimonialsSection {
-  padding: 80px 0;
-  background: $clinical-white;
-
-  .sectionTitle {
-    font-size: 42px;
-    font-weight: $font-weight-bold;
-    text-align: center;
-    margin-bottom: 24px;
-    color: $deep-petrol;
-    letter-spacing: -0.5px;
-  }
-
-  .testimonialsSubtitle {
-    font-size: 18px;
-    line-height: 1.7;
-    color: $text-light;
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 60px;
-  }
+.section {
+  position: relative;
+  padding: 120px 0;
+  background: #fff;
+  overflow: hidden;
 }
 
-.testimonialsGrid {
-  margin-top: 40px;
-  margin-bottom: 60px;
-
-  .testimonialCard {
-    background: white !important;
-    border-radius: $border-radius-md;
-    border: 1px solid rgba(141, 198, 63, 0.3) !important;
-    box-shadow: $shadow-md;
-    transition: $transition-base;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-lg;
-      border-color: rgba(141, 198, 63, 0.5) !important;
-    }
-
-    .quoteIcon {
-      position: absolute;
-      top: -8px;
-      left: 16px;
-      font-size: 64px;
-      font-weight: $font-weight-bold;
-      color: $vitality-green;
-      line-height: 1;
-      z-index: $z-index-base;
-      font-family: Georgia, serif;
-    }
-
-    .testimonialStars {
-      display: flex;
-      gap: 4px;
-      margin-top: 24px;
-      margin-bottom: 16px;
-
-      .star {
-        color: $vitality-green;
-        font-size: 18px;
-        line-height: 1;
-      }
-    }
-
-    .testimonialText {
-      font-size: 15px;
-      line-height: 1.7;
-      color: $text-dark;
-      margin-bottom: 24px;
-      flex-grow: 1;
-    }
-
-    .testimonialAuthor {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: auto;
-
-      .testimonialAvatar {
-        width: 48px;
-        height: 48px;
-        border-radius: $border-radius-full;
-        border: 2px solid rgba(141, 198, 63, 0.3);
-        overflow: hidden;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .avatarPlaceholder {
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, $wellness-teal, $trust-blue);
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: $font-weight-semibold;
-          font-size: 16px;
-        }
-      }
-
-      .authorInfo {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-
-        strong {
-          color: $deep-petrol;
-          font-size: 15px;
-          font-weight: $font-weight-semibold;
-        }
-
-        span {
-          color: $text-light;
-          font-size: 13px;
-        }
-      }
-    }
-  }
+.bgDecorations {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
 }
 
-.testimonialsCTA {
+.bubble {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.bubbleGreen {
+  top: 0;
+  left: 33%;
+  background: #8dc63f;
+}
+
+.bubbleBlue {
+  bottom: 0;
+  right: 33%;
+  background: #2eb5ac;
+}
+
+.inner {
+  position: relative;
+  z-index: 5;
+}
+
+.header {
   text-align: center;
-  margin-top: 60px;
+  margin-bottom: 80px;
+}
 
-  .testimonialsCTAText {
-    font-size: 18px;
-    color: $text-dark;
-    margin-bottom: 24px;
-  }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: linear-gradient(
+    to right,
+    rgba(141, 198, 63, 0.1),
+    rgba(46, 181, 172, 0.1)
+  );
+  border: 1px solid rgba(141, 198, 63, 0.2);
+  margin-bottom: 20px;
 
-  .testimonialsCTAButton {
-    padding: 16px 40px;
+  span {
+    color: #003b46;
+    font-weight: 500;
   }
 }
 
-@media (max-width: 768px) {
-  .testimonialsSection {
-    padding: 60px 0;
+.badgeIcon {
+  width: 16px;
+  height: 16px;
+  fill: #8dc63f;
+  color: #8dc63f;
+}
 
-    .sectionTitle {
-      font-size: 32px;
-    }
+.title {
+  font-size: 48px;
+  color: #003b46;
+  margin-bottom: 12px;
+}
 
-    .testimonialsSubtitle {
-      font-size: 16px;
-    }
+.subtitle {
+  font-size: 18px;
+  color: rgba(51, 51, 51, 0.7);
+}
+
+/* Cards */
+.cardWrapper {
+  position: relative;
+}
+
+.cardGlow {
+  position: absolute;
+  inset: -3px;
+  border-radius: 24px;
+  opacity: 0;
+  background: linear-gradient(
+    to bottom right,
+    #8dc63f,
+    #2eb5ac,
+    #1e5aa8
+  );
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+
+  .cardWrapper:hover & {
+    opacity: 1;
   }
 }
 
+.card {
+  position: relative;
+  padding: 32px;
+  border-radius: 24px;
+  background: linear-gradient(to bottom right, #fff, #f9fbfd);
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: transparent;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.quoteIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0.1;
+
+  svg {
+    width: 60px;
+    height: 60px;
+    color: #8dc63f;
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 18px;
+
+  .star {
+    width: 20px;
+    height: 20px;
+    fill: #8dc63f;
+    color: #8dc63f;
+  }
+}
+
+.content {
+  color: rgba(51, 51, 51, 0.8);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.name {
+  font-size: 18px;
+  color: #003b46;
+  font-weight: 600;
+}
+
+.role {
+  font-size: 14px;
+  color: rgba(51, 51, 51, 0.7);
+}
+
+/* Stats */
+.statsSection {
+  border-top: 1px solid #eee;
+  padding-top: 60px;
+  margin-top: 40px;
+}
+
+.statCard {
+  text-align: center;
+  padding: 26px;
+  background: linear-gradient(to bottom right, #fff, #f9fbfd);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.statValue {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-size: 16px;
+  color: rgba(51, 51, 51, 0.7);
+}
