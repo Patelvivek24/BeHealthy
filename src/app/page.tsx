@@ -9,7 +9,7 @@ import MedicalAI from '@/components/MedicalAI';
 import Gamification from '@/components/Gamification';
 import Pricing from '@/components/Pricing';
 import Testimonials from '@/components/Testimonials';
-import Newsletter from '@/components/Newsletter';
+import FAQ from '@/components/FAQ';
 import styles from './page.module.scss';
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
       <Gamification />
       <Pricing />
       <Testimonials />
-      <Newsletter />
+      <FAQ />
       <Footer />
     </div>
   );

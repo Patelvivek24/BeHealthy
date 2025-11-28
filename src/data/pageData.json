@@ -296,6 +296,44 @@
     "subtitle": "Get health tips, feature updates, and exclusive offers delivered to your inbox",
     "placeholder": "Enter your email",
     "buttonText": "Subscribe"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about BeHealthy",
+    "items": [
+      {
+        "question": "What is BeHealthy and how does it work?",
+        "answer": "BeHealthy is an all-in-one health and wellness platform that combines personalized diet plans, guided workouts, AI-powered medical report analysis, habit tracking, and vital monitoring in one app. Simply sign up, complete your health profile, and our AI will create a personalized plan tailored to your goals and needs."
+      },
+      {
+        "question": "Is BeHealthy free to use?",
+        "answer": "Yes! BeHealthy offers a free plan with basic health tracking, limited workout library, water intake tracking, and basic reminders. For advanced features like AI Medical Report Analysis, unlimited workouts, and priority support, you can upgrade to our Premium Analytics plan starting at $9.99/month."
+      },
+      {
+        "question": "How accurate is the AI Medical Report Analysis?",
+        "answer": "Our AI Medical Report Analyzer uses advanced machine learning algorithms trained on medical data to provide insights from your health reports. While it offers valuable insights and recommendations, it's important to note that it's not a replacement for professional medical advice. Always consult with healthcare professionals for medical decisions."
+      },
+      {
+        "question": "Can I track multiple health metrics?",
+        "answer": "Absolutely! BeHealthy allows you to track various health metrics including blood pressure, blood sugar, BMI, heart rate, water intake, medication schedules, and more. All your data is stored securely and can be viewed in easy-to-understand charts and trends."
+      },
+      {
+        "question": "Does BeHealthy work offline?",
+        "answer": "Yes, many features of BeHealthy work offline. You can track your daily activities, log meals, record vital signs, and view your saved data without an internet connection. However, features like AI report analysis and syncing across devices require an internet connection."
+      },
+      {
+        "question": "How do I cancel my subscription?",
+        "answer": "You can cancel your subscription at any time from your account settings. Simply go to Settings > Subscription and click 'Cancel Subscription'. Your access will continue until the end of your current billing period, and you won't be charged again."
+      },
+      {
+        "question": "Is my health data secure and private?",
+        "answer": "Yes, your privacy and data security are our top priorities. We use industry-standard encryption to protect your data, comply with healthcare data regulations, and never share your personal health information with third parties without your explicit consent."
+      },
+      {
+        "question": "Can I use BeHealthy with my fitness tracker or smartwatch?",
+        "answer": "Yes! BeHealthy integrates with popular fitness trackers and smartwatches. You can sync data from devices like Apple Watch, Fitbit, Garmin, and others to automatically track your workouts, steps, heart rate, and other metrics."
+      }
+    ]
   }
 }
 
