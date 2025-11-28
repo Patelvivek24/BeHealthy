@@ -104,6 +104,7 @@ export default function Footer() {
                 <motion.a
                   key={index}
                   href={social.href}
+                  aria-label={social.icon as string}
                   whileHover={{ scale: 1.2, y: -5 }}
                   className={styles.socialItem}
                 >
