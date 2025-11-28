@@ -1,114 +1,365 @@
 @use '../../app/variables' as *;
-@use "sass:color";
 
+/* ============================================
+SECTION WRAPPER
+============================================ */
 .pricingSection {
-  padding: 80px 0;
-  background: linear-gradient(135deg, rgba(30, 90, 168, 0.03), rgba(46, 181, 172, 0.03));
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(to bottom right,
+      #f9fbfd,
+      white,
+      rgba(46, 181, 172, 0.05));
+  overflow: hidden;
+}
 
-  .sectionTitle {
-    font-size: 42px;
-    font-weight: $font-weight-bold;
-    text-align: center;
-    margin-bottom: 24px;
-    color: $deep-petrol;
-    letter-spacing: -0.5px;
+/* ============================================
+BACKGROUND ORBS
+============================================ */
+.greenOrb,
+.tealOrb {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.06;
+}
+
+.greenOrb {
+  top: 80px;
+  left: 80px;
+  background: var(--vitality-green);
+}
+
+.tealOrb {
+  bottom: 80px;
+  right: 80px;
+  background: var(--wellness-teal);
+}
+
+/* ============================================
+CONTAINER
+============================================ */
+.container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================
+HEADER SECTION
+============================================ */
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(to right,
+      rgba(141, 198, 63, 0.1),
+      rgba(46, 181, 172, 0.1));
+  border: 1px solid rgba(141, 198, 63, 0.2);
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  color: var(--deep-petrol);
+}
+
+.title {
+  font-size: 46px;
+  font-weight: 700;
+  color: var(--deep-petrol);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.highlights {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.separator {
+  opacity: 0.4;
+}
+
+/* ============================================
+GRID LAYOUT
+============================================ */
+.grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ============================================
+CARD WRAPPERS
+============================================ */
+.cardWrapper {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.featuredWrapper {
+  transform: scale(1.05);
+}
+
+/* Glow border for "Most Popular" */
+.glowBorder {
+  position: absolute;
+  inset: -3px;
+  border-radius: 24px;
+  filter: blur(25px);
+  opacity: 0.5;
+}
+
+/* Gradient sets */
+.premium {
+  background: linear-gradient(to right,
+      #1e5aa8,
+      #2eb5ac,
+      #1e5aa8);
+}
+
+.green {
+  background: linear-gradient(to right,
+      var(--vitality-green),
+      var(--wellness-teal));
+}
+
+/* ============================================
+CARD BASE STYLES
+============================================ */
+.card {
+  position: relative;
+  padding: 40px;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.normalCard {
+  background: white;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+
+  &:hover {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
   }
 }
 
-.pricingGrid {
-  margin-top: 40px;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+.featuredCard {
+  background: linear-gradient(to bottom right,
+      #1e5aa8,
+      #2eb5ac);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
 
-  .pricingCard {
-    background: white !important;
-    border-radius: $border-radius-xl;
-    text-align: center;
-    border: 2px solid rgba(0, 59, 70, 0.1) !important;
-    transition: $transition-base;
-    position: relative;
+/* ============================================
+MOST POPULAR TAG
+============================================ */
+.popularTag {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 20px;
+  border-radius: 30px;
+  background: linear-gradient(to right, var(--vitality-green), var(--wellness-teal));
+  color: white;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+CARD HEADER
+============================================ */
+.cardHeader h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.period {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+
+  /* for non-featured cards */
+  .normalCard & {
+    color: rgba(51, 51, 51, 0.7);
+  }
+}
+
+/* ============================================
+FEATURE LIST
+============================================ */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  span {
+    font-size: 14px;
+  }
+}
+
+.iconCircle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(141, 198, 63, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconFeatured {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+
+  svg {
+    color: white;
+  }
+}
+
+/* ============================================
+BUTTONS
+============================================ */
+.ctaButton {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+
+  /* Featured Button */
+  .featuredCard & {
+    background: white;
+    color: var(--trust-blue);
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-xl;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
     }
+  }
 
-    &.pricingCardFeatured {
-      border-color: $vitality-green !important;
-      box-shadow: 0 8px 32px rgba(141, 198, 63, 0.2);
-      transform: scale(1.05);
+  /* Normal Button */
+  .normalCard & {
+    background: linear-gradient(to right, var(--vitality-green), var(--wellness-teal));
+    color: white;
 
-      @media (max-width: 968px) {
-        transform: scale(1);
-      }
-
-      .badge {
-        position: absolute;
-        top: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: $vitality-green !important;
-        color: white !important;
-        padding: 6px 20px;
-        border-radius: $border-radius-lg;
-        font-size: 12px;
-        font-weight: $font-weight-semibold;
-      }
-    }
-
-    .price {
-      margin-bottom: 32px;
-
-      .priceAmount {
-        font-size: 48px;
-        font-weight: $font-weight-bold;
-        color: $deep-petrol;
-      }
-
-      .pricePeriod {
-        font-size: 16px;
-        color: $text-light;
-        margin-left: 4px;
-      }
-    }
-
-    .pricingFeatures {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 32px;
-      min-height: 200px;
-
-      li {
-        padding: 12px 0;
-        color: $text-dark;
-        font-size: 15px;
-        position: relative;
-        padding-left: 24px;
-
-        &::before {
-          content: '✓';
-          position: absolute;
-          left: 0;
-          color: $vitality-green;
-          font-weight: $font-weight-bold;
-        }
-      }
-    }
-
-    .pricingCTA {
-      width: 100%;
+    &:hover {
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
     }
   }
 }
 
+/* ============================================
+CUSTOM PLAN CARD
+============================================ */
+.customCardWrapper {
+  position: relative;
+}
+
+.customCard {
+  background: linear-gradient(to bottom right, var(--deep-petrol), var(--trust-blue));
+  color: white;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.customTag {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, var(--vitality-green), var(--wellness-teal));
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: white;
+}
+
+.customButton {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: white;
+  color: var(--deep-petrol);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ============================================
+RESPONSIVE TYPOGRAPHY
+============================================ */
 @media (max-width: 768px) {
-  .pricingSection {
-    padding: 60px 0;
+  .title {
+    font-size: 34px;
+  }
 
-    .sectionTitle {
-      font-size: 32px;
-    }
+  .price {
+    font-size: 38px;
+  }
+
+  .pricingSection {
+    padding: 80px 0;
   }
 }
-
