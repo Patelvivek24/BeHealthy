@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./pricing.module.scss";
+import styles from "./Pricing.module.scss";
 
 const plans = [
   {
