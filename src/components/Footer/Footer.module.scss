@@ -1,202 +1,194 @@
 @use '../../app/variables' as *;
-@use "sass:color";
 
 .footer {
+  background: linear-gradient(135deg, #003B46, #1E5AA8);
+  color: white;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dotsWrapper {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+}
+
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
   background: white;
-  padding: 60px 0 0;
+  border-radius: 50%;
+}
 
-  .footerContent {
-    margin-bottom: 40px;
-    padding-bottom: 40px;
+/* Content Wrapper */
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+}
 
-    .footerSection {
-      h4 {
-        font-size: 18px;
-        font-weight: $font-weight-bold;
-        margin-bottom: 24px;
-        background: linear-gradient(135deg, $vitality-green, $trust-blue);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
+/* Newsletter Section */
+.newsletterBox {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
 
-      .footerDescription {
-        background: linear-gradient(135deg, $vitality-green, $trust-blue);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 24px;
-      }
+.newsletterInputWrapper {
+  display: flex;
+  gap: 1rem;
+}
 
-      ul {
-        list-style: none;
+.newsletterInput {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
 
-        li {
-          margin-bottom: 14px;
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-
-          &::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, $vitality-green, $trust-blue);
-            margin-top: 8px;
-            flex-shrink: 0;
-          }
-
-          a {
-            background: linear-gradient(135deg, $vitality-green, $trust-blue);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 15px;
-            transition: $transition-base;
-            line-height: 1.5;
-
-            &:hover {
-              background: linear-gradient(135deg, color.adjust($vitality-green, $lightness: -10%), color.adjust($trust-blue, $lightness: -10%));
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              background-clip: text;
-            }
-          }
-        }
-      }
-
-      .contactList {
-        li {
-          &::before {
-            display: none;
-          }
-
-          .contactIcon {
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-            margin-top: 2px;
-            color: $vitality-green;
-            stroke: currentColor;
-          }
-
-          span {
-            background: linear-gradient(135deg, $vitality-green, $trust-blue);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 15px;
-            line-height: 1.6;
-          }
-        }
-      }
-    }
-
-    .footerLogoPlaceholder {
-      border-radius: $border-radius-sm;
-      margin-bottom: 20px;
-    }
-
-    .socialLinks {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
-
-      .socialIcon {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: rgba(141, 198, 63, 0.1);
-        border: 1px solid rgba(141, 198, 63, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        color: $vitality-green;
-
-        svg {
-          width: 20px;
-          height: 20px;
-          fill: currentColor;
-        }
-
-        &:hover {
-          background: rgba(141, 198, 63, 0.15);
-          border-color: $trust-blue;
-          transform: translateY(-2px);
-          color: $trust-blue;
-        }
-      }
-    }
-  }
-
-  .footerBottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 0;
-    border-top: 1px solid rgba(0, 59, 70, 0.1);
-
-    .footerCopyright {
-      background: linear-gradient(135deg, $vitality-green, $trust-blue);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-
-      .heartIcon {
-        background: linear-gradient(135deg, $vitality-green, $trust-blue);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-size: 16px;
-      }
-    }
-
-    .footerLegal {
-      display: flex;
-      gap: 24px;
-
-      a {
-        background: linear-gradient(135deg, $vitality-green, $trust-blue);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-size: 14px;
-        transition: all 0.3s ease;
-
-        &:hover {
-          background: linear-gradient(135deg, color.adjust($vitality-green, $lightness: -10%), color.adjust($trust-blue, $lightness: -10%));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 968px) {
-    .footerBottom {
-      flex-direction: column;
-      gap: 16px;
-      text-align: center;
-
-      .footerLegal {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-      }
-    }
-  }
-
-  @media (max-width: 640px) {
-    padding: 40px 0 0;
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
   }
 }
 
+.subscribeBtn {
+  background: linear-gradient(to right, #8DC63F, #2EB5AC);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Columns */
+.linksRow {
+  margin-bottom: 3rem;
+}
+
+.column {
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+  }
+
+  h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        transition: 0.3s;
+
+        &:hover {
+          color: #8DC63F;
+        }
+      }
+    }
+  }
+}
+
+/* Logo */
+.logo {
+  width: 50px;
+  height: 50px;
+  // filter: invert(1) brightness(2);
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socialItem {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+
+  &:hover {
+    background: #8DC63F;
+  }
+}
+
+/* Contact List */
+.contactList {
+  li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    color: rgba(255, 255, 255, 0.8);
+
+    span {
+      line-height: 1.2;
+    }
+  }
+}
+
+.iconGreen {
+  color: #8DC63F;
+  fill: #8DC63F;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 2rem;
+
+  a {
+    color: rgba(255, 255, 255, 0.6);
+
+    &:hover {
+      color: #8DC63F;
+    }
+  }
+}
+
+/* Scroll to Top Button */
+.scrollTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(to right, #8DC63F, #2EB5AC);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  z-index: 50;
+}
