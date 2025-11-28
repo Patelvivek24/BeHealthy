@@ -1,321 +1,33 @@
 @use '../../app/variables' as *;
 
-/* ============================================
-SECTION WRAPPER
-============================================ */
-.section {
-  position: relative;
-  padding: 120px 0;
+.mainWrapper {
   min-height: 100vh;
-  background: linear-gradient(to bottom right,
-      #f9fbfd,
-      white,
-      rgba(46, 181, 172, 0.05));
-  overflow: hidden;
+  background: linear-gradient(to bottom right, #f9fbfd, #ffffff, rgba(141, 198, 63, 0.05));
 }
 
-/* ============================================
-BACKGROUND ORBS
-============================================ */
-.greenOrb,
-.tealOrb {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.06;
-  pointer-events: none;
-}
-
-.greenOrb {
-  top: 80px;
-  left: 80px;
-  background: var(--vitality-green);
-}
-
-.tealOrb {
-  bottom: 80px;
-  right: 80px;
-  background: var(--wellness-teal);
-}
-
-/* ============================================
-CONTAINER
-============================================ */
-.container {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* ============================================
-HEADER SECTION
-============================================ */
 .header {
-  text-align: center;
-  margin-bottom: 60px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.badge {
-  display: inline-flex;
+.backBtn {
+  display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(to right,
-      rgba(141, 198, 63, 0.1),
-      rgba(46, 181, 172, 0.1));
-  border: 1px solid rgba(141, 198, 63, 0.2);
-  padding: 8px 20px;
-  border-radius: 30px;
-  margin-bottom: 20px;
-  color: var(--deep-petrol);
-}
-
-.title {
-  font-size: 46px;
-  font-weight: 700;
-  color: var(--deep-petrol);
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 20px;
-  max-width: 700px;
-  margin: 0 auto;
-  color: rgba(51, 51, 51, 0.7);
-}
-
-/* ============================================
-FORM
-============================================ */
-.form {
-  background: white;
-  border-radius: 24px;
-  padding: 50px;
-  box-shadow: $shadow-lg;
-  border: 1px solid rgba(0, 59, 70, 0.08);
-}
-
-.formSection {
-  margin-bottom: 50px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
-.sectionTitle {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--deep-petrol);
-  margin-bottom: 12px;
-
-  svg {
-    color: var(--vitality-green);
-  }
-}
-
-.sectionDescription {
-  font-size: 16px;
-  color: rgba(51, 51, 51, 0.7);
-  margin-bottom: 24px;
-}
-
-/* ============================================
-FORM GRID
-============================================ */
-.formGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  label {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--deep-petrol);
-  }
-
-  .required {
-    color: #e74c3c;
-  }
-
-  input,
-  select,
-  textarea {
-    padding: 14px 18px;
-    border: 2px solid rgba(0, 59, 70, 0.1);
-    border-radius: 12px;
-    font-size: 16px;
-    font-family: inherit;
-    color: var(--text-dark);
-    background: white;
-    transition: $transition-base;
-
-    &:focus {
-      outline: none;
-      border-color: var(--vitality-green);
-      box-shadow: 0 0 0 3px rgba(141, 198, 63, 0.1);
-    }
-
-    &::placeholder {
-      color: rgba(51, 51, 51, 0.4);
-    }
-  }
-
-  textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-
-  select {
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23003B46' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 18px center;
-    padding-right: 45px;
-  }
-}
-
-/* ============================================
-FEATURES GRID
-============================================ */
-.featuresGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
-  margin-top: 24px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.featureCard {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
-  border: 2px solid rgba(0, 59, 70, 0.1);
-  border-radius: 12px;
-  background: white;
-  cursor: pointer;
-  transition: $transition-base;
-
-  &:hover {
-    border-color: var(--vitality-green);
-    background: rgba(141, 198, 63, 0.05);
-  }
-
-  span {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-dark);
-  }
-}
-
-.featureSelected {
-  border-color: var(--vitality-green);
-  background: rgba(141, 198, 63, 0.1);
-
-  .featureCheckbox {
-    background: var(--vitality-green);
-    color: white;
-  }
-}
-
-.featureCheckbox {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  border: 2px solid rgba(0, 59, 70, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: $transition-base;
-  background: white;
-
-  svg {
-    width: 16px;
-    height: 16px;
-  }
-}
-
-/* ============================================
-FORM ACTIONS
-============================================ */
-.formActions {
-  display: flex;
-  gap: 16px;
-  margin-top: 40px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(0, 59, 70, 0.1);
-
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-  }
-}
-
-.cancelButton {
-  flex: 1;
-  padding: 16px 24px;
-  border: 2px solid rgba(0, 59, 70, 0.2);
-  border-radius: 12px;
-  background: white;
   color: var(--deep-petrol);
   font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: $transition-base;
-
-  &:hover {
-    border-color: var(--deep-petrol);
-    background: rgba(0, 59, 70, 0.05);
-  }
-}
-
-.submitButton {
-  flex: 2;
-  padding: 16px 24px;
   border: none;
-  border-radius: 12px;
-  background: linear-gradient(to right, var(--vitality-green), var(--wellness-teal));
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
+  background: none;
   cursor: pointer;
-  transition: $transition-base;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: $shadow-button;
+  transition: 0.3s;
 
-  &:hover:not(:disabled) {
-    box-shadow: $shadow-button-hover;
-    transform: translateY(-2px);
-  }
-
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
+  &:hover {
+    color: var(--wellness-teal);
   }
 
   svg {
@@ -324,86 +36,349 @@ FORM ACTIONS
   }
 }
 
-.spinner {
-  animation: spin 1s linear infinite;
+/* -----------------------------
+   HERO SECTION
+----------------------------- */
+
+.heroSection {
+  padding: 80px 0;
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.sparkBadge {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(var(--vitality-green), 0.2);
+  background: linear-gradient(to right, rgba(var(--vitality-green), 0.1), rgba(var(--wellness-teal), 0.1));
+  margin-bottom: 20px;
+  align-items: center;
+
+  svg {
+    color: var(--wellness-teal);
+    width: 16px;
+    height: 16px;
   }
 }
 
-/* ============================================
-SUCCESS MESSAGE
-============================================ */
-.successMessage {
-  background: white;
+.heroTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--deep-petrol);
+  margin-bottom: 16px;
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  color: rgba(51, 51, 51, 0.8);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* -----------------------------
+   FORM WRAPPER
+----------------------------- */
+
+.formWrapper {
+  background: #fff;
+  padding: 40px;
   border-radius: 24px;
-  padding: 80px 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin-top: 50px;
+}
+
+/* -----------------------------
+   SECTION HEADERS
+----------------------------- */
+
+.section {
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--deep-petrol);
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sectionIcon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(to bottom right, rgba(var(--vitality-green), 0.2), rgba(var(--wellness-teal), 0.2));
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    color: var(--vitality-green);
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* -----------------------------
+   INPUTS
+----------------------------- */
+
+.formGroup {
+  margin-bottom: 25px;
+}
+
+.inputIconWrap {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: rgba(51, 51, 51, 0.4);
+}
+
+.input {
+  padding-left: 44px !important;
+  height: 55px;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+
+  &:focus {
+    border-color: var(--wellness-teal);
+    box-shadow: none;
+  }
+}
+
+.textArea {
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+
+  &:focus {
+    border-color: var(--wellness-teal);
+    box-shadow: none;
+  }
+}
+
+/* -----------------------------
+   GOAL CARDS
+----------------------------- */
+
+.goalCard {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    border-color: darken(#e5e7eb, 5%);
+  }
+}
+
+.activeGoal {
+  background: linear-gradient(to bottom right, rgba(var(--wellness-teal), 0.1), rgba(var(--vitality-green), 0.1));
+  border-color: var(--wellness-teal);
+  box-shadow: 0 4px 20px rgba(var(--wellness-teal), 0.2);
+}
+
+.goalInner {
+  display: flex;
+  gap: 14px;
+}
+
+.goalIcon {
+  width: 36px;
+  height: 36px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(51, 51, 51, 0.6);
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.goalIconActive {
+  background: var(--wellness-teal);
+  color: #fff;
+}
+
+/* -----------------------------
+   SUBMIT BUTTON
+----------------------------- */
+
+.submitBtn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(to right, var(--vitality-green), var(--wellness-teal));
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+.disclaimer {
   text-align: center;
-  box-shadow: $shadow-lg;
-  border: 1px solid rgba(0, 59, 70, 0.08);
+  color: rgba(51, 51, 51, 0.8);
+  margin-top: 12px;
+  font-size: 14px;
+}
 
-  h2 {
-    font-size: 32px;
-    color: var(--deep-petrol);
-    margin: 24px 0 16px;
-  }
+/* -----------------------------
+   SUBMITTED SUCCESS PAGE
+----------------------------- */
 
-  p {
-    font-size: 18px;
-    color: rgba(51, 51, 51, 0.7);
-    margin-bottom: 12px;
-  }
+.submittedWrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f9fbfd, #ffffff, rgba(var(--vitality-green), 0.05));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.submittedCard {
+  max-width: 650px;
+  width: 100%;
+  background: #fff;
+  padding: 50px;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .successIcon {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(141, 198, 63, 0.1);
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to bottom right, var(--vitality-green), var(--wellness-teal));
+  margin: 0 auto 25px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   svg {
+    width: 38px;
+    height: 38px;
+    color: #fff;
+  }
+}
+
+.submittedTitle {
+  font-size: 32px;
+  color: var(--deep-petrol);
+  margin-bottom: 10px;
+}
+
+.submittedText {
+  font-size: 17px;
+  color: rgba(51, 51, 51, 0.8);
+  margin-bottom: 35px;
+}
+
+.stepsBox {
+  background: linear-gradient(to bottom right, #f9fbfd, #ffffff);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 35px;
+}
+
+.stepsTitle {
+  font-size: 20px;
+  color: var(--deep-petrol);
+  margin-bottom: 18px;
+}
+
+.stepItem {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+
+  span {
+    color: rgba(51, 51, 51, 0.8);
+  }
+}
+
+.stepIcon {
+  width: 22px;
+  height: 22px;
+  background: rgba(var(--vitality-green), 0.15);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 13px;
+    height: 13px;
     color: var(--vitality-green);
   }
 }
 
-.redirectText {
-  font-size: 14px;
-  color: rgba(51, 51, 51, 0.5);
-  font-style: italic;
+.submittedButtons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* ============================================
-RESPONSIVE
-============================================ */
-@media (max-width: 768px) {
-  .section {
-    padding: 80px 0;
-  }
+.primaryBtn {
+  padding: 12px 30px;
+  background: linear-gradient(to right, var(--vitality-green), var(--wellness-teal));
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
 
-  .title {
-    font-size: 34px;
-  }
-
-  .form {
-    padding: 30px 20px;
-  }
-
-  .formSection {
-    margin-bottom: 40px;
-  }
-
-  .sectionTitle {
-    font-size: 20px;
+  &:hover {
+    opacity: 0.9;
   }
 }
 
+.secondaryBtn {
+  padding: 12px 30px;
+  border: 2px solid var(--deep-petrol);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--deep-petrol);
+  font-weight: 600;
+
+  &:hover {
+    background: #f7f7f7;
+  }
+}

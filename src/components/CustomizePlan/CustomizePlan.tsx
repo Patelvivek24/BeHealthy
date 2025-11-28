@@ -1,353 +1,398 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Icon } from '@iconify/react';
-import { motion } from 'framer-motion';
-import styles from './CustomizePlan.module.scss';
-
-interface FormData {
-  name: string;
-  email: string;
-  company?: string;
-  phone: string;
-  features: string[];
-  budget: string;
-  duration: string;
-  additionalInfo: string;
-}
-
-const availableFeatures = [
-  'AI Medical Report Analysis',
-  'Advanced vital tracking',
-  'Personalized diet plans',
-  'Workout progress analytics',
-  'Dedicated health coach',
-  'Weekly video consultations',
-  'Custom meal planning',
-  '24/7 coach messaging',
-  'Advanced goal setting',
-  'Monthly health reports',
-  'Priority support',
-  'White-glove onboarding',
-];
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import styles from "./CustomizePlan.module.scss";
 
 export default function CustomizePlan() {
   const router = useRouter();
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    features: [],
-    budget: '',
-    duration: '',
-    additionalInfo: '',
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    goals: [] as string[],
+    budget: "",
+    duration: "",
+    fitnessLevel: "",
+    dietaryPreferences: "",
+    healthConditions: "",
+    additionalNotes: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const goalOptions = [
+    { id: "weight-loss", label: "Weight Loss", icon: "lucide:activity" },
+    { id: "muscle-gain", label: "Muscle Gain", icon: "lucide:activity" },
+    { id: "general-fitness", label: "General Fitness", icon: "lucide:heart" },
+    { id: "nutrition", label: "Nutrition Planning", icon: "lucide:utensils" },
+    { id: "medical-monitoring", label: "Medical Monitoring", icon: "lucide:heart" },
+    { id: "stress-management", label: "Stress Management", icon: "lucide:heart" },
+  ];
+
+  const handleBack = () => {
+    router.push('/');
   };
 
-  const handleFeatureToggle = (feature: string) => {
+  const handleGoalToggle = (goalId: string) => {
     setFormData((prev) => ({
       ...prev,
-      features: prev.features.includes(feature)
-        ? prev.features.filter((f) => f !== feature)
-        : [...prev.features, feature],
+      goals: prev.goals.includes(goalId)
+        ? prev.goals.filter((g) => g !== goalId)
+        : [...prev.goals, goalId],
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-
-    // Reset form after 3 seconds and redirect
-    setTimeout(() => {
-      router.push('/');
-    }, 3000);
+    setSubmitted(true);
+    console.log("Form submitted:", formData);
   };
 
-  if (submitSuccess) {
+  // --------------------------------
+  // SUBMITTED PAGE
+  // --------------------------------
+  if (submitted) {
     return (
-      <section className={styles.section}>
-        <div className={styles.container}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className={styles.successMessage}
-          >
-            <div className={styles.successIcon}>
-              <Icon icon="lucide:check-circle" width={64} />
-            </div>
-            <h2>Thank You!</h2>
-            <p>We&apos;ve received your custom plan request. Our team will contact you within 24 hours.</p>
-            <p className={styles.redirectText}>Redirecting to home page...</p>
-          </motion.div>
-        </div>
-      </section>
-    );
-  }
-
-  return (
-    <section className={styles.section}>
-      {/* Background Orbs */}
-      <motion.div
-        animate={{ scale: [1, 1.3, 1], opacity: [0.03, 0.08, 0.03] }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className={styles.greenOrb}
-      />
-      <motion.div
-        animate={{ scale: [1.3, 1, 1.3], opacity: [0.05, 0.1, 0.05] }}
-        transition={{ duration: 12, repeat: Infinity }}
-        className={styles.tealOrb}
-      />
-
-      <div className={styles.container}>
-        {/* Header */}
+      <div className={styles.submittedWrapper}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className={styles.header}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className={styles.submittedCard}
         >
-          <div className={styles.badge}>
-            <Icon icon="lucide:sparkles" width={16} />
-            <span>Custom Plan Builder</span>
-          </div>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            className={styles.successIcon}
+          >
+            <Icon icon="lucide:check" width={38} height={38} />
+          </motion.div>
 
-          <h1 className={styles.title}>Customize Your Plan</h1>
-
-          <p className={styles.subtitle}>
-            Tell us about your needs and we&apos;ll create a personalized plan just for you
+          <h2 className={styles.submittedTitle}>Request Received!</h2>
+          <p className={styles.submittedText}>
+            Thank you for your interest in a customized plan. Our wellness experts will review your
+            requirements and contact you within 24 hours with a personalized proposal tailored to
+            your needs.
           </p>
-        </motion.div>
 
-        {/* Form */}
-        <motion.form
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          onSubmit={handleSubmit}
-          className={styles.form}
-        >
-          {/* Personal Information */}
-          <div className={styles.formSection}>
-            <h2 className={styles.sectionTitle}>
-              <Icon icon="lucide:user" width={20} />
-              Personal Information
-            </h2>
-
-            <div className={styles.formGrid}>
-              <div className={styles.formGroup}>
-                <label htmlFor="name">
-                  Full Name <span className={styles.required}>*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="John Doe"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="email">
-                  Email Address <span className={styles.required}>*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="john@example.com"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="phone">
-                  Phone Number <span className={styles.required}>*</span>
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="+1 (555) 123-4567"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="company">Company (Optional)</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  placeholder="Company Name"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Feature Selection */}
-          <div className={styles.formSection}>
-            <h2 className={styles.sectionTitle}>
-              <Icon icon="lucide:layers" width={20} />
-              Select Features
-            </h2>
-            <p className={styles.sectionDescription}>
-              Choose the features you&apos;d like to include in your custom plan
-            </p>
-
-            <div className={styles.featuresGrid}>
-              {availableFeatures.map((feature) => (
-                <motion.div
-                  key={feature}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className={`${styles.featureCard} ${
-                    formData.features.includes(feature) ? styles.featureSelected : ''
-                  }`}
-                  onClick={() => handleFeatureToggle(feature)}
-                >
-                  <div className={styles.featureCheckbox}>
-                    {formData.features.includes(feature) && (
-                      <Icon icon="lucide:check" width={16} />
-                    )}
+          <div className={styles.stepsBox}>
+            <h3 className={styles.stepsTitle}>What happens next?</h3>
+            <div className={styles.stepsList}>
+              {[
+                "Our experts review your requirements",
+                "We create a personalized plan proposal",
+                "You receive a custom quote via email",
+                "Schedule a consultation call with our team",
+              ].map((step, index) => (
+                <div key={index} className={styles.stepItem}>
+                  <div className={styles.stepIcon}>
+                    <Icon icon="lucide:check" width={13} height={13} />
                   </div>
-                  <span>{feature}</span>
-                </motion.div>
+                  <span>{step}</span>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Budget & Duration */}
-          <div className={styles.formSection}>
-            <h2 className={styles.sectionTitle}>
-              <Icon icon="lucide:settings" width={20} />
-              Plan Details
-            </h2>
+          <div className={styles.submittedButtons}>
+            <Button className={styles.primaryBtn} onClick={handleBack}>
+              Back to Home
+            </Button>
 
-            <div className={styles.formGrid}>
-              <div className={styles.formGroup}>
-                <label htmlFor="budget">
-                  Budget Range <span className={styles.required}>*</span>
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <option value="">Select budget range</option>
-                  <option value="under-50">Under $50/month</option>
-                  <option value="50-100">$50 - $100/month</option>
-                  <option value="100-200">$100 - $200/month</option>
-                  <option value="200-500">$200 - $500/month</option>
-                  <option value="500+">$500+/month</option>
-                  <option value="custom">Custom pricing</option>
-                </select>
-              </div>
+            <Button className={styles.secondaryBtn} onClick={() => setSubmitted(false)}>
+              Submit Another Request
+            </Button>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
 
-              <div className={styles.formGroup}>
-                <label htmlFor="duration">
-                  Plan Duration <span className={styles.required}>*</span>
-                </label>
-                <select
-                  id="duration"
-                  name="duration"
-                  value={formData.duration}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <option value="">Select duration</option>
-                  <option value="monthly">Monthly</option>
-                  <option value="quarterly">Quarterly (3 months)</option>
-                  <option value="semi-annual">Semi-Annual (6 months)</option>
-                  <option value="annual">Annual (12 months)</option>
-                  <option value="custom">Custom duration</option>
-                </select>
-              </div>
-            </div>
+  // --------------------------------
+  // MAIN FORM PAGE
+  // --------------------------------
+  return (
+    <div className={styles.mainWrapper}>
+      {/* Header */}
+      <div className={styles.header}>
+        <Container>
+          <motion.button
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            whileHover={{ x: -5 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleBack}
+            className={styles.backBtn}
+          >
+            <Icon icon="lucide:arrow-left" width={20} height={20} />
+            <span>Back to Pricing</span>
+          </motion.button>
+        </Container>
+      </div>
+
+      {/* HERO SECTION */}
+      <Container className={styles.heroSection}>
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className={styles.heroContent}>
+          <div className={styles.sparkBadge}>
+            <Icon icon="lucide:sparkles" width={16} height={16} className={styles.sparkIcon} />
+            <span>Tailored Just for You</span>
           </div>
 
-          {/* Additional Information */}
-          <div className={styles.formSection}>
-            <h2 className={styles.sectionTitle}>
-              <Icon icon="lucide:message-square" width={20} />
-              Additional Information
-            </h2>
+          <h1 className={styles.heroTitle}>Create Your Custom Plan</h1>
+          <p className={styles.heroSubtitle}>
+            Tell us about your unique health goals and needs, and we&apos;ll create a personalized plan designed specifically for you.
+          </p>
+        </motion.div>
 
-            <div className={styles.formGroup}>
-              <label htmlFor="additionalInfo">
-                Tell us more about your needs, goals, or any specific requirements
-              </label>
-              <textarea
-                id="additionalInfo"
-                name="additionalInfo"
-                value={formData.additionalInfo}
-                onChange={handleInputChange}
-                rows={5}
-                placeholder="Describe your health goals, team size, special requirements, or anything else that would help us create the perfect plan for you..."
-              />
+        {/* FORM */}
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className={styles.formWrapper}>
+          <Form onSubmit={handleSubmit}>
+            {/* PERSONAL INFO */}
+            <div className={styles.section}>
+              <h2 className={styles.sectionTitle}>
+                <div className={styles.sectionIcon}>
+                  <Icon icon="lucide:user" width={20} height={20} />
+                </div>
+                Personal Information
+              </h2>
+
+              <Row>
+                <Col md={6}>
+                  <Form.Group className={styles.formGroup}>
+                    <Form.Label>Full Name *</Form.Label>
+                    <div className={styles.inputIconWrap}>
+                      <Icon icon="lucide:user" width={20} height={20} className={styles.inputIcon} />
+                      <Form.Control
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="John Doe"
+                        className={styles.input}
+                      />
+                    </div>
+                  </Form.Group>
+                </Col>
+
+                <Col md={6}>
+                  <Form.Group className={styles.formGroup}>
+                    <Form.Label>Email Address *</Form.Label>
+                    <div className={styles.inputIconWrap}>
+                      <Icon icon="lucide:mail" width={20} height={20} className={styles.inputIcon} />
+                      <Form.Control
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="john@example.com"
+                        className={styles.input}
+                      />
+                    </div>
+                  </Form.Group>
+                </Col>
+
+                <Col md={12}>
+                  <Form.Group className={styles.formGroup}>
+                    <Form.Label>Phone Number</Form.Label>
+                    <div className={styles.inputIconWrap}>
+                      <Icon icon="lucide:phone" width={20} height={20} className={styles.inputIcon} />
+                      <Form.Control
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+1 (555) 000-0000"
+                        className={styles.input}
+                      />
+                    </div>
+                  </Form.Group>
+                </Col>
+              </Row>
             </div>
-          </div>
 
-          {/* Submit Button */}
-          <div className={styles.formActions}>
-            <motion.button
-              type="button"
-              onClick={() => router.back()}
-              className={styles.cancelButton}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Cancel
-            </motion.button>
+            {/* GOALS */}
+            <div className={styles.section}>
+              <h2 className={styles.sectionTitle}>
+                <div className={styles.sectionIcon}>
+                  <Icon icon="lucide:target" width={20} height={20} />
+                </div>
+                Your Health Goals *
+              </h2>
+
+              <Row>
+                {goalOptions.map((goal) => {
+                  const isSelected = formData.goals.includes(goal.id);
+
+                  return (
+                    <Col sm={6} md={4} key={goal.id}>
+                      <motion.button
+                        type="button"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleGoalToggle(goal.id)}
+                        className={`${styles.goalCard} ${isSelected ? styles.activeGoal : ""}`}
+                      >
+                        <div className={styles.goalInner}>
+                          <div className={`${styles.goalIcon} ${isSelected ? styles.goalIconActive : ""}`}>
+                            {isSelected ? (
+                              <Icon icon="lucide:check" width={20} height={20} />
+                            ) : (
+                              <Icon icon={goal.icon} width={20} height={20} />
+                            )}
+                          </div>
+                          <span>{goal.label}</span>
+                        </div>
+                      </motion.button>
+                    </Col>
+                  );
+                })}
+              </Row>
+            </div>
+
+            {/* PLAN DETAILS */}
+            <div className={styles.section}>
+              <h2 className={styles.sectionTitle}>
+                <div className={styles.sectionIcon}>
+                  <Icon icon="lucide:calendar" width={20} height={20} />
+                </div>
+                Plan Details
+              </h2>
+
+              <Row>
+                <Col md={6}>
+                  <Form.Group className={styles.formGroup}>
+                    <Form.Label>Budget Range *</Form.Label>
+                    <div className={styles.inputIconWrap}>
+                      <Icon icon="lucide:dollar-sign" width={20} height={20} className={styles.inputIcon} />
+                      <Form.Select
+                        required
+                        value={formData.budget}
+                        onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                        className={styles.input}
+                      >
+                        <option value="">Select budget range</option>
+                        <option value="under-50">Under $50/month</option>
+                        <option value="50-100">$50 - $100/month</option>
+                        <option value="100-200">$100 - $200/month</option>
+                        <option value="200-plus">$200+/month</option>
+                        <option value="one-time">One-time payment</option>
+                      </Form.Select>
+                    </div>
+                  </Form.Group>
+                </Col>
+
+                <Col md={6}>
+                  <Form.Group className={styles.formGroup}>
+                    <Form.Label>Commitment Duration *</Form.Label>
+                    <div className={styles.inputIconWrap}>
+                      <Icon icon="lucide:calendar" width={20} height={20} className={styles.inputIcon} />
+                      <Form.Select
+                        required
+                        value={formData.duration}
+                        onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
+                        className={styles.input}
+                      >
+                        <option value="">Select duration</option>
+                        <option value="1-month">1 Month</option>
+                        <option value="3-months">3 Months</option>
+                        <option value="6-months">6 Months</option>
+                        <option value="12-months">12 Months</option>
+                        <option value="flexible">Flexible</option>
+                      </Form.Select>
+                    </div>
+                  </Form.Group>
+                </Col>
+
+                <Col md={12}>
+                  <Form.Group className={styles.formGroup}>
+                    <Form.Label>Current Fitness Level *</Form.Label>
+                    <div className={styles.inputIconWrap}>
+                      <Icon icon="lucide:activity" width={20} height={20} className={styles.inputIcon} />
+                      <Form.Select
+                        required
+                        value={formData.fitnessLevel}
+                        onChange={(e) => setFormData({ ...formData, fitnessLevel: e.target.value })}
+                        className={styles.input}
+                      >
+                        <option value="">Select fitness level</option>
+                        <option value="beginner">Beginner - Just starting out</option>
+                        <option value="intermediate">Intermediate - Regular exercise</option>
+                        <option value="advanced">Advanced - Highly active</option>
+                        <option value="athlete">Athlete - Competitive level</option>
+                      </Form.Select>
+                    </div>
+                  </Form.Group>
+                </Col>
+              </Row>
+            </div>
+
+            {/* ADDITIONAL INFO */}
+            <div className={styles.section}>
+              <h2 className={styles.sectionTitle}>
+                <div className={styles.sectionIcon}>
+                  <Icon icon="lucide:message-square" width={20} height={20} />
+                </div>
+                Additional Information
+              </h2>
+
+              <Form.Group className={styles.formGroup}>
+                <Form.Label>Dietary Preferences</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  value={formData.dietaryPreferences}
+                  onChange={(e) => setFormData({ ...formData, dietaryPreferences: e.target.value })}
+                  className={styles.textArea}
+                  placeholder="e.g., Vegetarian, Vegan, Gluten-free, Allergies..."
+                />
+              </Form.Group>
+
+              <Form.Group className={styles.formGroup}>
+                <Form.Label>Health Conditions or Limitations</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  value={formData.healthConditions}
+                  onChange={(e) => setFormData({ ...formData, healthConditions: e.target.value })}
+                  className={styles.textArea}
+                  placeholder="Please mention any health conditions, injuries, or physical limitations..."
+                />
+              </Form.Group>
+
+              <Form.Group className={styles.formGroup}>
+                <Form.Label>Additional Notes</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={4}
+                  value={formData.additionalNotes}
+                  onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
+                  className={styles.textArea}
+                  placeholder="Any other information that would help us create your perfect plan..."
+                />
+              </Form.Group>
+            </div>
+
+            {/* SUBMIT */}
             <motion.button
               type="submit"
-              className={styles.submitButton}
-              disabled={isSubmitting}
-              whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-              whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={styles.submitBtn}
             >
-              {isSubmitting ? (
-                <>
-                  <Icon icon="lucide:loader-2" width={20} className={styles.spinner} />
-                  Submitting...
-                </>
-              ) : (
-                <>
-                  <Icon icon="lucide:send" width={20} />
-                  Submit Request
-                </>
-              )}
+              <Icon icon="lucide:send" width={20} height={20} />
+              Submit Custom Plan Request
             </motion.button>
-          </div>
-        </motion.form>
-      </div>
-    </section>
+
+            <p className={styles.disclaimer}>
+              Our team will review your request and get back to you within 24 hours with a personalized proposal.
+            </p>
+          </Form>
+        </motion.div>
+      </Container>
+    </div>
   );
 }
-
