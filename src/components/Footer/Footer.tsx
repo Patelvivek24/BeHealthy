@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../../../public/images/logo.png";
-import styles from "./footer.module.scss";
+import styles from "./Footer.module.scss";
 
 // Generate deterministic positions based on index
 // Using toFixed(2) to ensure exact string match between server and client
