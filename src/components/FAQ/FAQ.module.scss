@@ -242,7 +242,7 @@ $dark: #003B46;
    SUPPORT BOX
 ================================ */
 .supportBox {
-  margin-top: 4rem;
+  margin-top: 60px;
   text-align: center;
   backdrop-filter: blur(16px);
   background: linear-gradient(
@@ -252,21 +252,30 @@ $dark: #003B46;
   );
   border: 1px solid rgba($green, 0.2);
   border-radius: 1.5rem;
-  padding: 3rem;
-  max-width: 700px;
+  padding: 20px 40px;
+  // max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.supportButtonsWrapper {
+  display: flex;
 }
 
 .supportTitle {
   font-size: 1.75rem;
   color: $dark;
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
+  text-align: start;
 }
 
 .supportSubtitle {
   color: rgba(51, 51, 51, 0.7);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0px;
 }
 
 /* Buttons */
