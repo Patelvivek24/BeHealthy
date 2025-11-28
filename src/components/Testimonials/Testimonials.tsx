@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import styles from "./testimonials.module.scss";
+import styles from "./Testimonials.module.scss";
 
 const testimonials = [
   {
