@@ -101,9 +101,8 @@ export default function FAQ() {
             >
               <motion.div
                 whileHover={{ scale: 1.01 }}
-                className={`${styles.card} ${
-                  openIndex === index ? styles.cardOpen : ""
-                }`}
+                className={`${styles.card} ${openIndex === index ? styles.cardOpen : ""
+                  }`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -114,9 +113,8 @@ export default function FAQ() {
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className={`${styles.iconCircle} ${
-                      openIndex === index ? styles.iconCircleOpen : ""
-                    }`}
+                    className={`${styles.iconCircle} ${openIndex === index ? styles.iconCircleOpen : ""
+                      }`}
                   >
                     {openIndex === index ? (
                       <Icon icon="lucide:minus" className={styles.iconWhite} />
@@ -157,28 +155,31 @@ export default function FAQ() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
           className={styles.supportBox}
-        >
-          <h3 className={styles.supportTitle}>Still have questions?</h3>
-          <p className={styles.supportSubtitle}>
-            Our support team is here to help you on your wellness journey
-          </p>
+        ><div>
+            <h3 className={styles.supportTitle}>Still have questions?</h3>
+            <p className={styles.supportSubtitle}>
+              Our support team is here to help you on your wellness journey
+            </p>
+          </div>
 
-          <div className={styles.supportButtons}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={styles.buttonPrimary}
-            >
-              Contact Support
-            </motion.button>
+          <div className={styles.supportButtonsWrapper}>
+            <div className={styles.supportButtons}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={styles.buttonPrimary}
+              >
+                Contact Support
+              </motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={styles.buttonOutline}
-            >
-              Schedule a Demo
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={styles.buttonOutline}
+              >
+                Schedule a Demo
+              </motion.button>
+            </div>
           </div>
         </motion.div>
       </div>

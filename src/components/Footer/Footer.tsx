@@ -93,84 +93,244 @@ export default function Footer() {
 
         <Row className={styles.linksRow}>
           {/* Brand */}
-          <Col md={6} lg={3} className={styles.column}>
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Image src={logo} alt="BeHealthy Logo" className={styles.logo} />
+          <Col md={6} lg={4} className={styles.column}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.08, rotate: [0, -3, 3, 0] }}
+                transition={{ duration: 0.3 }}
+                className={styles.logoWrapper}
+              >
+                <Image src={logo} alt="BeHealthy Logo" className={styles.logo} />
+              </motion.div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                className={styles.tagline}
+              >
+                Your complete health companion for a better, healthier lifestyle.
+              </motion.p>
+
+              <motion.div
+                className={styles.socialIcons}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    aria-label={social.icon as string}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + index * 0.1, type: "spring", stiffness: 200 }}
+                    whileHover={{ 
+                      scale: 1.25, 
+                      y: -6,
+                      rotate: 360,
+                      boxShadow: `0 6px 20px ${social.color}50`
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                    className={styles.socialItem}
+                    style={{ '--social-color': social.color } as React.CSSProperties}
+                  >
+                    <Icon icon={social.icon} width={18} height={18} />
+                  </motion.a>
+                ))}
+              </motion.div>
             </motion.div>
-            <p>Your complete health companion for a better, healthier lifestyle.</p>
-
-            <div className={styles.socialIcons}>
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.icon as string}
-                  whileHover={{ scale: 1.2, y: -5 }}
-                  className={styles.socialItem}
-                >
-                  <Icon icon={social.icon} width={20} height={20} />
-                </motion.a>
-              ))}
-            </div>
           </Col>
 
-          {/* Product */}
-          <Col md={6} lg={3} className={styles.column}>
-            <h4>Product</h4>
-            <ul>
-              {["Features", "Pricing", "Testimonials", "FAQ", "Integrations"].map((item) => (
-                <motion.li key={item} whileHover={{ x: 5 }}>
-                  <a href="#">{item}</a>
-                </motion.li>
-              ))}
-            </ul>
-          </Col>
-
-          {/* Company */}
-          <Col md={6} lg={3} className={styles.column}>
-            <h4>Company</h4>
-            <ul>
-              {["About Us", "Careers", "Blog", "Press Kit", "Contact"].map((item) => (
-                <motion.li key={item} whileHover={{ x: 5 }}>
-                  <a href="#">{item}</a>
-                </motion.li>
-              ))}
-            </ul>
+          {/* Quick Links */}
+          <Col md={6} lg={4} className={`${styles.column} ${styles.quickLinksColumn}`}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className={styles.quickLinksWrapper}
+            >
+              <motion.h4
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className={styles.quickLinksTitle}
+              >
+                Quick Links
+              </motion.h4>
+              <ul className={styles.quickLinksList}>
+                {["Help Center", "Community", "Feature requests", "About Us", "Blog"].map((item, index) => (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      delay: 0.2 + index * 0.06, 
+                      duration: 0.4,
+                      ease: "easeOut"
+                    }}
+                    className={styles.quickLinkItem}
+                  >
+                    <motion.a
+                      href="#"
+                      className={styles.quickLinkText}
+                      whileHover={{ 
+                        x: 4,
+                        color: "#8DC63F"
+                      }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item}
+                    </motion.a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
           </Col>
 
           {/* Contact */}
-          <Col md={6} lg={3} className={styles.column}>
-            <h4>Contact Us</h4>
-            <ul className={styles.contactList}>
-              <motion.li whileHover={{ x: 5 }}>
-                <Icon icon="lucide:mail" width={18} height={18} className={styles.iconGreen} />
-                <span>support@behealthy.com</span>
-              </motion.li>
-              <motion.li whileHover={{ x: 5 }}>
-                <Icon icon="lucide:phone" width={18} height={18} className={styles.iconGreen} />
-                <span>+1 (555) 123-4567</span>
-              </motion.li>
-              <motion.li whileHover={{ x: 5 }}>
-                <Icon icon="lucide:map-pin" width={18} height={18} className={styles.iconGreen} />
-                <span>
-                  123 Wellness Street<br />San Francisco, CA 94102
-                </span>
-              </motion.li>
-            </ul>
+          <Col md={6} lg={4} className={`${styles.column} ${styles.contactColumn}`}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className={styles.contactWrapper}
+            >
+              <motion.h4
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className={styles.contactTitle}
+              >
+                Contact Us
+              </motion.h4>
+              <ul className={styles.contactList}>
+                {[
+                  { icon: "lucide:mail", text: "support@behealthy.com", href: "mailto:support@behealthy.com" },
+                  { icon: "lucide:phone", text: "+1 (555) 123-4567", href: "tel:+15551234567" },
+                  { icon: "lucide:map-pin", text: "123 Wellness Street, San Francisco, CA 94102", href: "https://www.google.com/maps/place/123+Wellness+Street,+San+Francisco,+CA+94102" }
+                ].map((contact, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      delay: 0.2 + index * 0.06, 
+                      duration: 0.4,
+                      ease: "easeOut"
+                    }}
+                    className={styles.contactItem}
+                  >
+                    <motion.a
+                      href={contact.href}
+                      className={styles.contactLink}
+                      whileHover={{ 
+                        x: 4,
+                        color: "#8DC63F"
+                      }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {contact.text.split('\n').map((line, i) => (
+                        <span key={i}>{line}{i < contact.text.split('\n').length - 1 && <br />}</span>
+                      ))}
+                    </motion.a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
           </Col>
         </Row>
 
         {/* Bottom Bar */}
-        <div className={styles.bottomBar}>
-          <p>
-            © 2025 BeHealthy. Made with <Icon icon="lucide:heart" width={14} height={14} className={styles.iconGreen} /> for your wellness
-          </p>
-          <div className={styles.bottomLinks}>
-            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
-              <a key={item} href="#">{item}</a>
-            ))}
-          </div>
-        </div>
+        <motion.div
+          className={styles.bottomBar}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <motion.p
+            className={styles.copyright}
+            whileHover={{ scale: 1.02 }}
+          >
+            © 2025 BeHealthy. Made with{" "}
+            <motion.span
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
+              className={styles.heartIcon}
+            >
+              <Icon icon="lucide:heart" width={14} height={14} className={styles.iconGreen} />
+            </motion.span>{" "}
+            for your wellness
+          </motion.p>
+          <motion.div
+            className={styles.bottomLinks}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <motion.a
+              href="/privacy-policy"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.4 }}
+              whileHover={{ 
+                scale: 1.1,
+                y: -2,
+                color: "#8DC63F"
+              }}
+              className={styles.bottomLink}
+            >
+              Privacy Policy
+            </motion.a>
+            <motion.a
+              href="/terms-of-service"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.4 }}
+              whileHover={{ 
+                scale: 1.1,
+                y: -2,
+                color: "#8DC63F"
+              }}
+              className={styles.bottomLink}
+            >
+              Terms of Service
+            </motion.a>
+            <motion.a
+              href="/cookie-policy"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7, duration: 0.4 }}
+              whileHover={{ 
+                scale: 1.1,
+                y: -2,
+                color: "#8DC63F"
+              }}
+              className={styles.bottomLink}
+            >
+              Cookie Policy
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </Container>
 
       {/* Scroll To Top */}
