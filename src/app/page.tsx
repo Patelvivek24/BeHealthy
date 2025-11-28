@@ -10,6 +10,7 @@ import Gamification from '@/components/Gamification';
 import Pricing from '@/components/Pricing';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
+import AppDownload from '@/components/AppDownload';
 import styles from './page.module.scss';
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <Pricing />
       <Testimonials />
       <FAQ />
+      <AppDownload />
       <Footer />
     </div>
   );
