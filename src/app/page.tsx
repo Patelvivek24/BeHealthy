@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import ProductOverview from '@/components/ProductOverview';
 import Features from '@/components/Features';
+import Statistics from '@/components/Statistics';
 import MedicalAI from '@/components/MedicalAI';
 import Gamification from '@/components/Gamification';
 import Pricing from '@/components/Pricing';
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <ProductOverview />
       <Features />
+      <Statistics />
       <MedicalAI />
       <Gamification />
       <Pricing />
