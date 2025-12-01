@@ -1,16 +1,25 @@
+'use client';
+
 import { motion } from "framer-motion";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Icon } from "@iconify/react";
+import { useRouter } from "next/navigation";
 import styles from "./Hero.module.scss";
 
 export default function Hero() {
+  const router = useRouter();
+  
   const features = [
-    { icon: "lucide:activity", label: "Personalized Plans", value: "AI-Powered", color: "#8DC63F" },
-    { icon: "lucide:heart", label: "Health Tracking", value: "Real-time", color: "#2EB5AC" },
-    { icon: "lucide:trending-up", label: "Progress Analytics", value: "Advanced", color: "#1E5AA8" },
-    { icon: "lucide:shield", label: "Medical Analysis", value: "AI Reports", color: "#8DC63F" }
+    { icon: "hugeicons:ai-dna", label: "Personalized Plans", value: "AI-Powered", color: "#1E5AA8", path: "/ai-powered-plans" },
+    { icon: "mage:heart-health", label: "Health Tracking", value: "Real-time", color: "#1E5AA8", path: "/health-tracking" },
+    { icon: "carbon:analytics", label: "Progress Analytics", value: "Advanced", color: "#1E5AA8", path: "/progress-analytics" },
+    { icon: "si:ai-note-duotone", label: "Medical Analysis", value: "AI Reports", color: "#1E5AA8", path: "/ai-reports" }
   ];
+
+  const handleCardClick = (path: string) => {
+    router.push(path);
+  };
 
   return (
     <section className={styles.heroSection}>
@@ -94,6 +103,7 @@ export default function Hero() {
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -10, scale: 1.05 }}
                 className={styles.featureCard}
+                onClick={() => handleCardClick(f.path)}
               >
                 <div className={styles.featureIconWrapper}>
                   <Icon icon={f.icon} className={styles.featureIcon} style={{ color: f.color }} />
