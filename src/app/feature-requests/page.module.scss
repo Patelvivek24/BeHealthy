@@ -1,0 +1,444 @@
+@use '../_variables' as *;
+
+.featureRequestsPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #F9FBFD 0%, #ffffff 100%);
+}
+
+.contentWrapper {
+  flex: 1;
+  padding: 140px 0 80px;
+  background: linear-gradient(135deg, #F9FBFD 0%, #ffffff 100%);
+
+  @media (max-width: 768px) {
+    padding: 120px 0 60px;
+  }
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 20px;
+
+  .subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: rgba(0, 59, 70, 0.7);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    background: rgba(141, 198, 63, 0.1);
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--deep-petrol);
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, var(--deep-petrol) 0%, var(--trust-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: rgba(0, 59, 70, 0.7);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Form Section */
+.formSection {
+  margin-bottom: 3rem;
+  padding: 0 20px;
+}
+
+.submitButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, var(--vitality-green) 0%, var(--wellness-teal) 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(141, 198, 63, 0.3);
+
+  &:hover {
+    box-shadow: 0 6px 24px rgba(141, 198, 63, 0.4);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.form {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 59, 70, 0.1);
+  border: 1px solid rgba(0, 59, 70, 0.1);
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--deep-petrol);
+    margin: 0;
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    color: rgba(0, 59, 70, 0.6);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: rgba(0, 59, 70, 0.1);
+      color: var(--deep-petrol);
+    }
+  }
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--deep-petrol);
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: #F9FBFD;
+    border: 1px solid rgba(0, 59, 70, 0.15);
+    border-radius: 12px;
+    color: var(--deep-petrol);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba(0, 59, 70, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--vitality-green);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(141, 198, 63, 0.1);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .charCount {
+    display: block;
+    text-align: right;
+    font-size: 0.8rem;
+    color: rgba(0, 59, 70, 0.5);
+    margin-top: 0.5rem;
+  }
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.cancelButton {
+  padding: 0.875rem 1.5rem;
+  background: white;
+  border: 1px solid rgba(0, 59, 70, 0.2);
+  border-radius: 12px;
+  color: var(--deep-petrol);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--deep-petrol);
+    background: rgba(0, 59, 70, 0.05);
+  }
+}
+
+.submitFormButton {
+  padding: 0.875rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 20px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--deep-petrol);
+    white-space: nowrap;
+  }
+
+  .filterButtons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    background: white;
+    border: 1px solid rgba(0, 59, 70, 0.15);
+    border-radius: 12px;
+    color: var(--deep-petrol);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &:hover {
+      border-color: var(--vitality-green);
+      background: rgba(141, 198, 63, 0.05);
+    }
+
+    &.active {
+      background: linear-gradient(135deg, var(--vitality-green) 0%, var(--wellness-teal) 100%);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 2px 8px rgba(141, 198, 63, 0.3);
+    }
+  }
+}
+
+/* Requests List */
+.requestsList {
+  padding: 0 20px;
+}
+
+.requestCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 59, 70, 0.08);
+  border: 1px solid rgba(0, 59, 70, 0.1);
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  &:hover {
+    border-color: rgba(141, 198, 63, 0.3);
+  }
+}
+
+.cardHeader {
+  margin-bottom: 1rem;
+}
+
+.cardTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+
+  .cardTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--deep-petrol);
+    margin: 0;
+    flex: 1;
+    line-height: 1.3;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  .statusBadge {
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid;
+  }
+}
+
+.cardDate {
+  font-size: 0.85rem;
+  color: rgba(0, 59, 70, 0.6);
+  margin: 0;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: rgba(0, 59, 70, 0.7);
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 59, 70, 0.1);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.upvoteButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(0, 59, 70, 0.05);
+  border: 1px solid rgba(0, 59, 70, 0.15);
+  border-radius: 12px;
+  color: var(--deep-petrol);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  span {
+    font-weight: 600;
+  }
+
+  &:hover {
+    background: rgba(141, 198, 63, 0.1);
+    border-color: var(--vitality-green);
+    color: var(--vitality-green);
+  }
+
+  &.upvoted {
+    background: linear-gradient(135deg, rgba(141, 198, 63, 0.15) 0%, rgba(46, 181, 172, 0.15) 100%);
+    border-color: var(--vitality-green);
+    color: var(--vitality-green);
+
+    .upvotedLabel {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-left: 0.25rem;
+    }
+  }
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(0, 59, 70, 0.6);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: rgba(0, 59, 70, 0.6);
+
+  svg {
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--deep-petrol);
+    margin: 0 0 0.5rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
