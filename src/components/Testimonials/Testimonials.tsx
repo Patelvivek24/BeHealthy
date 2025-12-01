@@ -35,13 +35,6 @@ const testimonials = [
   },
 ];
 
-const stats = [
-  { value: "50K+", label: "Active Users", color: "#8DC63F" },
-  { value: "1M+", label: "Workouts Completed", color: "#2EB5AC" },
-  { value: "100K+", label: "Reports Analyzed", color: "#1E5AA8" },
-  { value: "4.8★", label: "Average Rating", color: "#8DC63F" },
-];
-
 export default function Testimonials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -123,36 +116,6 @@ export default function Testimonials() {
             </Col>
           ))}
         </Row>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className={styles.statsSection}
-        >
-          <Row className="g-4">
-            {stats.map((s, index) => (
-              <Col xs={6} md={3} key={index}>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className={styles.statCard}
-                >
-                  <div
-                    className={styles.statValue}
-                    style={{ color: s.color }}
-                  >
-                    {s.value}
-                  </div>
-                  <div className={styles.statLabel}>{s.label}</div>
-                </motion.div>
-              </Col>
-            ))}
-          </Row>
-        </motion.div>
       </Container>
     </section>
   );

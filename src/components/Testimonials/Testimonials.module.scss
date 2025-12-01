@@ -177,31 +177,3 @@
   color: rgba(51, 51, 51, 0.7);
 }
 
-/* Stats */
-.statsSection {
-  border-top: 1px solid #eee;
-  padding-top: 60px;
-  margin-top: 40px;
-}
-
-.statCard {
-  text-align: center;
-  padding: 26px;
-  background: linear-gradient(to bottom right, #fff, #f9fbfd);
-  border-radius: 20px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  }
-}
-
-.statValue {
-  font-size: 36px;
-  margin-bottom: 8px;
-}
-
-.statLabel {
-  font-size: 16px;
-  color: rgba(51, 51, 51, 0.7);
-}
