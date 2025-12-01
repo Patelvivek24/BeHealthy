@@ -29,7 +29,7 @@ export default function Header() {
             <Nav.Link href="#features" className={styles.navLink}>Features</Nav.Link>
             <Nav.Link href="#pricing" className={styles.navLink}>Pricing</Nav.Link>
             <Nav.Link href="/feature-requests" className={styles.navLink} as={Link}>Feature requests</Nav.Link>
-            <Nav.Link href="#blog" className={styles.navLink}>Blog</Nav.Link>
+            <Nav.Link href="/blog" className={styles.navLink} as={Link}>Blog</Nav.Link>
             <Button variant="primary" className={styles.navCTA}>Get Started Free</Button>
           </Nav>
         </Navbar.Collapse>
