@@ -1,0 +1,506 @@
+@use '../_variables' as *;
+
+.contactUsPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #F9FBFD 0%, #ffffff 100%);
+}
+
+.contentWrapper {
+  flex: 1;
+  padding-top: 100px;
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, rgba(0, 59, 70, 0.03) 0%, rgba(46, 181, 172, 0.05) 100%);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(141, 198, 63, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(46, 181, 172, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}
+
+.heroContent {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(141, 198, 63, 0.1);
+  border: 1px solid rgba(141, 198, 63, 0.2);
+  border-radius: 50px;
+  color: $vitality-green;
+  font-size: 0.9rem;
+  font-weight: $font-weight-medium;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+  background: linear-gradient(135deg, $deep-petrol 0%, $trust-blue 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.heroDescription {
+  font-size: 1.15rem;
+  color: $text-light;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+/* Contact Methods Section */
+.contactMethodsSection {
+  padding: 60px 0;
+  background: white;
+}
+
+.contactMethodCard {
+  background: white;
+  border-radius: $border-radius-md;
+  padding: 2rem;
+  border: 1px solid rgba(0, 59, 70, 0.1);
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: rgba(141, 198, 63, 0.3);
+  }
+}
+
+.methodIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: $border-radius-sm;
+  background: rgba(141, 198, 63, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: var(--method-color);
+  transition: $transition-base;
+}
+
+.contactMethodCard:hover .methodIcon {
+  background: var(--method-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.methodTitle {
+  font-size: 1.25rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  margin: 0 0 0.5rem;
+}
+
+.methodDescription {
+  font-size: 0.9rem;
+  color: $text-light;
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.methodValue {
+  display: block;
+  font-size: 0.95rem;
+  color: $vitality-green;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: $transition-base;
+  word-break: break-word;
+
+  &:hover {
+    color: $wellness-teal;
+    text-decoration: underline;
+  }
+}
+
+/* Form Section */
+.formSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(0, 59, 70, 0.02) 0%, rgba(46, 181, 172, 0.03) 100%);
+}
+
+.formCard {
+  background: white;
+  border-radius: $border-radius-lg;
+  padding: 3rem;
+  box-shadow: $shadow-md;
+  border: 1px solid rgba(0, 59, 70, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.formHeader {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 59, 70, 0.1);
+}
+
+.formTitle {
+  font-size: 2rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  margin: 0 0 0.75rem;
+  background: linear-gradient(135deg, $deep-petrol 0%, $trust-blue 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+.formSubtitle {
+  font-size: 1rem;
+  color: $text-light;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contactForm {
+  margin-top: 1rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: $font-weight-semibold;
+  color: $deep-petrol;
+  margin-bottom: 0.5rem;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid rgba(0, 59, 70, 0.1);
+  border-radius: $border-radius-sm;
+  font-size: 1rem;
+  color: $deep-petrol;
+  background: white;
+  transition: $transition-base;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+    border-color: $vitality-green;
+    box-shadow: 0 0 0 3px rgba(141, 198, 63, 0.1);
+  }
+
+  &::placeholder {
+    color: $text-light;
+  }
+}
+
+.inputError {
+  border-color: #e74c3c !important;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1) !important;
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.charCount {
+  font-size: 0.85rem;
+  color: $text-light;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.errorMessage {
+  display: block;
+  font-size: 0.85rem;
+  color: #e74c3c;
+  margin-top: 0.5rem;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, $vitality-green 0%, $wellness-teal 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: $shadow-button;
+  transition: $transition-base;
+  margin-top: 1rem;
+
+  &:hover:not(:disabled) {
+    box-shadow: $shadow-button-hover;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.successMessage {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(141, 198, 63, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: $vitality-green;
+}
+
+.successMessage h3 {
+  font-size: 1.75rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  margin: 0 0 0.75rem;
+}
+
+.successMessage p {
+  font-size: 1rem;
+  color: $text-light;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Info Card */
+.infoCard {
+  background: white;
+  border-radius: $border-radius-lg;
+  padding: 2.5rem;
+  box-shadow: $shadow-md;
+  border: 1px solid rgba(0, 59, 70, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+
+  @media (max-width: 991px) {
+    position: relative;
+    top: 0;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  margin: 0 0 1.5rem;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 59, 70, 0.05);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    svg {
+      color: $vitality-green;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+
+    span {
+      font-size: 0.95rem;
+      color: $text-light;
+      line-height: 1.6;
+    }
+  }
+}
+
+.responseTime {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(141, 198, 63, 0.1) 0%, rgba(46, 181, 172, 0.1) 100%);
+  border-radius: $border-radius-sm;
+  margin-bottom: 2rem;
+
+  svg {
+    color: $vitality-green;
+    flex-shrink: 0;
+  }
+
+  strong {
+    display: block;
+    font-size: 0.95rem;
+    color: $deep-petrol;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: $text-light;
+    margin: 0;
+  }
+}
+
+.socialSection {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 59, 70, 0.1);
+}
+
+.socialTitle {
+  font-size: 1.1rem;
+  font-weight: $font-weight-semibold;
+  color: $deep-petrol;
+  margin: 0 0 1rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socialLink {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 59, 70, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--social-color);
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover {
+    background: var(--social-color);
+    color: white;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding-top: 80px;
+  }
+
+  .heroSection {
+    padding: 60px 0 40px;
+  }
+
+  .contactMethodsSection {
+    padding: 40px 0;
+  }
+
+  .formSection {
+    padding: 60px 0;
+  }
+
+  .contactMethodCard {
+    padding: 1.5rem;
+  }
+}
+

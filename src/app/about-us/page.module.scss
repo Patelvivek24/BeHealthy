@@ -1,0 +1,545 @@
+@use '../_variables' as *;
+
+.aboutPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #F9FBFD 0%, #ffffff 100%);
+}
+
+.contentWrapper {
+  flex: 1;
+  padding-top: 100px;
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, rgba(0, 59, 70, 0.03) 0%, rgba(46, 181, 172, 0.05) 100%);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(141, 198, 63, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(46, 181, 172, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}
+
+.heroContent {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(141, 198, 63, 0.1);
+  border: 1px solid rgba(141, 198, 63, 0.2);
+  border-radius: 50px;
+  color: $vitality-green;
+  font-size: 0.9rem;
+  font-weight: $font-weight-medium;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+  background: linear-gradient(135deg, $deep-petrol 0%, $trust-blue 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.heroDescription {
+  font-size: 1.15rem;
+  color: $text-light;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+/* Mission & Vision Section */
+.missionSection {
+  padding: 80px 0;
+  background: white;
+}
+
+.missionCard,
+.visionCard {
+  background: white;
+  border-radius: $border-radius-md;
+  padding: 2.5rem;
+  height: 100%;
+  border: 1px solid rgba(0, 59, 70, 0.1);
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    border-color: rgba(141, 198, 63, 0.3);
+    transform: translateY(-4px);
+  }
+}
+
+.missionCard {
+  .cardIcon {
+    color: $vitality-green;
+  }
+}
+
+.visionCard {
+  .cardIcon {
+    color: $wellness-teal;
+  }
+}
+
+.cardIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: $border-radius-sm;
+  background: rgba(141, 198, 63, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.75rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  margin: 0 0 1rem;
+}
+
+.cardText {
+  font-size: 1rem;
+  color: $text-light;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Stats Section */
+.statsSection {
+  padding: 60px 0;
+  background: linear-gradient(135deg, rgba(0, 59, 70, 0.02) 0%, rgba(46, 181, 172, 0.03) 100%);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.statCard {
+  background: white;
+  border-radius: $border-radius-md;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(0, 59, 70, 0.1);
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+  cursor: default;
+}
+
+.statIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: $border-radius-sm;
+  background: linear-gradient(135deg, rgba(141, 198, 63, 0.1) 0%, rgba(46, 181, 172, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: $vitality-green;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, $vitality-green 0%, $wellness-teal 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: 0.95rem;
+  color: $text-light;
+  margin: 0;
+  font-weight: $font-weight-medium;
+}
+
+/* Story Section */
+.storySection {
+  padding: 80px 0;
+  background: white;
+}
+
+.storyContent {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  text-align: center;
+  margin: 0 0 1rem;
+  background: linear-gradient(135deg, $deep-petrol 0%, $trust-blue 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.storyText {
+  font-size: 1.05rem;
+  color: $text-light;
+  line-height: 1.9;
+  margin: 0 0 1.5rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+/* Timeline */
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, $vitality-green, $wellness-teal);
+    transform: translateX(-50%);
+
+    @media (max-width: 768px) {
+      left: 20px;
+    }
+  }
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+
+  &:nth-child(odd) {
+    flex-direction: row;
+
+    @media (max-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    @media (max-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-left: 3rem;
+  }
+}
+
+.timelineYear {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $vitality-green 0%, $wellness-teal 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: $font-weight-bold;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 16px rgba(141, 198, 63, 0.3);
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.timelineContent {
+  flex: 1;
+  background: white;
+  border-radius: $border-radius-md;
+  padding: 2rem;
+  margin: 0 2rem;
+  border: 1px solid rgba(0, 59, 70, 0.1);
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    border-color: rgba(141, 198, 63, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+    margin-left: 1rem;
+  }
+}
+
+.timelineTitle {
+  font-size: 1.5rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  margin: 0 0 0.75rem;
+}
+
+.timelineDescription {
+  font-size: 1rem;
+  color: $text-light;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Values Section */
+.valuesSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(0, 59, 70, 0.02) 0%, rgba(46, 181, 172, 0.03) 100%);
+}
+
+.valuesHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 20px;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: $text-light;
+  margin: 0.5rem 0 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.valueCard {
+  background: white;
+  border-radius: $border-radius-md;
+  padding: 2rem;
+  border: 1px solid rgba(0, 59, 70, 0.1);
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+  text-align: center;
+}
+
+.valueIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: $border-radius-sm;
+  background: linear-gradient(135deg, rgba(141, 198, 63, 0.1) 0%, rgba(46, 181, 172, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: $vitality-green;
+}
+
+.valueTitle {
+  font-size: 1.35rem;
+  font-weight: $font-weight-bold;
+  color: $deep-petrol;
+  margin: 0 0 1rem;
+}
+
+.valueDescription {
+  font-size: 0.95rem;
+  color: $text-light;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 80px 0;
+  background: white;
+}
+
+.ctaCard {
+  background: linear-gradient(135deg, rgba(0, 59, 70, 0.95) 0%, rgba(30, 90, 168, 0.95) 65%, rgba(46, 181, 172, 0.95) 100%);
+  border-radius: $border-radius-lg;
+  padding: 4rem 3rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(141, 198, 63, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 2rem;
+  }
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  font-weight: $font-weight-bold;
+  margin: 0 0 1rem;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.ctaText {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin: 0 0 2rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, $vitality-green 0%, $wellness-teal 100%);
+  color: white;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  box-shadow: $shadow-button;
+  transition: $transition-base;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    box-shadow: $shadow-button-hover;
+    color: white;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding-top: 80px;
+  }
+
+  .heroSection {
+    padding: 60px 0 40px;
+  }
+
+  .missionSection,
+  .storySection,
+  .valuesSection,
+  .ctaSection {
+    padding: 60px 0;
+  }
+
+  .missionCard,
+  .visionCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .timelineContent {
+    padding: 1.5rem;
+  }
+}
+

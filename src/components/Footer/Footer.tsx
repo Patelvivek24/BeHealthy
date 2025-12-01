@@ -169,7 +169,7 @@ export default function Footer() {
                 Quick Links
               </motion.h4>
               <ul className={styles.quickLinksList}>
-                {["Help Center", "Community", "Feature requests", "About Us", "Blog"].map((item, index) => (
+                {["Help Center", "Community", "Feature requests", "About Us", "Blog", "Contact Us"].map((item, index) => (
                   <motion.li
                     key={item}
                     initial={{ opacity: 0, x: -15 }}
@@ -183,7 +183,7 @@ export default function Footer() {
                     className={styles.quickLinkItem}
                   >
                     <motion.a
-                      href="#"
+                      href={item === "Blog" ? "/blog" : item === "About Us" ? "/about-us" : item === "Feature requests" ? "/feature-requests" : item === "Community" ? "/community" : item === "Help Center" ? "/help-center" : item === "Contact Us" ? "/contact-us" : "#"}
                       className={styles.quickLinkText}
                       whileHover={{ 
                         x: 4,
@@ -244,9 +244,12 @@ export default function Footer() {
                       }}
                       transition={{ duration: 0.2 }}
                     >
-                      {contact.text.split('\n').map((line, i) => (
-                        <span key={i}>{line}{i < contact.text.split('\n').length - 1 && <br />}</span>
-                      ))}
+                      <Icon icon={contact.icon} width={18} height={18} className={styles.contactIcon} />
+                      <span className={styles.contactText}>
+                        {contact.text.split('\n').map((line, i) => (
+                          <span key={i}>{line}{i < contact.text.split('\n').length - 1 && <br />}</span>
+                        ))}
+                      </span>
                     </motion.a>
                   </motion.li>
                 ))}
