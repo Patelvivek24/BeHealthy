@@ -49,11 +49,9 @@
   gap: 8px;
   padding: 8px 18px;
   border-radius: 50px;
-  background: linear-gradient(
-    to right,
-    rgba(141, 198, 63, 0.1),
-    rgba(46, 181, 172, 0.1)
-  );
+  background: linear-gradient(to right,
+      rgba(141, 198, 63, 0.1),
+      rgba(46, 181, 172, 0.1));
   border: 1px solid rgba(141, 198, 63, 0.2);
   margin-bottom: 20px;
 
@@ -93,12 +91,10 @@
   inset: -8px;
   border-radius: 24px;
   opacity: 0;
-  background: linear-gradient(
-    to bottom right,
-    #8dc63f,
-    #2eb5ac,
-    #1e5aa8
-  );
+  background: linear-gradient(to bottom right,
+      #8dc63f,
+      #2eb5ac,
+      #1e5aa8);
   transition: opacity 0.3s ease;
   filter: blur(12px);
   z-index: 0;
@@ -154,6 +150,14 @@
   color: rgba(51, 51, 51, 0.8);
   line-height: 1.6;
   margin-bottom: 28px;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 90px;
+  font-size: 14px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .profile {
@@ -268,11 +272,11 @@
   }
 
   /* Hide any nested elements that might create duplicates */
-  > * {
+  >* {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     &::before,
     &::after {
       display: none !important;
@@ -379,4 +383,3 @@
     right: -20px;
   }
 }
-
