@@ -84,11 +84,13 @@
 /* Cards */
 .cardWrapper {
   position: relative;
+  overflow: visible;
+  height: 100%;
 }
 
 .cardGlow {
   position: absolute;
-  inset: -3px;
+  inset: -8px;
   border-radius: 24px;
   opacity: 0;
   background: linear-gradient(
@@ -98,7 +100,9 @@
     #1e5aa8
   );
   transition: opacity 0.3s ease;
-  filter: blur(8px);
+  filter: blur(12px);
+  z-index: 0;
+  pointer-events: none;
 
   .cardWrapper:hover & {
     opacity: 1;
@@ -112,6 +116,7 @@
   background: linear-gradient(to bottom right, #fff, #f9fbfd);
   border: 1px solid #eee;
   transition: all 0.3s ease;
+  z-index: 1;
 
   &:hover {
     border-color: transparent;
@@ -175,5 +180,203 @@
 .role {
   font-size: 14px;
   color: rgba(51, 51, 51, 0.7);
+}
+
+/* Slider Styles */
+.sliderWrapper {
+  position: relative;
+  padding: 0 50px;
+  margin-bottom: 40px;
+  overflow: visible;
+}
+
+.slider {
+  overflow: visible !important;
+
+  :global(.slick-list) {
+    overflow: visible !important;
+    padding: 8px 0 !important;
+  }
+
+  :global(.slick-track) {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .slideItem {
+    padding: 0 15px;
+    outline: none;
+    overflow: visible;
+    height: auto;
+  }
+}
+
+/* Hide default slick arrows completely */
+.slider :global(.slick-prev),
+.slider :global(.slick-next),
+.slider :global(.slick-prev:before),
+.slider :global(.slick-next:before) {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Custom Arrow Styles */
+.customArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to right, #8dc63f, #2eb5ac);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(141, 198, 63, 0.3);
+  padding: 0;
+  margin: 0;
+
+  /* Remove any pseudo-elements that might create duplicates */
+  &::before,
+  &::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(141, 198, 63, 0.4);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  /* Ensure only one icon/SVG is visible */
+  svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide any nested elements that might create duplicates */
+  > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &::before,
+    &::after {
+      display: none !important;
+      content: none !important;
+    }
+  }
+}
+
+.prevArrow {
+  left: -25px !important;
+
+  svg {
+    margin-left: -2px;
+  }
+}
+
+.nextArrow {
+  right: -25px !important;
+
+  svg {
+    margin-right: -2px;
+  }
+}
+
+.customArrow:global(.slick-disabled),
+.slider :global(.slick-arrow.slick-disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  &:hover {
+    transform: translateY(-50%);
+  }
+}
+
+/* Custom Dot Styles */
+.slider :global(.slick-dots) {
+  bottom: -50px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  li {
+    width: auto;
+    height: auto;
+    margin: 0;
+
+    button {
+      width: 12px;
+      height: 12px;
+      padding: 0;
+      border-radius: 50%;
+      background: rgba(141, 198, 63, 0.3);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:before {
+        content: "";
+        display: none;
+      }
+
+      &:hover {
+        background: rgba(141, 198, 63, 0.6);
+        transform: scale(1.2);
+      }
+    }
+
+    &.slick-active button {
+      background: linear-gradient(to right, #8dc63f, #2eb5ac);
+      width: 32px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(141, 198, 63, 0.4);
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sliderWrapper {
+    padding: 0 40px;
+    overflow: visible;
+  }
+
+  .slider {
+    overflow: visible !important;
+  }
+
+  .slider :global(.slick-arrow) {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .slider :global(.slick-prev) {
+    left: -20px;
+  }
+
+  .slider :global(.slick-next) {
+    right: -20px;
+  }
 }
 
