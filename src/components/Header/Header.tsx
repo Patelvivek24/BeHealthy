@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import Button from '@/components/Button';
@@ -8,11 +9,35 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get the hero section height (100vh)
+      const heroHeight = window.innerHeight;
+      const scrollPosition = window.scrollY;
+      
+      // Check if scrolled past the hero banner
+      setIsScrolled(scrollPosition > heroHeight);
+    };
+
+    // Initial check
+    handleScroll();
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <Navbar 
       fixed="top" 
       expand="lg" 
-      className={styles.navbar}
+      className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
     >
       <Container>
         <Navbar.Brand className={styles.logoContainer} as={Link} href="/">

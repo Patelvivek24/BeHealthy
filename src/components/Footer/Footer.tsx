@@ -29,10 +29,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { icon: "lucide:facebook", href: "#", color: "#1877F2" },
-    { icon: "lucide:twitter", href: "#", color: "#1DA1F2" },
-    { icon: "lucide:instagram", href: "#", color: "#E4405F" },
-    { icon: "lucide:linkedin", href: "#", color: "#0A66C2" }
+    { icon: "lucide:facebook", href: "#", color: "linear-gradient(90deg,#8DC63F,#2EB5AC)" },
+    { icon: "lucide:twitter", href: "#", color: "linear-gradient(90deg,#8DC63F,#2EB5AC)" },
+    { icon: "lucide:instagram", href: "#", color: "linear-gradient(90deg,#8DC63F,#2EB5AC)" },
+    { icon: "lucide:linkedin", href: "#", color: "linear-gradient(90deg,#8DC63F,#2EB5AC)" }
   ];
 
   return (
