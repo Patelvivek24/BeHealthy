@@ -103,7 +103,7 @@ export default function AppDownload() {
                   {/* Headline */}
                   <motion.h1
                     variants={itemVariants}
-                    className={styles.headline}
+                    className="title"
                   >
                     Start Your Disc Golf Journey Today
                   </motion.h1>
@@ -111,7 +111,7 @@ export default function AppDownload() {
                   {/* Description */}
                   <motion.p
                     variants={itemVariants}
-                    className={styles.description}
+                    className="description"
                   >
                     Join thousands of players already discovering new courses, tracking scores, and connecting with the community. Download the app now and take your game to the next level.
                   </motion.p>

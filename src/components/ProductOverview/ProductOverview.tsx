@@ -42,7 +42,7 @@ export default function ProductOverview({ onTagClick }: ProductOverviewProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className={styles.title}
+            className="title"
           >
             Your Complete Health Companion
           </motion.h2>
@@ -52,7 +52,7 @@ export default function ProductOverview({ onTagClick }: ProductOverviewProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className={styles.description}
+            className="description"
           >
             BeHealthy is an all-in-one platform that helps users build and maintain
             a healthier lifestyle through personalized diet plans, guided workouts,

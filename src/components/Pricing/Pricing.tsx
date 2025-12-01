@@ -96,7 +96,7 @@ export default function Pricing() {
             <span>Flexible Pricing</span>
           </div>
 
-          <h2 className={styles.title}>Choose Your Path to Wellness</h2>
+          <h2 className="title">Choose Your Path to Wellness</h2>
 
           <p className={styles.subtitle}>
             Flexible plans designed to fit your health goals and budget

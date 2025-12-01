@@ -84,7 +84,7 @@ export default function FAQ() {
               <span>Got Questions?</span>
             </div>
 
-            <h2 className={styles.title}>Frequently Asked Questions</h2>
+            <h2 className="title">Frequently Asked Questions</h2>
             <p className={styles.subtitle}>
               Everything you need to know about BeHealthy and your wellness
               journey

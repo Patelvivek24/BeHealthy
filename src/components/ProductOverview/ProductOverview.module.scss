@@ -50,6 +50,12 @@
   background: linear-gradient(to right, rgba(#8DC63F, 0.1), rgba(#2EB5AC, 0.1));
   border: 1px solid rgba(#8DC63F, 0.2);
   margin-bottom: 24px;
+
+  span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #003B46;
+  }
 }
 
 .badgeDot {
@@ -64,31 +70,6 @@
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.5); opacity: 0.6; }
   100% { transform: scale(1); opacity: 1; }
-}
-
-/* Title */
-.title {
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 30px;
-  background: linear-gradient(to right, #003B46, #1E5AA8);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  @media (min-width: 768px) {
-    font-size: 56px;
-  }
-}
-
-/* Description */
-.description {
-  font-size: 18px;
-  font-weight: 400;
-  color: rgba(51, 51, 51, 0.8);
-  line-height: 1.8;
-  margin-bottom: 40px;
 }
 
 /* Tags */

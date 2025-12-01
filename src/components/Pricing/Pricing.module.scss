@@ -72,13 +72,6 @@ HEADER SECTION
   color: var(--deep-petrol);
 }
 
-.title {
-  font-size: 46px;
-  font-weight: 700;
-  color: var(--deep-petrol);
-  margin-bottom: 10px;
-}
-
 .subtitle {
   font-size: 20px;
   max-width: 700px;
@@ -351,10 +344,6 @@ CUSTOM PLAN CARD
 RESPONSIVE TYPOGRAPHY
 ============================================ */
 @media (max-width: 768px) {
-  .title {
-    font-size: 34px;
-  }
-
   .price {
     font-size: 38px;
   }

@@ -156,7 +156,7 @@ export default function BlogPage() {
             className={styles.header}
           >
             <p className={styles.subtitle}>Here&apos;s the Latest in Health &amp; Wellness 2025</p>
-            <h1 className={styles.title}>Together, Realize the Promise of Better Health</h1>
+            <h1 className="title">Together, Realize the Promise of Better Health</h1>
           </motion.div>
 
           {/* Search and Filter Bar */}
