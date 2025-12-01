@@ -213,7 +213,7 @@ export default function FeatureRequestsPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className={styles.title}
+              className="title"
             >
               Feature Requests
             </motion.h1>
@@ -221,7 +221,7 @@ export default function FeatureRequestsPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className={styles.description}
+              className="description"
             >
               Help us improve BeHealthy by sharing your ideas. Vote on features you&apos;d like to see, 
               and we&apos;ll prioritize the most requested ones.

@@ -37,33 +37,6 @@
     border-radius: 20px;
   }
 
-  .title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--deep-petrol);
-    line-height: 1.2;
-    margin: 0 0 1rem 0;
-    background: linear-gradient(135deg, var(--deep-petrol) 0%, var(--trust-blue) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
-  }
-
-  .description {
-    font-size: 1.1rem;
-    color: rgba(0, 59, 70, 0.7);
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
-  }
 }
 
 /* Stats Section */

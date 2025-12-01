@@ -10,7 +10,7 @@ export default function Features() {
       <Container>
         <div className={styles.sectionHeader}>
           <span className={styles.sectionTag}>Powerful Features</span>
-          <h2 className={styles.sectionTitle}>Everything You Need to Stay Healthy</h2>
+          <h2 className="title" style={{ marginBottom: '0px' }}>Everything You Need to Stay Healthy</h2>
         </div>
         <Row className={styles.featuresGrid}>
           {pageData.features.map((feature, idx) => (

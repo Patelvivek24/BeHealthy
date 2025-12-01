@@ -200,10 +200,10 @@ export default function CommunityPage() {
               <Icon icon="lucide:users" width={18} height={18} />
               Join Our Growing Community
             </p>
-            <h1 className={styles.title}>
+            <h1 className="title">
               Connect, Share & Grow Together
             </h1>
-            <p className={styles.description}>
+            <p className="description">
               Join thousands of health enthusiasts sharing tips, success stories, and supporting each other 
               on their wellness journey.
             </p>

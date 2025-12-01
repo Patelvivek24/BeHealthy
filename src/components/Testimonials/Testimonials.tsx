@@ -121,7 +121,7 @@ export default function Testimonials() {
             <span>Testimonials</span>
           </div>
 
-          <h2 className={styles.title}>Loved by Thousands of Users</h2>
+          <h2 className="title">Loved by Thousands of Users</h2>
           <p className={styles.subtitle}>
             Real stories from people transforming their health with BeHealthy
           </p>

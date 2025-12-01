@@ -75,7 +75,7 @@ export default function MedicalAI() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className={styles.title}
+                className="title"
               >
                 Understand Your Health Reports Instantly
               </motion.h2>
@@ -85,7 +85,7 @@ export default function MedicalAI() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className={styles.description}
+                className="description"
               >
                 AI analyzes blood tests, sugar, thyroid, lipid profile, and more
                 giving users easy insights, scoring, and personalized recommendations.

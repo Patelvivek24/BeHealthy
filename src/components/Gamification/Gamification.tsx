@@ -96,7 +96,7 @@ export default function Gamification() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className={styles.title}
+              className="title"
             >
               Stay Motivated with Levels, Badges & Streaks
             </motion.h2>
@@ -105,7 +105,7 @@ export default function Gamification() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className={styles.description}
+              className="description"
             >
               Transform your health journey into an engaging experience. Earn
               rewards, maintain streaks, and compete on leaderboards while
