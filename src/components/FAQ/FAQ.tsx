@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import styles from "./FAQ.module.scss";
+import Container from "react-bootstrap/Container";
 
 const faqs = [
   {
@@ -69,120 +70,122 @@ export default function FAQ() {
         className={styles.orbGreen}
       />
 
-      <div className={styles.container}>
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className={styles.header}
-        >
-          <div className={styles.badge}>
-            <Icon icon="lucide:help-circle" className={styles.badgeIcon} />
-            <span>Got Questions?</span>
-          </div>
-
-          <h2 className={styles.title}>Frequently Asked Questions</h2>
-          <p className={styles.subtitle}>
-            Everything you need to know about BeHealthy and your wellness
-            journey
-          </p>
-        </motion.div>
-
-        {/* FAQ List */}
-        <div className={styles.faqList}>
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={styles.faqItem}
-            >
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className={`${styles.card} ${openIndex === index ? styles.cardOpen : ""
-                  }`}
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className={styles.questionRow}
-                >
-                  <span className={styles.question}>{faq.question}</span>
-
-                  <motion.div
-                    animate={{ rotate: openIndex === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className={`${styles.iconCircle} ${openIndex === index ? styles.iconCircleOpen : ""
-                      }`}
-                  >
-                    {openIndex === index ? (
-                      <Icon icon="lucide:minus" className={styles.iconWhite} />
-                    ) : (
-                      <Icon icon="lucide:plus" className={styles.iconDark} />
-                    )}
-                  </motion.div>
-                </button>
-
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className={styles.answerWrapper}
-                    >
-                      <motion.div
-                        initial={{ y: -10, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.3, delay: 0.1 }}
-                        className={styles.answerBox}
-                      >
-                        <p className={styles.answer}>{faq.answer}</p>
-                      </motion.div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Support Box */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className={styles.supportBox}
-        ><div>
-            <h3 className={styles.supportTitle}>Still have questions?</h3>
-            <p className={styles.supportSubtitle}>
-              Our support team is here to help you on your wellness journey
-            </p>
-          </div>
-
-          <div className={styles.supportButtonsWrapper}>
-            <div className={styles.supportButtons}>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={styles.buttonPrimary}
-              >
-                Contact Support
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={styles.buttonOutline}
-              >
-                Schedule a Demo
-              </motion.button>
+      <Container>
+        <div className={styles.faqMainSection}>
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className={styles.header}
+          >
+            <div className={styles.badge}>
+              <Icon icon="lucide:help-circle" className={styles.badgeIcon} />
+              <span>Got Questions?</span>
             </div>
+
+            <h2 className={styles.title}>Frequently Asked Questions</h2>
+            <p className={styles.subtitle}>
+              Everything you need to know about BeHealthy and your wellness
+              journey
+            </p>
+          </motion.div>
+
+          {/* FAQ List */}
+          <div className={styles.faqList}>
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={styles.faqItem}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.01 }}
+                  className={`${styles.card} ${openIndex === index ? styles.cardOpen : ""
+                    }`}
+                >
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className={styles.questionRow}
+                  >
+                    <span className={styles.question}>{faq.question}</span>
+
+                    <motion.div
+                      animate={{ rotate: openIndex === index ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className={`${styles.iconCircle} ${openIndex === index ? styles.iconCircleOpen : ""
+                        }`}
+                    >
+                      {openIndex === index ? (
+                        <Icon icon="lucide:minus" className={styles.iconWhite} />
+                      ) : (
+                        <Icon icon="lucide:plus" className={styles.iconDark} />
+                      )}
+                    </motion.div>
+                  </button>
+
+                  <AnimatePresence>
+                    {openIndex === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className={styles.answerWrapper}
+                      >
+                        <motion.div
+                          initial={{ y: -10, opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                          className={styles.answerBox}
+                        >
+                          <p className={styles.answer}>{faq.answer}</p>
+                        </motion.div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      </div>
+
+          {/* Support Box */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className={styles.supportBox}
+          ><div>
+              <h3 className={styles.supportTitle}>Still have questions?</h3>
+              <p className={styles.supportSubtitle}>
+                Our support team is here to help you on your wellness journey
+              </p>
+            </div>
+
+            <div className={styles.supportButtonsWrapper}>
+              <div className={styles.supportButtons}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={styles.buttonPrimary}
+                >
+                  Contact Support
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={styles.buttonOutline}
+                >
+                  Schedule a Demo
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </Container>
     </section>
   );
 }

@@ -80,8 +80,9 @@ export default function AppDownload() {
         }}
         className={styles.bgOrb2}
       />
+      <Container>
       <div className={styles.appDownloadMainSection}>
-        <Container>
+        
           <Row className={styles.row}>
             {/* Left Content - Text and Buttons */}
             <Col lg={8} className={styles.leftContent}>
@@ -186,8 +187,8 @@ export default function AppDownload() {
               </motion.div>
             </Col>
           </Row>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </section>
   );
 }
