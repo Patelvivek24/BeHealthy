@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -193,25 +194,51 @@ export default function CommunityPage() {
       )}
 
       <div className={styles.contentWrapper}>
+        {/* Hero Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="heroSection"
+        >
+          <Container>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="heroContent"
+            >
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="badge"
+              >
+                <Icon icon="lucide:message-circle" width={18} height={18} className="badgeIcon" />
+                <span>Join Our Growing Community</span>
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="title"
+              >
+                Connect, Share & Grow Together
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="description"
+              >
+                Join thousands of health enthusiasts sharing tips, success stories, and supporting each other 
+                on their wellness journey.
+              </motion.p>
+            </motion.div>
+          </Container>
+        </motion.section>
+
         <Container>
-          {/* Hero Section */}
-          <div className={styles.hero}>
-            {/* <div className="badge">
-              <Icon icon="lucide:users" width={18} height={18} />
-              Join Our Growing Community
-            </div> */}
-            <div className="badge">
-              <Icon icon="lucide:message-circle" width={18} height={18} className="badgeIcon" />
-              <span>Join Our Growing Community</span>
-            </div>
-            <h1 className="title">
-              Connect, Share & Grow Together
-            </h1>
-            <p className="description">
-              Join thousands of health enthusiasts sharing tips, success stories, and supporting each other 
-              on their wellness journey.
-            </p>
-          </div>
 
           {/* Stats Section */}
           <div className={styles.statsSection}>

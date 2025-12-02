@@ -9,42 +9,23 @@
 
 .contentWrapper {
   flex: 1;
-  padding: 140px 0 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   background: linear-gradient(135deg, #F9FBFD 0%, #ffffff 100%);
 
   @media (max-width: 768px) {
-    padding: 120px 0 60px;
+    padding-top: 80px;
   }
 }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  margin-bottom: 4rem;
-  padding: 0 20px;
-
-  // .subtitle {
-  //   display: inline-flex;
-  //   align-items: center;
-  //   gap: 0.5rem;
-  //   font-size: 0.95rem;
-  //   color: rgba(0, 59, 70, 0.7);
-  //   margin-bottom: 0.75rem;
-  //   font-weight: 500;
-  //   letter-spacing: 0.5px;
-  //   padding: 0.5rem 1rem;
-  //   background: rgba(141, 198, 63, 0.1);
-  //   border-radius: 20px;
-  // }
-
-}
+/* Hero Section - Using global classes from globals.scss */
 
 /* Stats Section */
 .statsSection {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-bottom: 4rem;
+  margin: 50px 0px;
   padding: 0 20px;
 
   @media (max-width: 768px) {
@@ -376,8 +357,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
+  // max-width: 800px;
+  margin-bottom: 50px;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;

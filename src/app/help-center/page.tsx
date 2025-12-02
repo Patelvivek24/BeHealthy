@@ -178,14 +178,14 @@ export default function HelpCenterPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className={styles.heroSection}
+          className="heroSection"
         >
           <Container>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className={styles.heroContent}
+              className="heroContent"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -200,7 +200,7 @@ export default function HelpCenterPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className={styles.heroTitle}
+                className="title"
               >
                 How can we help you?
               </motion.h1>
@@ -208,7 +208,7 @@ export default function HelpCenterPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className={styles.heroDescription}
+                className="description"
               >
                 Find answers to common questions, learn how to use BeHealthy features, 
                 and get the support you need to achieve your health goals.
