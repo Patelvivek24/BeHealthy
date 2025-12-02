@@ -122,7 +122,7 @@ export default function Pricing() {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              whileHover={{ y: plan.featured ? -15 : -10 }}
+              whileHover={{ y: -8 }}
               className={`${styles.cardWrapper} ${
                 plan.featured ? styles.featuredWrapper : ""
               }`}
@@ -146,40 +146,42 @@ export default function Pricing() {
                   </motion.div>
                 )}
 
-                <div className={styles.cardHeader}>
-                  <h3>{plan.name}</h3>
-                  <div className={styles.priceRow}>
-                    <motion.span
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      className={styles.price}
-                    >
-                      {plan.price}
-                    </motion.span>
-                    <span className={styles.period}>{plan.period}</span>
-                  </div>
-                  <p className={styles.description}>{plan.description}</p>
-                </div>
-
-                <ul className={styles.features}>
-                  {plan.features.map((feature, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      className={styles.featureItem}
-                    >
-                      <div
-                        className={`${styles.iconCircle} ${
-                          plan.featured ? styles.iconFeatured : ""
-                        }`}
+                <div className={styles.cardContent}>
+                  <div className={styles.cardHeader}>
+                    <h3>{plan.name}</h3>
+                    <div className={styles.priceRow}>
+                      <motion.span
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                        className={styles.price}
                       >
-                        <Icon icon="lucide:check" width={14} />
-                      </div>
-                      <span>{feature}</span>
-                    </motion.li>
-                  ))}
-                </ul>
+                        {plan.price}
+                      </motion.span>
+                      <span className={styles.period}>{plan.period}</span>
+                    </div>
+                    <p className={styles.description}>{plan.description}</p>
+                  </div>
+
+                  <ul className={styles.features}>
+                    {plan.features.map((feature, i) => (
+                      <motion.li
+                        key={i}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        className={styles.featureItem}
+                      >
+                        <div
+                          className={`${styles.iconCircle} ${
+                            plan.featured ? styles.iconFeatured : ""
+                          }`}
+                        >
+                          <Icon icon="lucide:check" width={14} />
+                        </div>
+                        <span>{feature}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
 
                 <motion.button className={styles.ctaButton}>
                   {plan.cta}
@@ -192,7 +194,7 @@ export default function Pricing() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            whileHover={{ y: -10 }}
+            whileHover={{ y: -8 }}
             className={styles.customCardWrapper}
           >
             <div className={styles.customCard}>
@@ -204,42 +206,46 @@ export default function Pricing() {
                 <Icon icon="lucide:sparkles" width={16} /> Build Your Own
               </motion.div>
 
-              <div className={styles.cardHeader}>
-                <h3>Custom Plan</h3>
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  className={styles.price}
-                >
-                  Custom
-                </motion.span>
-                <p className={styles.description}>
-                  Tailored specifically to your unique needs and goals
-                </p>
-              </div>
+              <div className={styles.cardContent}>
+                <div className={styles.cardHeader}>
+                  <h3>Custom Plan</h3>
+                  <div className={styles.priceRow}>
+                    <motion.span
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      className={styles.price}
+                    >
+                      Custom
+                    </motion.span>
+                  </div>
+                  <p className={styles.description}>
+                    Tailored specifically to your unique needs and goals
+                  </p>
+                </div>
 
-              <ul className={styles.features}>
-                {[
-                  "Personalized feature selection",
-                  "Flexible pricing options",
-                  "Custom duration",
-                  "Dedicated account manager",
-                  "Priority implementation",
-                  "White-glove onboarding",
-                ].map((feature, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    className={styles.featureItem}
-                  >
-                    <div className={styles.iconCircle}>
-                      <Icon icon="lucide:check" width={14} />
-                    </div>
-                    <span>{feature}</span>
-                  </motion.li>
-                ))}
-              </ul>
+                <ul className={styles.features}>
+                  {[
+                    "Personalized feature selection",
+                    "Flexible pricing options",
+                    "Custom duration",
+                    "Dedicated account manager",
+                    "Priority implementation",
+                    "White-glove onboarding",
+                  ].map((feature, i) => (
+                    <motion.li
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      className={styles.featureItem}
+                    >
+                      <div className={styles.iconCircle}>
+                        <Icon icon="lucide:check" width={14} />
+                      </div>
+                      <span>{feature}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
 
               <motion.button
                 onClick={handleCustomizePlan}
