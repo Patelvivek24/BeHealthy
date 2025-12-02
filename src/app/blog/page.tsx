@@ -15,7 +15,7 @@ const blogPosts = [
     id: 1,
     title: "5 AI Video Generation Tools You Need to Try",
     description: "Explore five leading AI video generators—HeyGen, Kling AI, DeepAny.AI, Veo, and Immersity AI—helping creators produce high-quality, cinematic, and engaging video content.",
-    image: "/images/blog/blog-1.jpg",
+    image: "/images/hero-2.jpeg",
     tags: ["Video Generation", "AI Tools", "Content Creation"],
     author: "Ishika Sharma",
     date: "28 November 2025"
@@ -24,7 +24,7 @@ const blogPosts = [
     id: 2,
     title: "From Idea to Copy: Best AI Content Creation Tools",
     description: "AI content creation tools help creators design, write, edit, translate, and produce content faster across formats. These top tools boost quality, cut production time, and enhance creativity.",
-    image: "/images/blog/blog-2.jpg",
+    image: "/images/hero-2.jpeg",
     tags: ["Writing Assistants", "Content Creation", "Productivity", "AI Tools"],
     author: "Ishika Sharma",
     date: "26 November 2025"
@@ -33,7 +33,7 @@ const blogPosts = [
     id: 3,
     title: "Gemini The Latest Release & New vs Earlier Versions",
     description: "Gemini 3 brings advanced reasoning, multimodal support, and enterprise-grade features. This summary outlines how it improves on past versions and what it means for users.",
-    image: "/images/blog/blog-3.jpg",
+    image: "/images/hero-2.jpeg",
     tags: ["Text Generator", "AI Models", "Technology", "Updates", "Google"],
     author: "Ishika Sharma",
     date: "24 November 2025"
@@ -42,7 +42,7 @@ const blogPosts = [
     id: 4,
     title: "AI Coding Tools That Make Developers Lives Easier",
     description: "This blog explores 13 AI coding tools that automate development, improve code quality, speed up debugging, simplify documentation, and help developers work more efficiently.",
-    image: "/images/blog/blog-4.jpg",
+    image: "/images/hero-2.jpeg",
     tags: ["Programming"],
     author: "Ishika Sharma",
     date: "21 November 2025"
@@ -51,7 +51,7 @@ const blogPosts = [
     id: 5,
     title: "Top AI Productivity Tools for Teams & Remote Work",
     description: "Remote teams need AI tools that cut manual work, improve collaboration, and reduce burnout. This blog highlights 10 SansSapien AI tools that streamline workflows and boost productivity.",
-    image: "/images/blog/blog-5.jpg",
+    image: "/images/hero-2.jpeg",
     tags: ["Productivity", "Remote Work"],
     author: "Ishika Sharma",
     date: "21 November 2025"
@@ -60,7 +60,7 @@ const blogPosts = [
     id: 6,
     title: "How Businesses Use AI Tools to Automate Daily Operations",
     description: "Learn how leading companies use business AI tools to automate workflows, enhance customer experiences, optimize marketing, and boost productivity across departments.",
-    image: "/images/blog/blog-6.jpg",
+    image: "/images/hero-2.jpeg",
     tags: ["Customer Engagement", "Business Automation", "AI Tools"],
     author: "Ishika Sharma",
     date: "12 November 2025"
@@ -69,7 +69,7 @@ const blogPosts = [
     id: 7,
     title: "10 Ways AI Tools Are Revolutionizing Every Industry",
     description: "AI tools are transforming industries by automating communication, security, and decision-making. From Metigan to FullEnrich, they boost productivity, reduce costs, and drive innovation.",
-    image: "/images/blog/blog-7.jpg",
+    image: "/images/hero-2.jpeg",
     tags: ["Artificial Intelligence", "Industry Trends", "Innovation"],
     author: "Ishika",
     date: "10 November 2025"
@@ -78,7 +78,7 @@ const blogPosts = [
     id: 8,
     title: "What AI Services Provide the Fastest Document Processing",
     description: "Explore the fastest AI document processing services of 2025. Compare Google Document AI, Azure Document Intelligence, Mistral OCR, Mindee, and other leading solutions.",
-    image: "/images/blog/blog-8.jpg",
+    image: "/images/hero-2.jpeg",
     tags: ["Document Analysis", "AI Services", "Automation"],
     author: "Ishika Sharma",
     date: "16 October 2025"
@@ -87,7 +87,7 @@ const blogPosts = [
     id: 9,
     title: "Best AI Collaboration Tools & Platforms (2025 Guide)",
     description: "Discover top AI collaboration tools that boost productivity, streamline communication, and automate workflows. Explore platforms like Google Workspace, Microsoft Teams, and more.",
-    image: "/images/blog/blog-9.jpg",
+    image: "/images/hero-2.jpeg",
     tags: ["Productivity", "Collaboration"],
     author: "Ishika Sharma",
     date: "15 October 2025"
@@ -102,6 +102,7 @@ export default function BlogPage() {
   const [sortBy, setSortBy] = useState("Latest");
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
   const [showSortDropdown, setShowSortDropdown] = useState(false);
+  const [expandedTags, setExpandedTags] = useState<Record<number, boolean>>({});
   const categoryRef = useRef<HTMLDivElement>(null);
   const sortRef = useRef<HTMLDivElement>(null);
 
@@ -125,7 +126,7 @@ export default function BlogPage() {
   const filteredPosts = blogPosts
     .filter(post => {
       const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           post.description.toLowerCase().includes(searchQuery.toLowerCase());
+        post.description.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = selectedCategory === "All" || post.tags.includes(selectedCategory);
       return matchesSearch && matchesCategory;
     })
@@ -192,7 +193,7 @@ export default function BlogPage() {
             className={styles.filterBar}
           >
             <div className={styles.filterGroup} ref={categoryRef}>
-              <button 
+              <button
                 className={styles.filterButton}
                 onClick={() => {
                   setShowCategoryDropdown(!showCategoryDropdown);
@@ -232,7 +233,7 @@ export default function BlogPage() {
             </div>
 
             <div className={styles.filterGroup} ref={sortRef}>
-              <button 
+              <button
                 className={styles.filterButton}
                 onClick={() => {
                   setShowSortDropdown(!showSortDropdown);
@@ -293,11 +294,48 @@ export default function BlogPage() {
                   <h3 className={styles.cardTitle}>{post.title}</h3>
                   <p className={styles.cardDescription}>{post.description}</p>
                   <div className={styles.cardTags}>
-                    {post.tags.slice(0, 1).map((tag, i) => (
-                      <span key={i} className={styles.tag}>{tag}</span>
-                    ))}
-                    {post.tags.length > 1 && (
-                      <span className={styles.tagMore}>+{post.tags.length - 1}</span>
+                    {expandedTags[post.id] ? (
+                      // Show all tags when expanded
+                      <>
+                        {post.tags.map((tag, i) => (
+                          <span key={i} className={styles.tag}>{tag}</span>
+                        ))}
+                        {post.tags.length > 1 && (
+                          <span 
+                            className={styles.tagMore}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setExpandedTags(prev => ({
+                                ...prev,
+                                [post.id]: false
+                              }));
+                            }}
+                          >
+                            Show Less
+                          </span>
+                        )}
+                      </>
+                    ) : (
+                      // Show first tag and "more" indicator when collapsed
+                      <>
+                        {post.tags.slice(0, 1).map((tag, i) => (
+                          <span key={i} className={styles.tag}>{tag}</span>
+                        ))}
+                        {post.tags.length > 1 && (
+                          <span 
+                            className={styles.tagMore}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setExpandedTags(prev => ({
+                                ...prev,
+                                [post.id]: true
+                              }));
+                            }}
+                          >
+                            +{post.tags.length - 1}
+                          </span>
+                        )}
+                      </>
                     )}
                   </div>
                   <div className={styles.cardMeta}>
