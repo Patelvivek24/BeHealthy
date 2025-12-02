@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Icon } from '@iconify/react';
 import Button from '@/components/Button';
 import styles from './Header.module.scss';
 import Image from 'next/image';
@@ -41,10 +40,6 @@ export default function Header() {
     >
       <Container>
         <Navbar.Brand className={styles.logoContainer} as={Link} href="/">
-          {/* <div className={styles.logoIcon}>
-            <Icon icon="lucide:heart" />
-          </div>
-          <span className={styles.logo}>BeHealthy</span> */}
           <Image src="/images/logo.png" className={styles.logoImage} alt="BeHealthy" width={100} height={100} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
