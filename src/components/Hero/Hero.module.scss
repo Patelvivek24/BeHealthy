@@ -119,11 +119,7 @@ $xxl: 1400px;
   margin-bottom: 8px;
 }
 
-.badgeIcon {
-  width: 16px;
-  height: 16px;
-  color: $green-500;
-}
+/* Badge icon styles are now global - see globals.scss */
 
 /* Heading */
 .mainHeading {

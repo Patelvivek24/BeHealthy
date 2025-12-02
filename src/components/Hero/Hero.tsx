@@ -66,7 +66,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             className={styles.badge}
           >
-            <Icon icon="lucide:brain" className={styles.badgeIcon} />
+            <Icon icon="lucide:brain" className="badgeIcon" />
             <span>AI-Powered Complete Health Platform</span>
           </motion.div>
 

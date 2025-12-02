@@ -201,7 +201,7 @@ export default function CommunityPage() {
               Join Our Growing Community
             </div> */}
             <div className="badge">
-              <Icon icon="lucide:message-circle" width={18} height={18} />
+              <Icon icon="lucide:message-circle" width={18} height={18} className="badgeIcon" />
               <span>Join Our Growing Community</span>
             </div>
             <h1 className="title">

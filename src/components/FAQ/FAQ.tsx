@@ -80,7 +80,7 @@ export default function FAQ() {
             className={styles.header}
           >
             <div className="badge">
-              <Icon icon="lucide:help-circle" className={styles.badgeIcon} />
+              <Icon icon="lucide:help-circle" className="badgeIcon" />
               <span>Got Questions?</span>
             </div>
 

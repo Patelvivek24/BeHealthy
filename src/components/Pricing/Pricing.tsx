@@ -92,13 +92,13 @@ export default function Pricing() {
           className={styles.header}
         >
           <div className="badge">
-            <Icon icon="lucide:zap" width={16} />
+            <Icon icon="lucide:zap" width={16} height={16} className="badgeIcon" />
             <span>Flexible Pricing</span>
           </div>
 
           <h2 className="title">Choose Your Path to Wellness</h2>
 
-          <p className={styles.subtitle}>
+          <p className="description">
             Flexible plans designed to fit your health goals and budget
           </p>
 

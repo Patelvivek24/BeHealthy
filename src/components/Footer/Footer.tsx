@@ -10,7 +10,7 @@ import styles from "./Footer.module.scss";
 // Using toFixed(2) to ensure exact string match between server and client
 const generatePosition = (index: number, type: 'left' | 'top') => {
   const seed = index * 137.508; // Golden angle approximation
-  const value = type === 'left' 
+  const value = type === 'left'
     ? (Math.sin(seed) * 0.5 + 0.5) * 100
     : (Math.cos(seed * 1.3) * 0.5 + 0.5) * 100;
   return `${value.toFixed(2)}%`;
@@ -133,8 +133,8 @@ export default function Footer() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + index * 0.1, type: "spring", stiffness: 200 }}
-                    whileHover={{ 
-                      scale: 1.25, 
+                    whileHover={{
+                      scale: 1.25,
                       y: -6,
                       rotate: 360,
                       boxShadow: `0 6px 20px ${social.color}50`
@@ -175,8 +175,8 @@ export default function Footer() {
                     initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ 
-                      delay: 0.2 + index * 0.06, 
+                    transition={{
+                      delay: 0.2 + index * 0.06,
                       duration: 0.4,
                       ease: "easeOut"
                     }}
@@ -184,8 +184,9 @@ export default function Footer() {
                   >
                     <motion.a
                       href={item === "Blog" ? "/blog" : item === "About Us" ? "/about-us" : item === "Feature requests" ? "/feature-requests" : item === "Community" ? "/community" : item === "Help Center" ? "/help-center" : item === "Contact Us" ? "/contact-us" : "#"}
+                      // href="#"
                       className={styles.quickLinkText}
-                      whileHover={{ 
+                      whileHover={{
                         x: 4,
                         color: "#8DC63F"
                       }}
@@ -228,8 +229,8 @@ export default function Footer() {
                     initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ 
-                      delay: 0.2 + index * 0.06, 
+                    transition={{
+                      delay: 0.2 + index * 0.06,
                       duration: 0.4,
                       ease: "easeOut"
                     }}
@@ -238,7 +239,7 @@ export default function Footer() {
                     <motion.a
                       href={contact.href}
                       className={styles.contactLink}
-                      whileHover={{ 
+                      whileHover={{
                         x: 4,
                         color: "#8DC63F"
                       }}
@@ -293,7 +294,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.4 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.1,
                 y: -2,
                 color: "#8DC63F"
@@ -308,7 +309,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.4 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.1,
                 y: -2,
                 color: "#8DC63F"
@@ -323,7 +324,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7, duration: 0.4 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.1,
                 y: -2,
                 color: "#8DC63F"

@@ -99,6 +99,14 @@ a {
   animation: pulse 1.5s infinite;
 }
 
+/* Global Badge Icon Class */
+.badgeIcon {
+  width: 16px;
+  height: 16px;
+  fill: #8dc63f;
+  color: #8dc63f;
+}
+
 @keyframes pulse {
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.5); opacity: 0.6; }

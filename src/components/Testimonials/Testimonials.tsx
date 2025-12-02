@@ -117,7 +117,7 @@ export default function Testimonials() {
           className={styles.header}
         >
           <div className="badge">
-            <Icon icon="lucide:star" className={styles.badgeIcon} />
+            <Icon icon="lucide:star" className="badgeIcon" />
             <span>Testimonials</span>
           </div>
 

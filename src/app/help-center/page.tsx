@@ -193,7 +193,7 @@ export default function HelpCenterPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="badge"
               >
-                <Icon icon="lucide:help-circle" width={18} height={18} />
+                <Icon icon="lucide:help-circle" width={18} height={18} className="badgeIcon" />
                 <span>Help Center</span>
               </motion.p>
               <motion.h1

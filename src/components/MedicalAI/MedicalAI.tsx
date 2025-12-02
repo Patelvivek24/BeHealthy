@@ -66,7 +66,7 @@ export default function MedicalAI() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="badge"
               >
-                <Icon icon="lucide:sparkles" className={styles.badgeIcon} />
+                <Icon icon="lucide:sparkles" className="badgeIcon" />
                 <span>AI-Powered Analysis</span>
               </motion.div>
 

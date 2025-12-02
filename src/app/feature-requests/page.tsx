@@ -206,7 +206,7 @@ export default function FeatureRequestsPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="badge"
             >
-              <Icon icon="lucide:lightbulb" width={18} height={18} />
+              <Icon icon="lucide:lightbulb" width={18} height={18} className="badgeIcon" />
               <span>Share Your Ideas</span>
             </motion.p>
             <motion.h1

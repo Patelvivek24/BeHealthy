@@ -88,7 +88,7 @@ export default function Gamification() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="badge"
             >
-              <Icon icon="lucide:award" className={styles.badgeIcon} />
+              <Icon icon="lucide:award" className="badgeIcon" />
               <span>Motivation System</span>
             </motion.div>
 
