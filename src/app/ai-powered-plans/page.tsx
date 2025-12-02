@@ -62,8 +62,8 @@ export default function AIPoweredPlansPage() {
               <div className={styles.iconWrapper}>
                 <Icon icon="hugeicons:ai-dna" className={styles.headerIcon} />
               </div>
-              <h1>AI-Powered Personalized Plans</h1>
-              <p className={styles.subtitle}>
+              <h1 className="title">AI-Powered Personalized Plans</h1>
+              <p className="description">
                 Experience the future of health and wellness with intelligent, adaptive plans designed specifically for you
               </p>
             </motion.div>
@@ -81,7 +81,7 @@ export default function AIPoweredPlansPage() {
                 to create comprehensive plans that adapt in real-time to your needs.
               </p>
               <p>
-                Whether you're looking to lose weight, build muscle, improve cardiovascular health, or manage chronic conditions, our AI creates a 
+                Whether you&apos;re looking to lose weight, build muscle, improve cardiovascular health, or manage chronic conditions, our AI creates a 
                 personalized roadmap that evolves with you. No two plans are alike because no two people are the same.
               </p>
             </motion.section>

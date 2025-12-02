@@ -204,10 +204,10 @@ export default function FeatureRequestsPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className={styles.subtitle}
+              className="badge"
             >
               <Icon icon="lucide:lightbulb" width={18} height={18} />
-              Share Your Ideas
+              <span>Share Your Ideas</span>
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 10 }}

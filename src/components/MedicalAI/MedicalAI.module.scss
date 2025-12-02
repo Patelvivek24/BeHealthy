@@ -31,18 +31,7 @@
   z-index: 10;
 }
 
-/* Badge */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  border-radius: 40px;
-  color: #fff;
-  margin-bottom: 24px;
-  background: linear-gradient(to right, #8dc63f, #2eb5ac);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
+/* Badge styles are now global - see globals.scss */
 
 .badgeIcon {
   width: 16px;

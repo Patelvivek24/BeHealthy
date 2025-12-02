@@ -62,8 +62,8 @@ export default function ProgressAnalyticsPage() {
               <div className={styles.iconWrapper}>
                 <Icon icon="carbon:analytics" className={styles.headerIcon} />
               </div>
-              <h1>Advanced Progress Analytics</h1>
-              <p className={styles.subtitle}>
+              <h1 className="title">Advanced Progress Analytics</h1>
+              <p className="description">
                 Unlock deep insights into your health journey with powerful analytics and data visualization tools
               </p>
             </motion.div>
@@ -81,7 +81,7 @@ export default function ProgressAnalyticsPage() {
               </p>
               <p>
                 From simple progress tracking to complex predictive modeling, our analytics engine provides actionable insights that guide your 
-                decisions. Whether you're monitoring weight loss, fitness gains, or health improvements, you'll have the tools to see the big picture 
+                decisions. Whether you&apos;re monitoring weight loss, fitness gains, or health improvements, you&apos;ll have the tools to see the big picture 
                 and make informed choices.
               </p>
             </motion.section>

@@ -116,7 +116,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className={styles.header}
         >
-          <div className={styles.badge}>
+          <div className="badge">
             <Icon icon="lucide:star" className={styles.badgeIcon} />
             <span>Testimonials</span>
           </div>

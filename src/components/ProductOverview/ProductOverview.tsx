@@ -31,9 +31,9 @@ export default function ProductOverview({ onTagClick }: ProductOverviewProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className={styles.badge}
+            className="badge"
           >
-            <div className={styles.badgeDot}></div>
+            <div className="badgeDot"></div>
             <span>Complete Health Solution</span>
           </motion.div>
 

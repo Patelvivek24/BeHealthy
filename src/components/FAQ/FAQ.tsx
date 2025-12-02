@@ -79,7 +79,7 @@ export default function FAQ() {
             transition={{ duration: 0.6 }}
             className={styles.header}
           >
-            <div className={styles.badge}>
+            <div className="badge">
               <Icon icon="lucide:help-circle" className={styles.badgeIcon} />
               <span>Got Questions?</span>
             </div>

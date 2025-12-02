@@ -176,10 +176,10 @@ export default function ContactUsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className={styles.heroBadge}
+                className="badge"
               >
                 <Icon icon="lucide:mail" width={18} height={18} />
-                Get in Touch
+                <span>Get in Touch</span>
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}

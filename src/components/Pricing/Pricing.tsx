@@ -91,7 +91,7 @@ export default function Pricing() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className={styles.header}
         >
-          <div className={styles.badge}>
+          <div className="badge">
             <Icon icon="lucide:zap" width={16} />
             <span>Flexible Pricing</span>
           </div>

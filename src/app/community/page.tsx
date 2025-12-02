@@ -196,10 +196,14 @@ export default function CommunityPage() {
         <Container>
           {/* Hero Section */}
           <div className={styles.hero}>
-            <p className={styles.subtitle}>
+            {/* <div className="badge">
               <Icon icon="lucide:users" width={18} height={18} />
               Join Our Growing Community
-            </p>
+            </div> */}
+            <div className="badge">
+              <Icon icon="lucide:message-circle" width={18} height={18} />
+              <span>Join Our Growing Community</span>
+            </div>
             <h1 className="title">
               Connect, Share & Grow Together
             </h1>
