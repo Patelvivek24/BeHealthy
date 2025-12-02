@@ -84,7 +84,6 @@ export default function CustomizePlan() {
     e.preventDefault();
     if (validateForm()) {
       setSubmitted(true);
-      console.log("Form submitted:", formData);
     } else {
       // Scroll to first error
       const firstError = Object.keys(errors)[0];

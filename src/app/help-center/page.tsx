@@ -162,13 +162,6 @@ export default function HelpCenterPage() {
     return matchesSearch && matchesCategory;
   });
 
-  const filteredCategories = helpCategories.filter(cat => {
-    if (!searchQuery) return true;
-    return cat.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-           cat.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-           cat.articles.some(article => article.toLowerCase().includes(searchQuery.toLowerCase()));
-  });
-
   return (
     <div className={styles.helpCenterPage}>
       <Header />

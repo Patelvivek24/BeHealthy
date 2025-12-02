@@ -59,8 +59,8 @@ export default function FeatureRequestsPage() {
             });
             return;
           }
-        } catch (e) {
-          console.error('Error loading feature requests:', e);
+        } catch {
+          // Error loading feature requests
         }
       }
       
