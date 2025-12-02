@@ -192,41 +192,51 @@ export default function FeatureRequestsPage() {
     <div className={styles.featureRequestsPage}>
       <Header />
       <div className={styles.contentWrapper}>
+        {/* Hero Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="heroSection"
+        >
+          <Container>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="heroContent"
+            >
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="badge"
+              >
+                <Icon icon="lucide:lightbulb" width={18} height={18} className="badgeIcon" />
+                <span>Share Your Ideas</span>
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="title"
+              >
+                Feature Requests
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="description"
+              >
+                Help us improve BeHealthy by sharing your ideas. Vote on features you&apos;d like to see, 
+                and we&apos;ll prioritize the most requested ones.
+              </motion.p>
+            </motion.div>
+          </Container>
+        </motion.section>
+
         <Container>
-          {/* Header Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className={styles.header}
-          >
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className={styles.subtitle}
-            >
-              <Icon icon="lucide:lightbulb" width={18} height={18} />
-              Share Your Ideas
-            </motion.p>
-            <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="title"
-            >
-              Feature Requests
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="description"
-            >
-              Help us improve BeHealthy by sharing your ideas. Vote on features you&apos;d like to see, 
-              and we&apos;ll prioritize the most requested ones.
-            </motion.p>
-          </motion.div>
 
           {/* Submit Feature Form */}
           <motion.div

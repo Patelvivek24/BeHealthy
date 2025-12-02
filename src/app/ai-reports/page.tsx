@@ -62,8 +62,8 @@ export default function AIReportsPage() {
               <div className={styles.iconWrapper}>
                 <Icon icon="si:ai-note-duotone" className={styles.headerIcon} />
               </div>
-              <h1>AI Reports Medical Analysis</h1>
-              <p className={styles.subtitle}>
+              <h1 className="title">AI Reports Medical Analysis</h1>
+              <p className="description">
                 Transform complex medical data into clear, actionable insights with advanced AI-powered analysis
               </p>
             </motion.div>
@@ -83,7 +83,7 @@ export default function AIReportsPage() {
               <p>
                 Using advanced natural language processing and medical knowledge databases, our AI identifies key findings, explains 
                 medical terminology in plain language, tracks trends over time, and provides personalized recommendations. While our 
-                AI provides valuable insights, it's designed to complement, not replace, professional medical advice.
+                AI provides valuable insights, it&apos;s designed to complement, not replace, professional medical advice.
               </p>
             </motion.section>
 

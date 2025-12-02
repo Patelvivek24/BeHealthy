@@ -147,17 +147,42 @@ export default function BlogPage() {
     <div className={styles.blogPage}>
       <Header />
       <div className={styles.contentWrapper}>
+        {/* Hero Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="heroSection"
+        >
+          <Container>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="heroContent"
+            >
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="badge"
+              >
+                <Icon icon="lucide:book-open" width={18} height={18} className="badgeIcon" />
+                <span>Here&apos;s the Latest in Health &amp; Wellness 2025</span>
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="title"
+              >
+                Together, Realize the Promise of Better Health
+              </motion.h1>
+            </motion.div>
+          </Container>
+        </motion.section>
+
         <Container>
-          {/* Header Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className={styles.header}
-          >
-            <p className={styles.subtitle}>Here&apos;s the Latest in Health &amp; Wellness 2025</p>
-            <h1 className="title">Together, Realize the Promise of Better Health</h1>
-          </motion.div>
 
           {/* Search and Filter Bar */}
           <motion.div

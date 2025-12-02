@@ -91,14 +91,14 @@ export default function Pricing() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className={styles.header}
         >
-          <div className={styles.badge}>
-            <Icon icon="lucide:zap" width={16} />
+          <div className="badge">
+            <Icon icon="lucide:zap" width={16} height={16} className="badgeIcon" />
             <span>Flexible Pricing</span>
           </div>
 
           <h2 className="title">Choose Your Path to Wellness</h2>
 
-          <p className={styles.subtitle}>
+          <p className="description">
             Flexible plans designed to fit your health goals and budget
           </p>
 

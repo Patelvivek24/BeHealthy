@@ -94,9 +94,9 @@ export default function AppDownload() {
                   {/* Badge */}
                   <motion.div
                     variants={itemVariants}
-                    className={styles.badge}
+                    className="badge"
                   >
-                    <Icon icon="lucide:sparkles" className={styles.badgeIcon} />
+                    <Icon icon="lucide:sparkles" className="badgeIcon" />
                     <span>Available Now</span>
                   </motion.div>
 

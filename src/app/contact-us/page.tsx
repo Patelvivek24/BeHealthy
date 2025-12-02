@@ -163,29 +163,29 @@ export default function ContactUsPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className={styles.heroSection}
+          className="heroSection"
         >
           <Container>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className={styles.heroContent}
+              className="heroContent"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className={styles.heroBadge}
+                className="badge"
               >
-                <Icon icon="lucide:mail" width={18} height={18} />
-                Get in Touch
+                <Icon icon="lucide:mail" width={18} height={18} className="badgeIcon" />
+                <span>Get in Touch</span>
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className={styles.heroTitle}
+                className="title"
               >
                 We&apos;d Love to Hear From You
               </motion.h1>
@@ -193,7 +193,7 @@ export default function ContactUsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className={styles.heroDescription}
+                className="description"
               >
                 Have a question, suggestion, or need support? Our team is here to help. 
                 Fill out the form below or reach out through any of our contact methods.

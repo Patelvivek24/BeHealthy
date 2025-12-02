@@ -76,29 +76,29 @@ export default function AboutUsPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className={styles.heroSection}
+          className="heroSection"
         >
           <Container>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className={styles.heroContent}
+              className="heroContent"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className={styles.heroBadge}
+                className="badge"
               >
-                <Icon icon="lucide:info" width={18} height={18} />
-                About BeHealthy
+                <Icon icon="lucide:info" width={18} height={18} className="badgeIcon" />
+                <span>About BeHealthy</span>
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className={styles.heroTitle}
+                className="title"
               >
                 Empowering Your Health Journey
               </motion.h1>
@@ -106,7 +106,7 @@ export default function AboutUsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className={styles.heroDescription}
+                className="description"
               >
                 We&apos;re on a mission to revolutionize how people manage their health and wellness, 
                 making personalized healthcare accessible, affordable, and effective for everyone.

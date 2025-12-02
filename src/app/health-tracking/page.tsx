@@ -62,8 +62,8 @@ export default function HealthTrackingPage() {
               <div className={styles.iconWrapper}>
                 <Icon icon="mage:heart-health" className={styles.headerIcon} />
               </div>
-              <h1>Real-time Health Tracking</h1>
-              <p className={styles.subtitle}>
+              <h1 className="title">Real-time Health Tracking</h1>
+              <p className="description">
                 Monitor your health metrics continuously and gain actionable insights to optimize your wellness journey
               </p>
             </motion.div>

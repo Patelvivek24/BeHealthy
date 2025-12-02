@@ -174,9 +174,9 @@ export default function TermsOfService() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className={styles.header}
             >
-              <h1>Terms of Service</h1>
+              <h1 className="title">Terms of Service</h1>
               <p className={styles.lastUpdated}>Last Updated: January 15, 2025</p>
-              <p className={styles.intro}>
+              <p className="description" style={{ maxWidth: '900px', margin: '0 auto' }}>
                 These Terms of Service govern your access to and use of BeHealthy. Please read these terms carefully before using our service. By using BeHealthy, you agree to be bound by these terms.
               </p>
             </motion.div>

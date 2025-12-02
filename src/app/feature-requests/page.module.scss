@@ -9,39 +9,20 @@
 
 .contentWrapper {
   flex: 1;
-  padding: 140px 0 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   background: linear-gradient(135deg, #F9FBFD 0%, #ffffff 100%);
 
   @media (max-width: 768px) {
-    padding: 120px 0 60px;
+    padding-top: 80px;
   }
 }
 
-/* Header Section */
-.header {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 0 20px;
-
-  .subtitle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-    color: rgba(0, 59, 70, 0.7);
-    margin-bottom: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    padding: 0.5rem 1rem;
-    background: rgba(141, 198, 63, 0.1);
-    border-radius: 20px;
-  }
-
-}
+/* Hero Section - Using global classes from globals.scss */
 
 /* Form Section */
 .formSection {
-  margin-bottom: 3rem;
+  margin: 50px 0px;
   padding: 0 20px;
 }
 

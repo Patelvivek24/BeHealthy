@@ -12,18 +12,18 @@
     margin-bottom: 50px;
   }
 
-  .sectionTag {
-    display: inline-block;
-    padding: 8px 20px;
-    background: linear-gradient(135deg, rgba(141, 198, 63, 0.15) 0%, rgba(141, 198, 63, 0.1) 100%);
-    border: 1px solid rgba(141, 198, 63, 0.3);
-    border-radius: $border-radius-xl;
-    font-size: 14px;
-    font-weight: $font-weight-medium;
-    color: $deep-petrol;
-    margin-bottom: 16px;
-    text-align: center;
-  }
+  // .sectionTag {
+  //   display: inline-block;
+  //   padding: 8px 20px;
+  //   background: linear-gradient(135deg, rgba(141, 198, 63, 0.15) 0%, rgba(141, 198, 63, 0.1) 100%);
+  //   border: 1px solid rgba(141, 198, 63, 0.3);
+  //   border-radius: $border-radius-xl;
+  //   font-size: 14px;
+  //   font-weight: $font-weight-medium;
+  //   color: $deep-petrol;
+  //   margin-bottom: 16px;
+  //   text-align: center;
+  // }
 
   .sectionTitle {
     font-size: 46px;
@@ -168,11 +168,11 @@
   .featuresSection {
     padding: 60px 0;
 
-    .sectionTag {
-      font-size: 13px;
-      padding: 6px 16px;
-      margin-bottom: 12px;
-    }
+    // .sectionTag {
+    //   font-size: 13px;
+    //   padding: 6px 16px;
+    //   margin-bottom: 12px;
+    // }
 
     .sectionTitle {
       font-size: 32px;

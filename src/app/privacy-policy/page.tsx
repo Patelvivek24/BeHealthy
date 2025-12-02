@@ -135,9 +135,9 @@ export default function PrivacyPolicy() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className={styles.header}
           >
-            <h1>Privacy Policy</h1>
+            <h1 className="title">Privacy Policy</h1>
             <p className={styles.lastUpdated}>Last Updated: January 15, 2025</p>
-            <p className={styles.intro}>
+            <p className="description" style={{ maxWidth: '900px', margin: '0 auto' }}>
               At BeHealthy, we are committed to protecting your privacy and ensuring the security of your personal and health information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our health and wellness platform.
             </p>
           </motion.div>

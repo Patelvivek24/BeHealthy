@@ -154,9 +154,9 @@ export default function CookiePolicy() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className={styles.header}
             >
-              <h1>Cookie Policy</h1>
+              <h1 className="title">Cookie Policy</h1>
               <p className={styles.lastUpdated}>Last Updated: January 15, 2025</p>
-              <p className={styles.intro}>
+              <p className="description" style={{ maxWidth: '900px', margin: '0 auto' }}>
                 This Cookie Policy explains how BeHealthy uses cookies and similar tracking technologies on our website and mobile application. It describes what cookies are, how we use them, and your choices regarding their use.
               </p>
             </motion.div>

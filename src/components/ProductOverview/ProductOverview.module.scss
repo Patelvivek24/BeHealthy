@@ -40,37 +40,7 @@
   filter: blur(60px);
 }
 
-/* Badge */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  border-radius: 40px;
-  background: linear-gradient(to right, rgba(#8DC63F, 0.1), rgba(#2EB5AC, 0.1));
-  border: 1px solid rgba(#8DC63F, 0.2);
-  margin-bottom: 24px;
-
-  span {
-    font-size: 14px;
-    font-weight: 500;
-    color: #003B46;
-  }
-}
-
-.badgeDot {
-  width: 8px;
-  height: 8px;
-  background: #8DC63F;
-  border-radius: 50%;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.5); opacity: 0.6; }
-  100% { transform: scale(1); opacity: 1; }
-}
+/* Badge styles are now global - see globals.scss */
 
 /* Tags */
 .tags {

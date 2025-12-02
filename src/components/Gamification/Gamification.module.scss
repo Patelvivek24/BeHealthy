@@ -124,23 +124,7 @@
   font-size: 16px;
 }
 
-/* Text Section */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  border-radius: 50px;
-  background: linear-gradient(to right, #2eb5ac, #1e5aa8);
-  color: #fff;
-  margin-bottom: 20px;
-  box-shadow: 0 6px 20px #0002;
-}
-
-.badgeIcon {
-  width: 18px;
-  height: 18px;
-}
+/* Badge styles are now global - see globals.scss */
 
 .features {
   margin-top: 2rem;
