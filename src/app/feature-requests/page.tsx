@@ -246,15 +246,15 @@ export default function FeatureRequestsPage() {
             className={styles.formSection}
           >
             {!showForm ? (
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => setShowForm(true)}
-                className={styles.submitButton}
               >
-                <Icon icon="lucide:plus" width={20} height={20} />
-                Submit a Feature Request
-              </motion.button>
+                <Button variant="primary" onClick={() => setShowForm(true)} className={styles.submitButton}>
+                  <Icon icon="lucide:plus" width={20} height={20} />
+                  Submit a Feature Request
+                </Button>
+              </motion.div>
             ) : (
               <motion.form
                 initial={{ opacity: 0, height: 0 }}
@@ -304,8 +304,9 @@ export default function FeatureRequestsPage() {
                   </span>
                 </div>
                 <div className={styles.formActions}>
-                  <button
+                  <Button
                     type="button"
+                    variant="outline"
                     onClick={() => {
                       setShowForm(false);
                       setFormData({ title: '', description: '' });
@@ -313,7 +314,7 @@ export default function FeatureRequestsPage() {
                     className={styles.cancelButton}
                   >
                     Cancel
-                  </button>
+                  </Button>
                   <Button
                     type="submit"
                     variant="primary"

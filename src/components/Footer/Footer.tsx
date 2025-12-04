@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../../../public/images/logo.png";
+import Button from "../Button";
 import styles from "./Footer.module.scss";
 
 // Generate deterministic positions based on index
@@ -79,13 +80,14 @@ export default function Footer() {
                   whileFocus={{ scale: 1.02 }}
                   className={styles.newsletterInput}
                 />
-                <motion.button
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={styles.subscribeBtn}
                 >
-                  Subscribe
-                </motion.button>
+                  <Button variant="primary">
+                    Subscribe
+                  </Button>
+                </motion.div>
               </div>
             </Col>
           </Row>
@@ -183,9 +185,7 @@ export default function Footer() {
                     className={styles.quickLinkItem}
                   >
                     <motion.a
-                      href={item === "Blog" ? "/blog" : item === "Feature requests" ? "/feature-requests" : item === "Community" ? "/community" : item === "Help Center" ? "/help-center" : item === "Contact Us" ? "/contact-us" : "#"}
-                      // href="#"
-                      // href={item === "Blog" ? "/blog" : item === "About Us" ? "/about-us" : item === "Feature requests" ? "/feature-requests" : item === "Community" ? "/community" : item === "Help Center" ? "/help-center" : item === "Contact Us" ? "/contact-us" : "#"}
+                      href={item === "Blog" ? "/blog" : item === "About Us" ? "/about-us" : item === "Feature requests" ? "/feature-requests" : item === "Community" ? "/community" : item === "Help Center" ? "/help-center" : item === "Contact Us" ? "/contact-us" : "#"}
                       className={styles.quickLinkText}
                       whileHover={{
                         x: 4,

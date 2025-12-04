@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
+import Button from "@/components/Button";
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/navigation";
 import styles from "./Hero.module.scss";
@@ -84,11 +84,11 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className={styles.ctaWrapper}>
-            <Button className={styles.primaryCTA}>
+            <Button variant="primary">
               Start Your Free Journey <Icon icon="lucide:arrow-right" className={styles.arrowIcon} />
             </Button>
 
-            <Button className={styles.secondaryCTA}>
+            <Button variant="white">
               <Icon icon="lucide:play" className={styles.playIcon} /> Watch Demo
             </Button>
           </div>

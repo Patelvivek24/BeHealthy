@@ -4,7 +4,8 @@ import { Icon } from '@iconify/react';
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import Button from "../Button";
 import styles from "./CustomizePlan.module.scss";
 
 export default function CustomizePlan() {
@@ -186,12 +187,12 @@ export default function CustomizePlan() {
             className={styles.submittedButtons}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className={styles.primaryBtn} onClick={handleBack}>
+              <Button variant="primary" onClick={handleBack}>
                 Back to Home
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className={styles.secondaryBtn} onClick={() => setSubmitted(false)}>
+              <Button variant="outline" onClick={() => setSubmitted(false)}>
                 Submit Another Request
               </Button>
             </motion.div>
@@ -720,20 +721,20 @@ export default function CustomizePlan() {
               transition={{ delay: 0.3 }}
               className={styles.submitSection}
             >
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02, boxShadow: "0 8px 25px rgba(46, 181, 172, 0.3)" }}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={styles.submitBtn}
               >
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
-                >
-                  <Icon icon="lucide:send" width={20} height={20} />
-                </motion.span>
-                Submit Custom Plan Request
-              </motion.button>
+                <Button type="submit" variant="primary" className={styles.submitBtn}>
+                  <motion.span
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
+                  >
+                    <Icon icon="lucide:send" width={20} height={20} />
+                  </motion.span>
+                  Submit Custom Plan Request
+                </Button>
+              </motion.div>
 
               <motion.p
                 initial={{ opacity: 0 }}

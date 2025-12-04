@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './Button.module.scss';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'outline';
+  variant?: 'primary' | 'outline' | 'white';
   children: React.ReactNode;
   className?: string;
 }
@@ -15,7 +15,12 @@ export default function Button({
   className = '',
   ...props 
 }: ButtonProps) {
-  const buttonClasses = `${styles.button} ${variant === 'primary' ? styles.primary : styles.outline} ${className}`.trim();
+  const variantClass = 
+    variant === 'primary' ? styles.primary : 
+    variant === 'outline' ? styles.outline : 
+    styles.white;
+  
+  const buttonClasses = `${styles.button} ${variantClass} ${className}`.trim();
   
   return (
     <button

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Button from '@/components/Button';
 import styles from './page.module.scss';
 import Container from 'react-bootstrap/Container';
 import { Icon } from '@iconify/react';
@@ -402,25 +403,24 @@ export default function ContactUsPage() {
                         </Col>
 
                         <Col md={12}>
-                          <motion.button
-                            type="submit"
-                            className={styles.submitButton}
-                            disabled={isSubmitting}
+                          <motion.div
                             whileHover={{ scale: isSubmitting ? 1 : 1.02, y: isSubmitting ? 0 : -2 }}
                             whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                           >
-                            {isSubmitting ? (
-                              <>
-                                <Icon icon="lucide:loader-2" width={20} height={20} className={styles.spinner} />
-                                Sending...
-                              </>
-                            ) : (
-                              <>
-                                <Icon icon="lucide:send" width={20} height={20} />
-                                Send Message
-                              </>
-                            )}
-                          </motion.button>
+                            <Button type="submit" variant="primary" disabled={isSubmitting} className={styles.submitButton}>
+                              {isSubmitting ? (
+                                <>
+                                  <Icon icon="lucide:loader-2" width={20} height={20} className={styles.spinner} />
+                                  Sending...
+                                </>
+                              ) : (
+                                <>
+                                  <Icon icon="lucide:send" width={20} height={20} />
+                                  Send Message
+                                </>
+                              )}
+                            </Button>
+                          </motion.div>
                         </Col>
                       </Row>
                     </form>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Button from '@/components/Button';
 import styles from './page.module.scss';
 import Container from 'react-bootstrap/Container';
 import { Icon } from '@iconify/react';
@@ -305,15 +306,17 @@ export default function AboutUsPage() {
                 Whether you&apos;re just starting your health journey or looking to take it to the next level, 
                 BeHealthy is here to support you every step of the way.
               </p>
-              <motion.a
-                href="/"
-                className={styles.ctaButton}
+              <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Your Free Journey
-                <Icon icon="lucide:arrow-right" width={20} height={20} />
-              </motion.a>
+                <a href="/" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                  <Button variant="primary" className={styles.ctaButton}>
+                    Start Your Free Journey
+                    <Icon icon="lucide:arrow-right" width={20} height={20} />
+                  </Button>
+                </a>
+              </motion.div>
             </motion.div>
           </Container>
         </section>
