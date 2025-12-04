@@ -183,8 +183,9 @@ export default function Footer() {
                     className={styles.quickLinkItem}
                   >
                     <motion.a
-                      href={item === "Blog" ? "/blog" : item === "About Us" ? "/about-us" : item === "Feature requests" ? "/feature-requests" : item === "Community" ? "/community" : item === "Help Center" ? "/help-center" : item === "Contact Us" ? "/contact-us" : "#"}
+                      href={item === "Blog" ? "/blog" : item === "Feature requests" ? "/feature-requests" : item === "Community" ? "/community" : item === "Help Center" ? "/help-center" : item === "Contact Us" ? "/contact-us" : "#"}
                       // href="#"
+                      // href={item === "Blog" ? "/blog" : item === "About Us" ? "/about-us" : item === "Feature requests" ? "/feature-requests" : item === "Community" ? "/community" : item === "Help Center" ? "/help-center" : item === "Contact Us" ? "/contact-us" : "#"}
                       className={styles.quickLinkText}
                       whileHover={{
                         x: 4,
@@ -245,7 +246,9 @@ export default function Footer() {
                       }}
                       transition={{ duration: 0.2 }}
                     >
-                      <Icon icon={contact.icon} width={18} height={18} className={styles.contactIcon} />
+                      <div className={styles.contactIconWrapper}>
+                        <Icon icon={contact.icon} width={18} height={18} className={styles.contactIcon} />
+                      </div>
                       <span className={styles.contactText}>
                         {contact.text.split('\n').map((line, i) => (
                           <span key={i}>{line}{i < contact.text.split('\n').length - 1 && <br />}</span>

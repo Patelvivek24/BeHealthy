@@ -9,7 +9,7 @@
   width: calc(100% - 48px);
   max-width: 1200px;
   z-index: $z-index-fixed;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.10);
@@ -60,7 +60,7 @@
     transition: $transition-base;
 
     &:hover {
-      color: #588b0f !important;
+      color: $vitality-green !important;
     }
   }
 
