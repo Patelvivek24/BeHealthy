@@ -66,7 +66,7 @@ export default function Footer() {
         >
           <Row className="align-items-center">
             <Col md={6}>
-              <h3>Stay Updated with BeHealthy</h3>
+              <span>Stay Updated with BeHealthy</span>
               <p>Get health tips, feature updates, and exclusive offers delivered to your inbox</p>
             </Col>
 
@@ -343,6 +343,7 @@ export default function Footer() {
       {/* Scroll To Top */}
       <motion.button
         onClick={scrollToTop}
+        aria-label="Scroll to top"
         whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.9 }}
         className={styles.scrollTop}
