@@ -355,20 +355,24 @@
 }
 
 .socialLink {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(0, 59, 70, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--social-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 59, 70, 0.2);
+  background: white;
+  color: $deep-petrol;
   text-decoration: none;
-  transition: $transition-base;
+  transition: all 0.3s ease;
 
   &:hover {
-    background: var(--social-color);
+    background: $vitality-green;
+    border-color: $vitality-green;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(141, 198, 63, 0.3);
   }
 }
 

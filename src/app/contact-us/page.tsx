@@ -474,18 +474,18 @@ export default function ContactUsPage() {
                     <h4 className={styles.socialTitle}>Follow Us</h4>
                     <div className={styles.socialLinks}>
                       {[
-                        { icon: 'lucide:facebook', href: '#', color: '#1877F2' },
-                        { icon: 'lucide:twitter', href: '#', color: '#1DA1F2' },
-                        { icon: 'lucide:instagram', href: '#', color: '#E4405F' },
-                        { icon: 'lucide:linkedin', href: '#', color: '#0A66C2' }
+                        { icon: 'lucide:facebook', href: '#', label: 'Follow on Facebook' },
+                        { icon: 'lucide:twitter', href: '#', label: 'Follow on Twitter' },
+                        { icon: 'lucide:instagram', href: '#', label: 'Follow on Instagram' },
+                        { icon: 'lucide:linkedin', href: '#', label: 'Follow on LinkedIn' }
                       ].map((social, index) => (
                         <motion.a
                           key={index}
                           href={social.href}
                           className={styles.socialLink}
-                          whileHover={{ scale: 1.15, y: -3 }}
-                          whileTap={{ scale: 0.9 }}
-                          style={{ '--social-color': social.color } as React.CSSProperties}
+                          aria-label={social.label}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
                         >
                           <Icon icon={social.icon} width={20} height={20} />
                         </motion.a>
