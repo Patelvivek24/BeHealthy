@@ -137,8 +137,8 @@ export default function Footer() {
                     transition={{ delay: 0.3 + index * 0.1, type: "spring", stiffness: 200 }}
                     whileHover={{
                       scale: 1.25,
-                      y: -6,
-                      rotate: 360,
+                      // y: -6,
+                      // rotate: 360,
                       boxShadow: `0 6px 20px ${social.color}50`
                     }}
                     whileTap={{ scale: 0.9 }}

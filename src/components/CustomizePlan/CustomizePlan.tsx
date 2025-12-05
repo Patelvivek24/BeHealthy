@@ -269,7 +269,7 @@ export default function CustomizePlan() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className={styles.heroTitle}
+            className="title"
           >
             Create Your Custom Plan
           </motion.h1>
@@ -277,7 +277,7 @@ export default function CustomizePlan() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className={styles.heroSubtitle}
+            className="description"
           >
             Tell us about your unique health goals and needs, and we&apos;ll create a personalized plan designed specifically for you.
           </motion.p>
@@ -722,10 +722,9 @@ export default function CustomizePlan() {
               className={styles.submitSection}
             >
               <motion.div
-                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Button type="submit" variant="primary" className={styles.submitBtn}>
+                <Button type="submit" variant="primary">
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}

@@ -237,44 +237,97 @@ export default function FeatureRequestsPage() {
         </motion.section>
 
         <Container>
-
-          {/* Submit Feature Form */}
+          {/* Top Section: Sort, Filter, and Submit */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className={styles.formSection}
+            className={styles.topSection}
           >
-            {!showForm ? (
-              <motion.div
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button variant="primary" onClick={() => setShowForm(true)} className={styles.submitButton}>
+            {/* Sort by Section */}
+            <div className={styles.sortSection}>
+              <label>Sort by:</label>
+              <div className={styles.filterButtons}>
+                <button
+                  onClick={() => setSortBy('popular')}
+                  className={sortBy === 'popular' ? styles.active : ''}
+                >
+                  <Icon icon="lucide:line-chart" width={16} height={16} />
+                  Most Popular
+                </button>
+                <button
+                  onClick={() => setSortBy('newest')}
+                  className={sortBy === 'newest' ? styles.active : ''}
+                >
+                  <Icon icon="lucide:clock" width={16} height={16} />
+                  Newest
+                </button>
+              </div>
+            </div>
+
+            {/* Filter by Status Section */}
+            <div className={styles.filterSection}>
+              <label>Filter by status:</label>
+              <div className={styles.filterButtons}>
+                <button
+                  onClick={() => setFilterStatus('all')}
+                  className={filterStatus === 'all' ? styles.active : ''}
+                >
+                  All
+                </button>
+                {Object.entries(STATUS_LABELS).map(([key, label]) => (
+                  <button
+                    key={key}
+                    onClick={() => setFilterStatus(key)}
+                    className={filterStatus === key ? styles.active : ''}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Submit Button */}
+            <div className={styles.submitButtonWrapper}>
+              {!showForm ? (
+                <Button
+                  variant="primary"
+                  onClick={() => setShowForm(true)}
+                  type="button"
+                >
                   <Icon icon="lucide:plus" width={20} height={20} />
                   Submit a Feature Request
                 </Button>
-              </motion.div>
-            ) : (
+              ) : (
+                <motion.button
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => {
+                    setShowForm(false);
+                    setFormData({ title: '', description: '' });
+                  }}
+                
+                >
+                  <Icon icon="lucide:x" width={20} height={20} />
+                  Cancel
+                </motion.button>
+              )}
+            </div>
+          </motion.div>
+
+          {/* Submit Feature Form */}
+          {showForm && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className={styles.formSection}
+            >
               <motion.form
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
                 onSubmit={handleSubmit}
                 className={styles.form}
               >
                 <div className={styles.formHeader}>
                   <h3>Submit a New Feature Request</h3>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setShowForm(false);
-                      setFormData({ title: '', description: '' });
-                    }}
-                    className={styles.closeButton}
-                  >
-                    <Icon icon="lucide:x" width={20} height={20} />
-                  </button>
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="title">Feature Title *</label>
@@ -325,56 +378,8 @@ export default function FeatureRequestsPage() {
                   </Button>
                 </div>
               </motion.form>
-            )}
-          </motion.div>
-
-          {/* Filters */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className={styles.filters}
-          >
-            <div className={styles.filterGroup}>
-              <label>Sort by:</label>
-              <div className={styles.filterButtons}>
-                <button
-                  onClick={() => setSortBy('popular')}
-                  className={sortBy === 'popular' ? styles.active : ''}
-                >
-                  <Icon icon="lucide:trending-up" width={16} height={16} />
-                  Most Popular
-                </button>
-                <button
-                  onClick={() => setSortBy('newest')}
-                  className={sortBy === 'newest' ? styles.active : ''}
-                >
-                  <Icon icon="lucide:clock" width={16} height={16} />
-                  Newest
-                </button>
-              </div>
-            </div>
-            <div className={styles.filterGroup}>
-              <label>Filter by status:</label>
-              <div className={styles.filterButtons}>
-                <button
-                  onClick={() => setFilterStatus('all')}
-                  className={filterStatus === 'all' ? styles.active : ''}
-                >
-                  All
-                </button>
-                {Object.entries(STATUS_LABELS).map(([key, label]) => (
-                  <button
-                    key={key}
-                    onClick={() => setFilterStatus(key)}
-                    className={filterStatus === key ? styles.active : ''}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          )}
 
           {/* Feature Requests List */}
           <motion.div

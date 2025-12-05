@@ -87,10 +87,6 @@ export default function Hero() {
             <Button variant="primary">
               Start Your Free Journey <Icon icon="lucide:arrow-right" className={styles.arrowIcon} />
             </Button>
-
-            <Button variant="white">
-              <Icon icon="lucide:play" className={styles.playIcon} /> Watch Demo
-            </Button>
           </div>
 
           {/* Feature Cards */}
