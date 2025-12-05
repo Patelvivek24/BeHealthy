@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
+import Button from "../Button";
 import styles from "./Pricing.module.scss";
 
 const plans = [
@@ -183,9 +184,14 @@ export default function Pricing() {
                   </ul>
                 </div>
 
-                <motion.button className={styles.ctaButton}>
-                  {plan.cta}
-                </motion.button>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button variant={plan.featured ? "white" : "primary"} className={styles.ctaButton}>
+                    {plan.cta}
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           ))}
@@ -247,12 +253,14 @@ export default function Pricing() {
                 </ul>
               </div>
 
-              <motion.button
-                onClick={handleCustomizePlan}
-                className={styles.customButton}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Customize Your Plan
-              </motion.button>
+                <Button variant="white" onClick={handleCustomizePlan} className={styles.customButton}>
+                  Customize Your Plan
+                </Button>
+              </motion.div>
             </div>
           </motion.div>
         </div>

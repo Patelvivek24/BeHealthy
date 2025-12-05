@@ -352,88 +352,6 @@
   margin: 0;
 }
 
-/* CTA Section */
-.ctaSection {
-  padding: 80px 0;
-  background: white;
-}
-
-.ctaCard {
-  background: linear-gradient(135deg, rgba(0, 59, 70, 0.95) 0%, rgba(30, 90, 168, 0.95) 65%, rgba(46, 181, 172, 0.95) 100%);
-  border-radius: $border-radius-lg;
-  padding: 4rem 3rem;
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(141, 198, 63, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  @media (max-width: 768px) {
-    padding: 3rem 2rem;
-  }
-}
-
-.ctaTitle {
-  font-size: 2.5rem;
-  font-weight: $font-weight-bold;
-  margin: 0 0 1rem;
-  position: relative;
-  z-index: 1;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-}
-
-.ctaText {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  margin: 0 0 2rem;
-  opacity: 0.95;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  z-index: 1;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-}
-
-.ctaButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2.5rem;
-  background: linear-gradient(135deg, $vitality-green 0%, $wellness-teal 100%);
-  color: white;
-  border-radius: 50px;
-  font-size: 1.05rem;
-  font-weight: $font-weight-semibold;
-  text-decoration: none;
-  box-shadow: $shadow-button;
-  transition: $transition-base;
-  position: relative;
-  z-index: 1;
-
-  &:hover {
-    box-shadow: $shadow-button-hover;
-    color: white;
-  }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .contentWrapper {
@@ -446,8 +364,7 @@
 
   .missionSection,
   .storySection,
-  .valuesSection,
-  .ctaSection {
+  .valuesSection {
     padding: 60px 0;
   }
 

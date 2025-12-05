@@ -1,9 +1,9 @@
 @use '../../app/variables' as *;
 
 .footer {
-  background: linear-gradient(135deg,rgba(0,59,70,.85) 0%,rgba(33,98,184,.9) 65%,rgba(46,181,172,.9) 100%);
+  background: linear-gradient(135deg, rgba(0, 59, 70, .85) 0%, rgba(33, 98, 184, .9) 65%, rgba(46, 181, 172, .9) 100%);
   color: white;
-  padding: 80px 0px 40px 0px; 
+  padding: 80px 0px 40px 0px;
   position: relative;
   overflow: hidden;
 }
@@ -339,29 +339,47 @@
   width: 100%;
 }
 
+.contactIconWrapper {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
 .contactLink {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
   transition: all 0.3s ease;
   display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
+  align-items: center;
+  gap: 10px;
   position: relative;
   cursor: pointer;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1.5px;
-    background: linear-gradient(to right, #8DC63F, #2EB5AC);
-    transition: width 0.3s ease;
-  }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: -2px;
+  //   left: 0;
+  //   width: 0;
+  //   height: 1.5px;
+  //   background: linear-gradient(to right, #8DC63F, #2EB5AC);
+  //   transition: width 0.3s ease;
+  // }
 
   &:hover {
     color: #8DC63F;
@@ -407,7 +425,7 @@
 
 .copyright {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.8rem;
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -430,7 +448,7 @@
 .bottomLink {
   color: rgba(255, 255, 255, 0.65);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: 400;
   position: relative;
   padding: 0.2rem 0;

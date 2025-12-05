@@ -49,7 +49,6 @@ $xxl: 1400px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  // filter: blur(8px);
   transform: scale(1);
   z-index: 0;
 }
@@ -170,70 +169,9 @@ $xxl: 1400px;
   margin-top: 8px;
 }
 
-.primaryCTA {
-  padding: 16px 32px;
-  background: linear-gradient(135deg, $green-500 0%, #7AB82E 100%);
-  border: none;
-  border-radius: 12px;
-  color: $white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 20px rgba(141, 198, 63, 0.4);
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(141, 198, 63, 0.5);
-    background: linear-gradient(135deg, #7AB82E 0%, $green-500 100%);
-    color: $white;
-  }
-
-  @media (max-width: $sm) {
-    padding: 14px 24px;
-    font-size: 14px;
-  }
-}
-
-.secondaryCTA {
-  padding: 16px 32px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  color: $white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  backdrop-filter: blur(10px);
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
-    color: $white;
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: $sm) {
-    padding: 14px 24px;
-    font-size: 14px;
-  }
-}
-
 .arrowIcon {
   width: 20px;
   height: 20px;
-}
-
-.playIcon {
-  width: 18px;
-  height: 18px;
 }
 
 /* Feature Cards */

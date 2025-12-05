@@ -181,9 +181,9 @@ export default function CommunityPage() {
                 </span>
               </div>
               <div className={styles.formActions}>
-                <button type="button" onClick={handleCloseModal} className={styles.cancelButton}>
+                <Button type="button" variant="outline" onClick={handleCloseModal} className={styles.cancelButton}>
                   Cancel
-                </button>
+                </Button>
                 <Button type="submit" variant="primary" disabled={!formData.title || !formData.category || !formData.description}>
                   Post Discussion
                 </Button>

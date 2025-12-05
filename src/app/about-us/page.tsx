@@ -289,34 +289,6 @@ export default function AboutUsPage() {
             </div>
           </Container>
         </section>
-
-        {/* CTA Section */}
-        <section className={styles.ctaSection}>
-          <Container>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className={styles.ctaCard}
-            >
-              <h2 className={styles.ctaTitle}>Join Us on This Journey</h2>
-              <p className={styles.ctaText}>
-                Whether you&apos;re just starting your health journey or looking to take it to the next level, 
-                BeHealthy is here to support you every step of the way.
-              </p>
-              <motion.a
-                href="/"
-                className={styles.ctaButton}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Start Your Free Journey
-                <Icon icon="lucide:arrow-right" width={20} height={20} />
-              </motion.a>
-            </motion.div>
-          </Container>
-        </section>
       </div>
       <Footer />
     </div>

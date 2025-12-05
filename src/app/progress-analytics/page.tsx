@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Button from '@/components/Button';
 import styles from './page.module.scss';
 
 export default function ProgressAnalyticsPage() {
@@ -134,14 +135,15 @@ export default function ProgressAnalyticsPage() {
             >
               <h2>Explore Your Analytics</h2>
               <p>Discover insights that drive better health decisions</p>
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={styles.ctaButton}
               >
-                View Analytics Dashboard
-                <Icon icon="lucide:arrow-right" />
-              </motion.button>
+                <Button variant="primary" className={styles.ctaButton}>
+                  View Analytics Dashboard
+                  <Icon icon="lucide:arrow-right" />
+                </Button>
+              </motion.div>
             </motion.div>
           </motion.div>
         </Container>

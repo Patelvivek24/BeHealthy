@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
+import Button from "../Button";
 import styles from "./FAQ.module.scss";
 import Container from "react-bootstrap/Container";
 
@@ -166,21 +167,23 @@ export default function FAQ() {
 
             <div className={styles.supportButtonsWrapper}>
               <div className={styles.supportButtons}>
-                <motion.button
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={styles.buttonPrimary}
                 >
-                  Contact Support
-                </motion.button>
+                  <Button variant="primary">
+                    Contact Support
+                  </Button>
+                </motion.div>
 
-                <motion.button
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={styles.buttonOutline}
                 >
-                  Schedule a Demo
-                </motion.button>
+                  <Button variant="outline">
+                    Schedule a Demo
+                  </Button>
+                </motion.div>
               </div>
             </div>
           </motion.div>

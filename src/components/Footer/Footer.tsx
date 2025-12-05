@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../../../public/images/logo.png";
+import Button from "../Button";
 import styles from "./Footer.module.scss";
 
 // Generate deterministic positions based on index
@@ -79,13 +80,14 @@ export default function Footer() {
                   whileFocus={{ scale: 1.02 }}
                   className={styles.newsletterInput}
                 />
-                <motion.button
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={styles.subscribeBtn}
                 >
-                  Subscribe
-                </motion.button>
+                  <Button variant="primary">
+                    Subscribe
+                  </Button>
+                </motion.div>
               </div>
             </Col>
           </Row>
@@ -135,8 +137,8 @@ export default function Footer() {
                     transition={{ delay: 0.3 + index * 0.1, type: "spring", stiffness: 200 }}
                     whileHover={{
                       scale: 1.25,
-                      y: -6,
-                      rotate: 360,
+                      // y: -6,
+                      // rotate: 360,
                       boxShadow: `0 6px 20px ${social.color}50`
                     }}
                     whileTap={{ scale: 0.9 }}
@@ -184,7 +186,6 @@ export default function Footer() {
                   >
                     <motion.a
                       href={item === "Blog" ? "/blog" : item === "About Us" ? "/about-us" : item === "Feature requests" ? "/feature-requests" : item === "Community" ? "/community" : item === "Help Center" ? "/help-center" : item === "Contact Us" ? "/contact-us" : "#"}
-                      // href="#"
                       className={styles.quickLinkText}
                       whileHover={{
                         x: 4,
@@ -245,7 +246,9 @@ export default function Footer() {
                       }}
                       transition={{ duration: 0.2 }}
                     >
-                      <Icon icon={contact.icon} width={18} height={18} className={styles.contactIcon} />
+                      <div className={styles.contactIconWrapper}>
+                        <Icon icon={contact.icon} width={18} height={18} className={styles.contactIcon} />
+                      </div>
                       <span className={styles.contactText}>
                         {contact.text.split('\n').map((line, i) => (
                           <span key={i}>{line}{i < contact.text.split('\n').length - 1 && <br />}</span>

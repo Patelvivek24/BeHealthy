@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Button from '@/components/Button';
 import styles from './page.module.scss';
 
 export default function AIReportsPage() {
@@ -149,14 +150,15 @@ export default function AIReportsPage() {
             >
               <h2>Get Your Medical Analysis</h2>
               <p>Upload your medical reports and get instant AI-powered insights</p>
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={styles.ctaButton}
               >
-                Analyze Medical Reports
-                <Icon icon="lucide:arrow-right" />
-              </motion.button>
+                <Button variant="primary" className={styles.ctaButton}>
+                  Analyze Medical Reports
+                  <Icon icon="lucide:arrow-right" />
+                </Button>
+              </motion.div>
             </motion.div>
           </motion.div>
         </Container>

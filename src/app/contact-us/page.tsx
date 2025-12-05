@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Button from '@/components/Button';
 import styles from './page.module.scss';
 import Container from 'react-bootstrap/Container';
 import { Icon } from '@iconify/react';
@@ -272,7 +273,8 @@ export default function ContactUsPage() {
                   ) : (
                     <form onSubmit={handleSubmit} className={styles.contactForm}>
                       <Row className="g-3">
-                        <Col md={6}>
+                        {/* First Row: Full Name, Email Address, Phone Number */}
+                        <Col md={4}>
                           <div className={styles.formGroup}>
                             <label htmlFor="name" className={styles.label}>
                               Full Name <span className={styles.required}>*</span>
@@ -292,7 +294,7 @@ export default function ContactUsPage() {
                           </div>
                         </Col>
 
-                        <Col md={6}>
+                        <Col md={4}>
                           <div className={styles.formGroup}>
                             <label htmlFor="email" className={styles.label}>
                               Email Address <span className={styles.required}>*</span>
@@ -312,7 +314,7 @@ export default function ContactUsPage() {
                           </div>
                         </Col>
 
-                        <Col md={6}>
+                        <Col md={4}>
                           <div className={styles.formGroup}>
                             <label htmlFor="phone" className={styles.label}>
                               Phone Number <span className={styles.required}>*</span>
@@ -332,6 +334,7 @@ export default function ContactUsPage() {
                           </div>
                         </Col>
 
+                        {/* Second Row: Inquiry Type, Subject */}
                         <Col md={6}>
                           <div className={styles.formGroup}>
                             <label htmlFor="inquiryType" className={styles.label}>
@@ -357,7 +360,7 @@ export default function ContactUsPage() {
                           </div>
                         </Col>
 
-                        <Col md={12}>
+                        <Col md={6}>
                           <div className={styles.formGroup}>
                             <label htmlFor="subject" className={styles.label}>
                               Subject <span className={styles.required}>*</span>
@@ -377,6 +380,7 @@ export default function ContactUsPage() {
                           </div>
                         </Col>
 
+                        {/* Third Row: Message */}
                         <Col md={12}>
                           <div className={styles.formGroup}>
                             <label htmlFor="message" className={styles.label}>
@@ -402,25 +406,23 @@ export default function ContactUsPage() {
                         </Col>
 
                         <Col md={12}>
-                          <motion.button
-                            type="submit"
-                            className={styles.submitButton}
-                            disabled={isSubmitting}
-                            whileHover={{ scale: isSubmitting ? 1 : 1.02, y: isSubmitting ? 0 : -2 }}
+                          <motion.div
                             whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                           >
-                            {isSubmitting ? (
-                              <>
-                                <Icon icon="lucide:loader-2" width={20} height={20} className={styles.spinner} />
-                                Sending...
-                              </>
-                            ) : (
-                              <>
-                                <Icon icon="lucide:send" width={20} height={20} />
-                                Send Message
-                              </>
-                            )}
-                          </motion.button>
+                            <Button type="submit" variant="primary" disabled={isSubmitting}>
+                              {isSubmitting ? (
+                                <>
+                                  <Icon icon="lucide:loader-2" width={20} height={20} className={styles.spinner} />
+                                  Sending...
+                                </>
+                              ) : (
+                                <>
+                                  <Icon icon="lucide:send" width={20} height={20} />
+                                  Send Message
+                                </>
+                              )}
+                            </Button>
+                          </motion.div>
                         </Col>
                       </Row>
                     </form>

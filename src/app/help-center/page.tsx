@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Button from '@/components/Button';
 import styles from './page.module.scss';
 import Container from 'react-bootstrap/Container';
 import { Icon } from '@iconify/react';
@@ -380,7 +381,7 @@ export default function HelpCenterPage() {
               )}
             </motion.div>
 
-            <div className={styles.faqList}>
+            <div>
               {filteredFaqs.length > 0 ? (
                 filteredFaqs.map((faq, index) => (
                   <motion.div
@@ -435,7 +436,7 @@ export default function HelpCenterPage() {
         </section>
 
         {/* Contact Support */}
-        <section className={styles.contactSection}>
+        <section>
           <Container>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -444,32 +445,25 @@ export default function HelpCenterPage() {
               transition={{ duration: 0.6 }}
               className={styles.contactCard}
             >
-              <div className={styles.contactIcon}>
-                <Icon icon="lucide:headphones" width={48} height={48} />
-              </div>
               <h2 className={styles.contactTitle}>Still need help?</h2>
               <p className={styles.contactText}>
                 Our support team is here to assist you. Reach out to us and we&apos;ll get back to you as soon as possible.
               </p>
               <div className={styles.contactButtons}>
-                <motion.a
-                  href="mailto:support@behealthy.com"
-                  className={styles.contactButton}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                <Button
+                  variant="primary"
+                  onClick={() => window.location.href = 'mailto:support@behealthy.com'}
                 >
-                  <Icon icon="lucide:mail" width={20} height={20} />
                   Email Support
-                </motion.a>
-                <motion.a
-                  href="tel:+15551234567"
-                  className={styles.contactButtonSecondary}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                  <Icon icon="lucide:arrow-right" width={20} height={20} />
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => window.location.href = 'tel:+15551234567'}
                 >
-                  <Icon icon="lucide:phone" width={20} height={20} />
                   Call Us
-                </motion.a>
+                  <Icon icon="lucide:arrow-right" width={20} height={20} />
+                </Button>
               </div>
               <div className={styles.contactInfo}>
                 <div className={styles.contactInfoItem}>
