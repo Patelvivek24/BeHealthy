@@ -45,7 +45,7 @@ export default function AIPoweredPlansPage() {
   ];
 
   return (
-    <div className={styles.detailPage}>
+    <main className={styles.detailPage}>
       <Header />
       <div className={styles.contentWrapper}>
         <Container>
@@ -149,7 +149,7 @@ export default function AIPoweredPlansPage() {
         </Container>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

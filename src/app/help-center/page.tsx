@@ -164,7 +164,7 @@ export default function HelpCenterPage() {
   });
 
   return (
-    <div className={styles.helpCenterPage}>
+    <main className={styles.helpCenterPage}>
       <Header />
       <div className={styles.contentWrapper}>
         {/* Hero Section */}
@@ -480,7 +480,7 @@ export default function HelpCenterPage() {
         </section>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

@@ -145,7 +145,7 @@ export default function BlogPage() {
     });
 
   return (
-    <div className={styles.blogPage}>
+    <main className={styles.blogPage}>
       <Header />
       <div className={styles.contentWrapper}>
         {/* Hero Section */}
@@ -359,7 +359,7 @@ export default function BlogPage() {
         </Container>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

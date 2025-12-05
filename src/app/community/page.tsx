@@ -125,7 +125,7 @@ export default function CommunityPage() {
   };
 
   return (
-    <div className={styles.communityPage}>
+    <main className={styles.communityPage}>
       <Header />
       
       {/* Modal Popup */}
@@ -387,6 +387,6 @@ export default function CommunityPage() {
         </Container>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }

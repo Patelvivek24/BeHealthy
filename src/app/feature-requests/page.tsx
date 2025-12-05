@@ -189,7 +189,7 @@ export default function FeatureRequestsPage() {
   };
 
   return (
-    <div className={styles.featureRequestsPage}>
+    <main className={styles.featureRequestsPage}>
       <Header />
       <div className={styles.contentWrapper}>
         {/* Hero Section */}
@@ -452,7 +452,7 @@ export default function FeatureRequestsPage() {
         </Container>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

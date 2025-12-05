@@ -158,7 +158,7 @@ export default function TermsOfService() {
   ];
 
   return (
-    <div className={styles.legalPage}>
+    <main className={styles.legalPage}>
       <Header />
       <div className={styles.contentWrapper}>
         <Container>
@@ -213,7 +213,7 @@ export default function TermsOfService() {
         </Container>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 
