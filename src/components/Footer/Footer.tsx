@@ -161,7 +161,7 @@ export default function Footer() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className={styles.quickLinksWrapper}
             >
-              <motion.h4
+              <motion.p
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -169,7 +169,7 @@ export default function Footer() {
                 className={styles.quickLinksTitle}
               >
                 Quick Links
-              </motion.h4>
+              </motion.p>
               <ul className={styles.quickLinksList}>
                 {["Help Center", "Community", "Feature requests", "About Us", "Blog", "Contact Us"].map((item, index) => (
                   <motion.li
@@ -210,7 +210,7 @@ export default function Footer() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className={styles.contactWrapper}
             >
-              <motion.h4
+              <motion.p
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -218,7 +218,7 @@ export default function Footer() {
                 className={styles.contactTitle}
               >
                 Contact Us
-              </motion.h4>
+              </motion.p>
               <ul className={styles.contactList}>
                 {[
                   { icon: "lucide:mail", text: "support@behealthy.com", href: "mailto:support@behealthy.com" },

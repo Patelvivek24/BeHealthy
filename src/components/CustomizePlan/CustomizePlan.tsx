@@ -531,6 +531,7 @@ export default function CustomizePlan() {
                       <Icon icon="lucide:dollar-sign" width={20} height={20} className={styles.inputIcon} />
                       <Form.Select
                         required
+                        id="budget"
                         value={formData.budget}
                         onChange={(e) => {
                           setFormData({ ...formData, budget: e.target.value });
@@ -570,6 +571,7 @@ export default function CustomizePlan() {
                       <Icon icon="lucide:calendar" width={20} height={20} className={styles.inputIcon} />
                       <Form.Select
                         required
+                        id="duration"
                         value={formData.duration}
                         onChange={(e) => {
                           setFormData({ ...formData, duration: e.target.value });
@@ -609,6 +611,7 @@ export default function CustomizePlan() {
                       <Icon icon="lucide:activity" width={20} height={20} className={styles.inputIcon} />
                       <Form.Select
                         required
+                        id="fitnessLevel"
                         value={formData.fitnessLevel}
                         onChange={(e) => {
                           setFormData({ ...formData, fitnessLevel: e.target.value });
