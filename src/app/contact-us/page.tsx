@@ -156,7 +156,7 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className={styles.contactUsPage}>
+    <main className={styles.contactUsPage}>
       <Header />
       <div className={styles.contentWrapper}>
         {/* Hero Section */}
@@ -499,7 +499,7 @@ export default function ContactUsPage() {
         </section>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

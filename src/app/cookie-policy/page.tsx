@@ -138,7 +138,7 @@ export default function CookiePolicy() {
   ];
 
   return (
-    <div className={styles.legalPage}>
+    <main className={styles.legalPage}>
       <Header />
       <div className={styles.contentWrapper}>
         <Container>
@@ -193,7 +193,7 @@ export default function CookiePolicy() {
         </Container>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

@@ -16,7 +16,7 @@ import styles from './page.module.scss';
 
 export default function Home() {
   return (
-    <div className={styles.landingPage}>
+    <main className={styles.landingPage}>
       <Header />
       <Hero />
       <ProductOverview />
@@ -29,6 +29,6 @@ export default function Home() {
       <FAQ />
       <AppDownload />
       <Footer />
-    </div>
+    </main>
   );
 }

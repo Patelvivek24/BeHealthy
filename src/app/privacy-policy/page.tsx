@@ -119,7 +119,7 @@ export default function PrivacyPolicy() {
   ];
 
   return (
-    <div className={styles.legalPage}>
+    <main className={styles.legalPage}>
       <Header />
       <div className={styles.contentWrapper}>
         <Container>
@@ -174,7 +174,7 @@ export default function PrivacyPolicy() {
         </Container> 
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

@@ -68,7 +68,7 @@ const milestones = [
 
 export default function AboutUsPage() {
   return (
-    <div className={styles.aboutPage}>
+    <main className={styles.aboutPage}>
       <Header />
       <div className={styles.contentWrapper}>
         {/* Hero Section */}
@@ -291,7 +291,7 @@ export default function AboutUsPage() {
         </section>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 
