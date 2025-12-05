@@ -131,27 +131,7 @@
         "title": "Personalized Recommendations",
         "description": "AI-generated action plans based on your results"
       }
-    ],
-    "visualSection": {
-      "image": "/images/hero-5.jpg",
-      "scores": [
-        {
-          "value": "85",
-          "label": "Overall Score",
-          "color": "green"
-        },
-        {
-          "value": "92",
-          "label": "Cholesterol",
-          "color": "blue"
-        },
-        {
-          "value": "78",
-          "label": "Blood Sugar",
-          "color": "blue"
-        }
-      ]
-    }
+    ]
   },
   "gamification": {
     "title": "Stay Motivated with Levels, Badges & Streaks",

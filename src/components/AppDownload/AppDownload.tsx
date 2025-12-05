@@ -105,7 +105,7 @@ export default function AppDownload() {
                     variants={itemVariants}
                     className="title"
                   >
-                    Start Your Disc Golf Journey Today
+                    Start Your Health Journey Today
                   </motion.h1>
 
                   {/* Description */}
@@ -113,7 +113,7 @@ export default function AppDownload() {
                     variants={itemVariants}
                     className="description"
                   >
-                    Join thousands of players already discovering new courses, tracking scores, and connecting with the community. Download the app now and take your game to the next level.
+                    Join thousands of users already transforming their health with personalized plans, AI-powered insights, and smart tracking. Download the app now and take control of your wellness.
                   </motion.p>
 
                   {/* Button Group */}
