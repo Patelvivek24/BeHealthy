@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import styles from './page.module.scss';
@@ -97,6 +98,7 @@ const blogPosts = [
 const categories = ["All", "Video Generation", "Writing Assistants", "Text Generator", "Programming", "Productivity", "Customer Engagement", "Artificial Intelligence", "Document Analysis"];
 
 export default function BlogPage() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("Latest");
@@ -277,6 +279,7 @@ export default function BlogPage() {
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
                 className={styles.blogCard}
                 whileHover={{ y: -5, boxShadow: "0 8px 24px rgba(0, 59, 70, 0.15)" }}
+                onClick={() => router.push(`/blog/${post.id}`)}
               >
                 <div className={styles.cardImage}>
                   <Image
