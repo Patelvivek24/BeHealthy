@@ -257,26 +257,30 @@ export default function HelpCenterPage() {
               <Row className="g-4">
                 {popularArticles.map((article, index) => (
                   <Col md={6} lg={3} key={index}>
-                    <motion.div
+                    <motion.article
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className={styles.popularCard}
                       whileHover={{ y: -5, boxShadow: "0 8px 24px rgba(0, 59, 70, 0.15)" }}
+                      role="article"
+                      aria-label={`Article: ${article.title}`}
                     >
-                      <div className={styles.popularIcon}>
+                      <div className={styles.popularIcon} aria-hidden="true">
                         <Icon icon="lucide:file-text" width={24} height={24} />
                       </div>
                       <h3 className={styles.popularTitle}>{article.title}</h3>
                       <div className={styles.popularMeta}>
-                        <span className={styles.popularCategory}>{article.category}</span>
-                        <span className={styles.popularViews}>
-                          <Icon icon="lucide:eye" width={14} height={14} />
+                        <strong className={styles.popularCategory} aria-label={`Category: ${article.category}`}>
+                          {article.category}
+                        </strong>
+                        <span className={styles.popularViews} aria-label={`${article.views} views`}>
+                          <Icon icon="lucide:eye" width={14} height={14} aria-hidden="true" />
                           {article.views}
                         </span>
                       </div>
-                    </motion.div>
+                    </motion.article>
                   </Col>
                 ))}
               </Row>

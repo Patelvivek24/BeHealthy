@@ -179,6 +179,8 @@ export default function AppDownload() {
                     src="/images/download_app.png"
                     alt="App Screenshot"
                     className={styles.phoneImage}
+                    width={1080}
+                    height={2329}
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ delay: 0.7, duration: 0.5 }}
