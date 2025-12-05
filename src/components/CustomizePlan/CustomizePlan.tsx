@@ -523,7 +523,7 @@ export default function CustomizePlan() {
               <Row>
                 <Col md={4}>
                   <Form.Group className={styles.formGroup} data-field="budget">
-                    <Form.Label>Budget Range *</Form.Label>
+                    <Form.Label htmlFor="budget">Budget Range *</Form.Label>
                     <motion.div
                       whileFocus={{ scale: 1.02 }}
                       className={styles.selectIconWrap}
@@ -563,7 +563,7 @@ export default function CustomizePlan() {
 
                 <Col md={4}>
                   <Form.Group className={styles.formGroup} data-field="duration">
-                    <Form.Label>Commitment Duration *</Form.Label>
+                    <Form.Label htmlFor="duration">Commitment Duration *</Form.Label>
                     <motion.div
                       whileFocus={{ scale: 1.02 }}
                       className={styles.selectIconWrap}
@@ -603,7 +603,7 @@ export default function CustomizePlan() {
 
                 <Col md={4}>
                   <Form.Group className={styles.formGroup} data-field="fitnessLevel">
-                    <Form.Label>Current Fitness Level *</Form.Label>
+                    <Form.Label htmlFor="fitnessLevel">Current Fitness Level *</Form.Label>
                     <motion.div
                       whileFocus={{ scale: 1.02 }}
                       className={styles.selectIconWrap}
