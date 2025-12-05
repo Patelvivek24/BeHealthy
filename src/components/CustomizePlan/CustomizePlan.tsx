@@ -206,7 +206,7 @@ export default function CustomizePlan() {
   // MAIN FORM PAGE
   // --------------------------------
   return (
-    <div className={styles.mainWrapper}>
+    <main className={styles.mainWrapper}>
       {/* Header */}
       <motion.div
         initial={{ y: -100, opacity: 0 }}
@@ -750,6 +750,6 @@ export default function CustomizePlan() {
           </Form>
         </motion.div>
       </Container>
-    </div>
+    </main>
   );
 }
